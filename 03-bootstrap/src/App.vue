@@ -10,10 +10,6 @@
 
 <style lang="scss">
 @import './assets/scss/app.scss';
-
-#app {
-}
-
 .grey {
   background-color: #ccc;
 }
