@@ -1,29 +1,48 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>
+    <b-container>
+
+      <b-row>
+        <b-col>
+          <div class="grey">A</div>
+        </b-col>
+        <b-col>
+          <div class="grey">B</div>
+        </b-col>
+        <b-col>
+          <div class="grey">C</div>
+        </b-col>
+      </b-row>
+
+      <b-row>
+        <b-col>
+          <b-alert show>ALERT</b-alert>
+        </b-col>
+      </b-row>
+
+    </b-container>
   </div>
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
-import HelloWorld from './components/HelloWorld.vue';
+import Vue from "vue";
+import HelloWorld from "./components/HelloWorld.vue";
 
 export default Vue.extend({
-  name: 'app',
+  name: "app",
   components: {
-    HelloWorld,
-  },
+    HelloWorld
+  }
 });
 </script>
 
 <style lang="scss">
+@import './assets/scss/app.scss';
+
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+}
+
+.grey {
+  background-color: #ccc;
 }
 </style>
