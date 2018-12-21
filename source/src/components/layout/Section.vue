@@ -4,7 +4,7 @@
             <slot></slot>
         </template>
         <template v-else>
-            <b-container>
+            <b-container :fluid="fluid">
                 <b-row>
                     <b-col>
                         <slot></slot>
@@ -27,6 +27,8 @@ export default Vue.extend({
         },
         verticalFill: Boolean,
         noGrid: Boolean,
+        slim: Boolean,
+        fluid: Boolean,
     },
 });
 </script>
@@ -51,7 +53,16 @@ export default Vue.extend({
         background-color: rgba($color-white, 0.1);
         padding: 0.5em 0.5em;
         margin: 0;
+        color: $color-orange;
     }
+}
+
+.white + .white .container::before {
+    content: "--------------";
+    color: transparent;
+    border-top: 4px solid $color-orange;
+    position: relative;
+    top: -20px;
 }
 
 .orange { 
@@ -72,7 +83,14 @@ export default Vue.extend({
     }
 }
 
-.rose { background-color: $color-rose; color: $color-white; }
+.rose { 
+    background-color: $color-rose; 
+    color: $color-white; 
+
+    pre {
+        color: $color-white;
+    }
+}
 
 .darkred { 
     background-color: $color-darkred; 

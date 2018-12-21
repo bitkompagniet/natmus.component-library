@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <layout-section theme="lightgrey">
+    <layout-section theme="white">
       <h2>Navigation</h2>
       <p>
         Most pages should have a top navigation bar, like the one you see
@@ -40,7 +40,7 @@
       <h3>Basic usage</h3>
 
       <pre>
-&lt;layout-section&gt;
+&lt;layout-section theme="white"&gt;
   &lt;h2&gt;Section header&lt;/h2&gt;
 &lt;/layout-section&gt;
 </pre>
@@ -55,6 +55,21 @@
           <code>{{ data.value }}</code>
         </template>
       </b-table>
+
+      <h3>Design guidelines</h3>
+
+      <ul>
+        <li>
+          Don't let two sections of the same theme follow each other, <em>except</em> if both sections are white. In this case,
+          a small divider will tie the two sections together (this section features an example).
+        </li>
+      </ul>
+
+    </layout-section>
+
+    <layout-section>
+      <h2>Slim</h2>
+      <p></p>
     </layout-section>
 
     <template v-for="color in sectionColors">
@@ -97,6 +112,12 @@ export default Vue.extend({
       { key: 'description' },
     ],
     properties: [
+      {
+        name: 'fluid',
+        type: 'bool',
+        default: 'false',
+        description: 'Whether the embedded bootstrap grid should be fluid. Ignored when the no-container option is on.',
+      },
       {
         name: 'no-container',
         type: 'bool',
