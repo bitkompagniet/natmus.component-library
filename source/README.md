@@ -1,4 +1,4 @@
-# 03-bootstrap
+# Component library
 
 ## Project setup
 ```
