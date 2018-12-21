@@ -4,6 +4,7 @@ import BootstrapVue from 'bootstrap-vue';
 import router from './router';
 
 import 'bootstrap-vue/dist/bootstrap-vue.css';
+import './register-globals';
 
 Vue.config.productionTip = false;
 

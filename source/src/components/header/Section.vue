@@ -5,7 +5,7 @@
 <style lang="scss">
 
 .section-header {
-    border-bottom: 1px solid black;
+    font-size: 3em;
 }
 
 </style>
