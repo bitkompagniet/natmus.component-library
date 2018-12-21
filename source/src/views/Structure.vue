@@ -78,44 +78,42 @@
 </template>
 
 <script>
-import Vue from "vue";
+import Vue from 'vue';
 
 export default Vue.extend({
   data: () => ({
     sectionColors: [
-      "rose",
-      "darkblue",
-      "orange",
-      "darkred",
-      "beige",
-      "lightgrey"
+      'rose',
+      'darkblue',
+      'orange',
+      'darkred',
+      'beige',
+      'lightgrey',
     ],
     fields: [
-      { key: "name", sortable: true },
-      { key: "type" },
-      { key: "default" },
-      { key: "description" }
+      { key: 'name', sortable: true },
+      { key: 'type' },
+      { key: 'default' },
+      { key: 'description' },
     ],
     properties: [
       {
-        name: "no-container",
-        type: "bool",
-        default: "false",
-        description: `For complete control of content, suppress the inner generation of a Bootstrap grid.`
+        name: 'no-container',
+        type: 'bool',
+        default: 'false',
+        description: 'For complete control of content, suppress the inner generation of a Bootstrap grid.',
       },
       {
-        name: "theme",
-        type: "string",
+        name: 'theme',
+        type: 'string',
         default: '"white"',
-        description:
-          'One of "white", "rose", "darkblue", "orange", "darkred", "beige", "lightgrey".'
+        description: 'One of "white", "rose", "darkblue", "orange", "darkred", "beige", "lightgrey".',
       },
       {
         name: 'vertical-fill',
         type: 'bool',
         default: 'false',
-        description:
-          'Expands section vertically to at least 100% vertical viewport height.',
+        description: 'Expands section vertically to at least 100% vertical viewport height.',
       },
     ],
   }),
