@@ -5,9 +5,7 @@
             <div class="logo"><img src="https://via.placeholder.com/90" /></div>
             <div class="menu">
                 <nav class="nav">
-                    <div>First</div>
-                    <div>Second</div>
-                    <div>Third</div>
+                    <slot></slot>
                 </nav>
             </div>
         </div>
@@ -47,6 +45,10 @@ export default Vue.extend({
             flex-direction: column;
             font-weight: bold;
             font-size: 1.3em;
+
+            a {
+                color: $color-white;
+            }
         }
     }
 
