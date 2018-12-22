@@ -1,5 +1,5 @@
 <template>
-    <div class="base" v-bind:class="[theme, { vfill: verticalFill }]">
+    <section class="base" v-bind:class="[theme, { vfill: verticalFill }]">
         <template v-if="noGrid">
             <slot></slot>
         </template>
@@ -13,7 +13,7 @@
             </b-container>
         </template>
         
-    </div>
+    </section>
 </template>
 
 <script lang="ts">

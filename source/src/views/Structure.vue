@@ -69,7 +69,30 @@
 
     <layout-section>
       <h2>Slim</h2>
-      <p></p>
+      <p>
+        A <code>layout-section</code> will be set to the standard bootstrap container width unless it is fluid.
+        You can use a <code>layout-slim</code> inside a <code>layout-section</code> to get a half-width container.
+      </p>
+
+      <layout-slim>
+        This is inside a <code>layout-slim</code>. This is very useful for forms or condensed text snippets, since
+        very long or wide views of this sort can be difficult to follow.
+      </layout-slim>
+
+      <h3>Basic usage</h3>
+
+      <pre>
+&lt;layout-slim&gt;
+  This is inside a layout-slim.
+&lt;/layout-slim&gt;
+</pre>
+
+      <h3>Design guidelines</h3>
+
+      <ul>
+        <li>Use with forms.</li>
+      </ul>
+
     </layout-section>
 
     <template v-for="color in sectionColors">
