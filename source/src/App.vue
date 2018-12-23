@@ -17,7 +17,7 @@ export default {
 
 
 <style lang="scss">
-@import './assets/scss/app.scss';
+// @import './assets/scss/app.scss';
 .grey {
   background-color: #ccc;
 }

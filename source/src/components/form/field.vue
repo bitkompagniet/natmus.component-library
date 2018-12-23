@@ -17,14 +17,14 @@ import Vue from 'vue';
 const allowedTypes = [
     'text',
     'email',
-    'number'
+    'number',
 ];
 
 export default Vue.extend({
     props: {
         id: {
             type: String,
-            required: true
+            required: true,
         },
         label: String,
         description: String,
@@ -37,10 +37,10 @@ export default Vue.extend({
         value: [String, Number],
     },
     computed: {
-        groupId: function() {
+        groupId(): string {
             return `group-${this.id}`;
         },
-    }
+    },
 });
 </script>
 

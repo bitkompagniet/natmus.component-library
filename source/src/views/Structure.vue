@@ -25,8 +25,7 @@
         Sections are used to divide pages into large structural blocks.
         This is the most dramatic way to split pages. Usually, two sections are
         demarked by different background colors. Sections define a very generous
-        top and bottom
-        <code>padding</code>.
+        top and bottom <code>padding</code>.
       </p>
 
       <p>

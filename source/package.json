@@ -1,10 +1,12 @@
 {
-  "name": "component-library",
+  "name": "nm-component-library",
   "version": "0.1.0",
   "private": true,
+  "main": "dist/lib/nmlib.common.js",
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
+    "build:demo": "vue-cli-service build --dest dist/demo src/main.ts",
+    "build:lib": "vue-cli-service build --target lib --name nmlib --dest dist/lib src/module.ts",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {

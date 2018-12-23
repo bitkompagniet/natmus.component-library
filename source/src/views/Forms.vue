@@ -51,8 +51,7 @@ export default Vue.extend({
   data: () => ({
     name: '',
     fieldProperties: {
-      
-    }
+    },
   }),
 });
 </script>
