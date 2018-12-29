@@ -1,0 +1,31 @@
+<template>
+    <b-button :variant="variant" :disabled="disabled" @click="$emit('click')">
+        <span v-if="isIconSet" style="margin-right: 0.4em;">
+            <font-awesome-icon :icon="icon" />
+        </span>
+        <slot></slot>
+    </b-button>
+</template>
+
+<script lang="ts">
+import Vue from 'vue';
+
+const variants : string[] = ['primary', 'secondary', 'passive', 'danger'];
+
+export default Vue.extend({
+    props: {
+        icon: String,
+        disabled: Boolean,
+        variant: {
+            type: String,
+            default: 'secondary',
+            validator: (value: string) => variants.indexOf(value) !== -1,
+        }
+    },
+    computed: {
+        isIconSet(): boolean {
+            return this.icon != null && this.icon !== '';
+        }
+    }
+});
+</script>
