@@ -53,15 +53,81 @@
 
       <h3>Properties</h3>
 
-      <b-table striped :fields="buttonProperties.fields" :items="buttonProperties.rows">
+      <b-table striped :fields="fields" :items="buttonProperties">
         <template slot="name" slot-scope="data">
           <code>{{ data.value }}</code>
         </template>
         <template slot="type" slot-scope="data">
           <code>{{ data.value }}</code>
         </template>
+				<template slot="default" slot-scope="data">
+					<code>{{ data.value }}</code>
+				</template>
       </b-table>
     </layout-section>
+
+		<layout-section>
+			<h2>StepProgress</h2>
+
+			<p>
+				A component of a wizard or step flow, this is a visual aid showing all steps and
+				the current step being shown.
+			</p>
+
+			<h3>Basic usage</h3>
+
+			<pre>
+&lt;step-progress
+  :active="two"
+  :steps="[{
+    key: 'one',
+    title: 'First step',
+    icon: 'info-circle',
+  },
+  {
+    key: 'two',
+    title: 'Second step',
+    icon: 'comment',
+  },
+  {
+    key: 'three',
+    title: 'Third step',
+    icon: 'hand-point-right',
+  }]"
+/&gt;
+</pre>
+
+			<h3>Example</h3>
+
+			<step-progress :steps="steps" :active="steps[1]" />
+
+			<h3>Properties</h3>
+
+			<b-table striped :fields="fields" :items="stepProgressProperties">
+        <template slot="name" slot-scope="data">
+          <code>{{ data.value }}</code>
+        </template>
+        <template slot="type" slot-scope="data">
+          <code>{{ data.value }}</code>
+        </template>
+				<template slot="default" slot-scope="data">
+					<code>{{ data.value }}</code>
+				</template>
+      </b-table>
+
+			<h4><code>IStep</code></h4>
+
+			<p>The key of <code>IStep</code> should be unique. The icon is optional.</p>
+
+			<pre>
+{
+  key: string,
+  title: string,
+  icon?: string,
+}
+</pre>
+
+		</layout-section>
   </div>
 </template>
 
@@ -76,35 +142,64 @@ export default Vue.extend({
         { variant: 'secondary', text: 'Cancel' },
         { variant: 'passive', text: 'Disabled', disabled: true },
         { variant: 'danger', text: 'Danger!' }
-      ],
-      buttonProperties: {
-        fields: [
-          { key: 'name', sortable: true },
-          { key: 'type' },
-          { key: 'default' },
-          { key: 'description' }
-        ],
-        rows: [
-					{
-						name: '@click',
-						type: 'function',
-						default: 'undefined',
-						description: 'Bind the click event of the button.',
-					},
-					{
-						name: 'disabled',
-						type: 'bool',
-						default: 'false',
-						description: 'Display as disabled, which is separate from passive style',
-          },
-					{
-            name: 'variant',
-            type: 'string',
-            default: '"secondary"',
-            description: 'The button variant - one of "primary", "secondary", "passive" or "danger".',
-          },
-        ]
-      }
+			],
+			fields: [
+				{ key: 'name', sortable: true },
+				{ key: 'type' },
+				{ key: 'default' },
+				{ key: 'description' }
+			],
+      buttonProperties: [
+				{
+					name: '@click',
+					type: 'function',
+					default: 'undefined',
+					description: 'Bind the click event of the button.',
+				},
+				{
+					name: 'disabled',
+					type: 'bool',
+					default: 'false',
+					description: 'Display as disabled, which is separate from passive style',
+				},
+				{
+					name: 'variant',
+					type: 'string',
+					default: '"secondary"',
+					description: 'The button variant - one of "primary", "secondary", "passive" or "danger".',
+				},
+			],
+			stepProgressProperties: [
+				{
+					name: 'active',
+					type: 'IStep | string',
+					default: 'null',
+					description: 'The active step, as a reference to the actual object or the key as a string.',
+				},
+				{
+					name: 'steps',
+					type: 'Array<IStep>',
+					default: '[]',
+					description: 'The array of steps.'
+				},
+			],
+			steps: [
+				{
+					key: 'one',
+					title: 'First step',
+					icon: 'info-circle',
+				},
+				{
+					key: 'two',
+					title: 'Second step',
+					icon: 'comment',
+				},
+				{
+					key: 'three',
+					title: 'Third step',
+					icon: 'hand-point-right',
+				},
+			]
     };
   },
   methods: {
