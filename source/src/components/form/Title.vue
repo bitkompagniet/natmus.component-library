@@ -22,7 +22,7 @@ export default Vue.extend({
 @import '../../assets/scss/colors.scss';
 
 .form-title {
-    color: $color-darkblue;
+    // color: $color-darkblue;
     text-align: center;
     margin-bottom: 3em;
 

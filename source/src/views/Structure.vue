@@ -22,6 +22,7 @@
       <h2>Sections</h2>
 
       <p>
+        All content on pages should be in sections.
         Sections are used to divide pages into large structural blocks.
         This is the most dramatic way to split pages. Usually, two sections are
         demarked by different background colors. Sections define a very generous

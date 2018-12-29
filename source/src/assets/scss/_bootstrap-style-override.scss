@@ -12,5 +12,10 @@ form {
         border-radius: 0;
         padding: 25px 20px;
     }
-}
 
+    textarea.form-control {
+        border: 3px solid black;
+        border-radius: 0;
+        padding: 15px 20px;
+    }
+}

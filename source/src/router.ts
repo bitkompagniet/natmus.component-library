@@ -2,6 +2,7 @@ import Vue from 'vue';
 import Router from 'vue-router';
 import Structure from './views/Structure.vue';
 import Forms from './views/Forms.vue';
+import Elements from './views/Elements.vue';
 
 Vue.use(Router);
 
@@ -11,6 +12,11 @@ export default new Router({
       path: '/',
       name: 'structure',
       component: Structure,
+    },
+    {
+      path: '/elements',
+      name: 'elements',
+      component: Elements,
     },
     {
       path: '/forms',
