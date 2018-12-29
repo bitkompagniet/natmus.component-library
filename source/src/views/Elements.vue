@@ -1,7 +1,7 @@
 <template>
     <div>
         <layout-section>
-            <h2>Font awesome</h2>
+            <h2>Font awesome <font-awesome-icon icon="thumbs-up" /></h2>
             <p>Font awesome icons are included by default.</p>
         </layout-section>
     </div>
