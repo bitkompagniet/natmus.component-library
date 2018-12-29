@@ -1,13 +1,29 @@
 <template>
   <b-form-group :id="groupId" :label="label" :label-for="id" :description="description">
+    <b-form-textarea 
+        v-if="type === 'textarea'"
+        :id="id"
+        :placeholder="placeholder"
+        :value="value"
+        :rows="rows"
+        :state="state"
+        @input="$emit('input', $event)"
+    />
     <b-form-input 
+        v-else
         :id="id"
         :type="type"
         :required="required"
         :placeholder="placeholder"
-        v-bind:value="value"
-        v-on:input="$emit('input', $event)"
+        :state="state"
+        :value="value"
+        @input="$emit('input', $event)"
     ></b-form-input>
+
+    <b-form-invalid-feedback :id="errorId" v-if="state === false">
+      {{ error }}
+    </b-form-invalid-feedback>
+
   </b-form-group>
 </template>
 
@@ -18,10 +34,12 @@ const allowedTypes = [
     'text',
     'email',
     'number',
+    'textarea',
 ];
 
 export default Vue.extend({
     props: {
+        error: String,
         id: {
             type: String,
             required: true,
@@ -30,6 +48,11 @@ export default Vue.extend({
         description: String,
         required: Boolean,
         placeholder: String,
+        rows: Number,
+        state: {
+            type: Boolean,
+            default: null
+        },
         type: {
             type: String,
             validator: (value: string) => allowedTypes.indexOf(value) !== -1,
@@ -40,6 +63,13 @@ export default Vue.extend({
         groupId(): string {
             return `group-${this.id}`;
         },
+        errorId(): string {
+            return `error-${this.id}`;
+        },
+        getState(): boolean | null {
+            if (this.state == null) return null;
+            return this.state;
+        }
     },
 });
 </script>
