@@ -15,34 +15,41 @@
 <script lang="ts">
 import Vue from 'vue';
 
-function getKey(step) {
-    if (typeof step == 'string') return step;
+interface IStep {
+    key: string,
+    title: string,
+    icon?: string,
+}
+
+function getKey(step: IStep | string) {
+    if (typeof step == 'string') return step as string;
     return step.key;
 }
 
 export default Vue.extend({
-    created() {
-        if (this.active == null) {
-            this.active = this.steps[0];
-        }
-    },
-
     props: {
         active: [Object, String],
         steps: {
-            type: Array,
-            default: () => [],
+            type: Array as () => IStep[],
+            default: [],
         }
     },
 
     methods: {
-        isActive(step): boolean {
-            return getKey(step) === getKey(this.active);
+        isActive(step: IStep | string): boolean {
+            return getKey(step) === getKey(this.getActive());
         },
-        showTail(step): boolean {
+        showTail(step: IStep | string): boolean {
             const last = this.steps[this.steps.length - 1];
             return getKey(last) !== getKey(step);
         },
+        getActive() {
+            if (this.active == null) {
+                return this.steps[0];
+            }
+
+            return this.active;
+        }
     },
 });
 </script>
