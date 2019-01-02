@@ -1,7 +1,7 @@
 <template>
   <div>
 
-    <layout-section>
+    <n-section>
       <h2>Forms</h2>
 
       <p>
@@ -13,15 +13,15 @@
 
       <pre>
 &lt;form&gt;
-  &lt;form-field id="name" label="Navn" type="text" v-model="name" /&gt;
+  &lt;n-form-field id="name" label="Navn" type="text" v-model="name" /&gt;
 &lt;/form&gt;
 </pre>
 
-      <layout-slim>
+      <n-slim>
         <form>
-          <form-field id="name" label="Navn" type="text" v-model="name" />
+          <n-form-field id="name" label="Navn" type="text" v-model="name" />
         </form>
-      </layout-slim>
+      </n-slim>
       
       <p>This will create an input with label "Navn" bound to the 'name' data field.</p>
 
@@ -37,13 +37,13 @@
 
       <pre>
 &lt;form&gt;
-  &lt;form-field id="name" label="Navn" type="text" :state="name.length >= 3" error="Navn skal være minimum 3 tegn." v-model="name" /&gt;
+  &lt;n-form-field id="name" label="Navn" type="text" :state="name.length >= 3" error="Navn skal være minimum 3 tegn." v-model="name" /&gt;
 &lt;/form&gt;
 </pre>
 
-      <layout-slim>
-        <form><form-field id="name" label="Navn" type="text" :state="name.length >= 3" error="Navn skal være minimum 3 tegn." v-model="name" /></form>
-      </layout-slim>
+      <n-slim>
+        <form><n-form-field id="name" label="Navn" type="text" :state="name.length >= 3" error="Navn skal være minimum 3 tegn." v-model="name" /></form>
+      </n-slim>
 
       <h3>Design guidelines</h3>
 
@@ -51,11 +51,11 @@
         <li>Keep forms on section themes "white" or "lightgrey".</li>
       </ul>
 
-    </layout-section>
+    </n-section>
 
-    <layout-section theme="lightgrey">
-      <layout-slim>
-        <form-title title="Complete example" subtitle="A form with all input types"/>
+    <n-section theme="lightgrey">
+      <n-slim>
+        <n-form-title title="Complete example" subtitle="A form with all input types"/>
 
         <b-form>
           <b-form-group
@@ -69,25 +69,25 @@
 
           <b-row>
             <b-col md="4">
-              <form-field id="postnummer" label="Postnummer" type="number"/>
+              <n-form-field id="postnummer" label="Postnummer" type="number"/>
             </b-col>
             <b-col md="8">
-              <form-field id="by" label="By" type="text"/>
+              <n-form-field id="by" label="By" type="text"/>
             </b-col>
           </b-row>
 
-          <form-field id="navn" label="Navn" type="text" v-model="name"/>
+          <n-form-field id="navn" label="Navn" type="text" v-model="name"/>
 
           <p v-if="name.length > 0">Det indtastede navn er: {{ name }}</p>
           <p v-else>Der er ikke indtastet et navn endnu.</p>
 
-          <form-field id="witherror" label="Validering minimum 3 tegn" type="text" :state="witherrorState.state" :error="witherrorState.error" v-model="witherror" />
+          <n-form-field id="witherror" label="Validering minimum 3 tegn" type="text" :state="witherrorState.state" :error="witherrorState.error" v-model="witherror" />
           
-          <form-field id="longtext" label="Historie" type="textarea" :rows="8" v-model="long" :description="noCharacters" />
+          <n-form-field id="longtext" label="Historie" type="textarea" :rows="8" v-model="long" :description="noCharacters" />
 
         </b-form>
-      </layout-slim>
-    </layout-section>
+      </n-slim>
+    </n-section>
   </div>
 </template>
 

@@ -1,10 +1,10 @@
 <template>
   <div id="app">
-    <navigation-topbar>
+    <n-nav-topbar>
       <div><router-link to="/">Structure</router-link></div>
       <div><router-link to="/elements">Elements</router-link></div>
       <div><router-link to="/forms">Forms</router-link></div>
-    </navigation-topbar>
+    </n-nav-topbar>
     <router-view />
   </div>
 </template>
