@@ -11,13 +11,12 @@
 
 <script lang="ts">
 export default {
-  name: 'App',
+  name: 'DemoApp',
 };
 </script>
 
 
 <style lang="scss">
-// @import './assets/scss/app.scss';
 .grey {
   background-color: #ccc;
 }
