@@ -8,6 +8,5 @@ export default function() {
         const componentConfig = requireComponent(filename);
         const componentName = 'n-' + _.kebabCase(filename.replace(/^\.\/(.*)\.\w+$/, '$1'));
         Vue.component(componentName, componentConfig.default || componentConfig);
-        console.log(componentName);
     });
 }

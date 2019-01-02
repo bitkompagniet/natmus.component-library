@@ -43,7 +43,7 @@ export default Vue.extend({
             const last = this.steps[this.steps.length - 1];
             return getKey(last) !== getKey(step);
         },
-        getActive() {
+        getActive(): IStep | string {
             if (this.active == null) {
                 return this.steps[0];
             }
