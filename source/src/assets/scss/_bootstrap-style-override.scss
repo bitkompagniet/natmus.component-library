@@ -1,28 +1,51 @@
 @import 'colors.scss';
 
-.alert-infos {
-    background-color: red;
+div.n-style, 
+section.n-style, 
+header.n-style, 
+article.n-style, 
+aside.n-style, 
+details.n-style, 
+figcaption.n-style, 
+figure.n-style,
+footer.n-style, 
+main.n-style, 
+mark.n-style, 
+nav.n-style, 
+summary.n-style, 
+time.n-style {
+    h2 {
+        font-size: 3em;
+    }
+
+    h3 {
+        margin-top: 1em;
+        margin-bottom: 0.5em;
+    }
+
+    h4 {
+        margin-top: 1.5em;
+        font-size: 1.3em;
+    }
 }
 
-form {
-    label {
-        font-weight: bold;
-    }
-
-    input[type="text"], input[type="email"], input[type="number"] {
-        border: 3px solid $color-black;
-        border-radius: 0;
-        padding: 25px 20px;
-    }
-
-    textarea.form-control {
-        border: 3px solid $color-black;
-        border-radius: 0;
-        padding: 15px 20px;
-    }
+label.n-style {
+    font-weight: bold;
 }
 
-.btn {
+input.n-style {
+    border: 3px solid $color-black;
+    border-radius: 0;
+    padding: 25px 20px;
+}
+
+textarea.form-control.n-style {
+    border: 3px solid $color-black;
+    border-radius: 0;
+    padding: 15px 20px;
+}
+
+.n-style.btn {
     border-radius: 0;
     padding: 0.7em;
     font-weight: 500;

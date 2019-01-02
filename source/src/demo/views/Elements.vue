@@ -1,13 +1,13 @@
 <template>
   <div>
-    <layout-section>
+    <n-section>
       <h2>Font awesome
         <font-awesome-icon icon="thumbs-up"/>
       </h2>
       <p>Font awesome icons are included by default.</p>
-    </layout-section>
+    </n-section>
 
-    <layout-section>
+    <n-section>
       <h2>Buttons</h2>
 
 			<p>Standard buttons.</p>
@@ -20,18 +20,18 @@
 			</p>
 
 			<pre>
-<span v-for="button in buttons" :key="button.variant">&lt;element-button variant="{{ button.variant }}"{{ button.disabled ? ' disabled' : '' }}&gt;{{ button.text }}&lt;/element-button&gt;
+<span v-for="button in buttons" :key="button.variant">&lt;n-button variant="{{ button.variant }}"{{ button.disabled ? ' disabled' : '' }}&gt;{{ button.text }}&lt;/n-button&gt;
 </span>
 </pre>
 
 			<h3>Examples</h3>
 
       <span v-for="button in buttons" :key="button.variant" style="margin-right: 1em;">
-        <element-button
+        <n-button
           :variant="button.variant"
           :disabled="button.disabled"
           @click="buttonPress(button.variant)"
-        >{{ button.text }}</element-button>
+        >{{ button.text }}</n-button>
       </span>
 
 			<h3>Button with icon</h3>
@@ -44,11 +44,11 @@
 			</p>
 
 			<pre>
-&lt;element-button variant="primary" icon="thumbs-up"&gt;Approve!&lt;/element-button&gt;
+&lt;n-button variant="primary" icon="thumbs-up"&gt;Approve!&lt;/n-button&gt;
 </pre>
 
 			<div style="margin-top: 1.5em">
-				<element-button variant="primary" icon="thumbs-up">Approve!</element-button>
+				<n-button variant="primary" icon="thumbs-up">Approve!</n-button>
 			</div>
 
       <h3>Properties</h3>
@@ -64,9 +64,9 @@
 					<code>{{ data.value }}</code>
 				</template>
       </b-table>
-    </layout-section>
+    </n-section>
 
-		<layout-section>
+		<n-section>
 			<h2>StepProgress</h2>
 
 			<p>
@@ -77,7 +77,7 @@
 			<h3>Basic usage</h3>
 
 			<pre>
-&lt;step-progress
+&lt;n-step-progress
   :active="two"
   :steps="[{
     key: 'one',
@@ -99,7 +99,7 @@
 
 			<h3>Example</h3>
 
-			<step-progress :steps="steps" :active="steps[1]" />
+			<n-step-progress :steps="steps" :active="steps[1]" />
 
 			<h3>Properties</h3>
 
@@ -127,7 +127,7 @@
 }
 </pre>
 
-		</layout-section>
+		</n-section>
   </div>
 </template>
 

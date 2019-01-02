@@ -1,5 +1,5 @@
 <template>
-    <b-button :variant="variant" :disabled="disabled" @click="$emit('click')">
+    <b-button class="n-style" :variant="variant" :disabled="disabled" @click="$emit('click')">
         <span v-if="isIconSet" style="margin-right: 0.4em;">
             <font-awesome-icon :icon="icon" />
         </span>

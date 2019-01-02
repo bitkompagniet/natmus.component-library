@@ -1,5 +1,8 @@
 <template>
-  <b-form-group :id="groupId" :label="label" :label-for="id" :description="description">
+  <b-form-group class="n-style" :id="groupId" :description="description">
+    <slot name="label">
+        <label :id="groupId + '-label'" :for="id" class="col-form-label n-style">{{ label }}</label>
+    </slot>
     <b-form-textarea 
         v-if="type === 'textarea'"
         :id="id"
@@ -7,6 +10,7 @@
         :value="value"
         :rows="rows"
         :state="state"
+        class="n-style"
         @input="$emit('input', $event)"
     />
     <b-form-input 
@@ -17,6 +21,7 @@
         :placeholder="placeholder"
         :state="state"
         :value="value"
+        class="n-style"
         @input="$emit('input', $event)"
     ></b-form-input>
 

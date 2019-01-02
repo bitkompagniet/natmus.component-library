@@ -1,5 +1,5 @@
 <template>
-    <section class="base" v-bind:class="[theme, { vfill: verticalFill }]">
+    <section class="base n-style" v-bind:class="[theme, { vfill: verticalFill, padded: !noPad }]">
         <template v-if="noGrid">
             <slot></slot>
         </template>
@@ -29,25 +29,17 @@ export default Vue.extend({
         noGrid: Boolean,
         slim: Boolean,
         fluid: Boolean,
+        noPad: Boolean,
     },
 });
 </script>
 
 <style lang="scss" scoped>
 
-@import '../../assets/scss/colors.scss';
+@import '../assets/scss/colors.scss';
 
 .base {
-    padding: 5em 0;
-
-    h2 {
-        font-size: 3em;
-    }
-
-    h3 {
-        margin-top: 1em;
-        margin-bottom: 0.5em;
-    }
+    padding: 0;
 
     pre {
         background-color: rgba($color-white, 0.1);
@@ -101,10 +93,22 @@ export default Vue.extend({
     }
 }
 
-.beige { background-color: $color-beige; color: $color-white; }
+.beige {
+    background-color: $color-beige;
+    color: $color-white;
+}
 
-.lightgrey { background-color: $color-lightgrey; color: $color-darkblue; }
+.lightgrey {
+    background-color: $color-lightgrey;
+    color: $color-darkblue;
+}
 
-.vfill { min-height: 100vh; }
+.vfill { 
+    min-height: 100vh; 
+}
+
+.padded {
+    padding: 5em 0;
+}
 
 </style>
