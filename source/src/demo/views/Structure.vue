@@ -5,22 +5,23 @@
       <h2>Nationalmuseet Component Library (NCL)</h2>
 
       <p>
-        Every component in the NCL are prefixed with <code>n-</code> (for example, <code>n-section</code>). All Bootstrap Vue components
-        are left as is, and are prefixed with <code>b-</code> (for example, <code>b-button</code>).
-        All NCL components are abstractions and specializations of Bootstrap components or pure HTML.
-      </p>
-
-      <p>
-        NCL components should cover all usage scenarios that can be derived from the specification and design guides created by
-        <a href="http://bitkompagniet.dk/">Bitkompagniet</a> and approved by <a href="http://natmus.dk/">Nationalmuseet</a>.
+        This component library is built on top of Bootstrap Vue.
+        It defines a set of components that are specific to the specification and design guides
+        created by <a href="http://bitkompagniet.dk/">Bitkompagniet</a> and approved by 
+        <a href="http://natmus.dk/">Nationalmuseet</a>.
       </p>
 
       <h3>Basic structure</h3>
 
       <p>
+        Every page in our examples is built from a <code>n-nav-topbar</code> elements followed by a series of 
+        <code>n-section</code> elements, and terminated with a <code>n-footer</code>.
+      </p>
+
+      <p>
         If you just want to follow the convention laid out by the component library, you define some header content such as navigation,
         and all body content is then placed inside a series of <code>n-section</code>'s. In Vue, you need a top-level wrapper element.
-        This could be a standard <code>div</code> (or <code>template</code>, if you don't want it to render).
+        This could be a standard <code>div</code>.
       </p>
 
       <pre>
@@ -40,70 +41,26 @@
 
       <p>The page you are currently reading follows the above markup.</p>
 
-      <h3>Separation of Bootstrap and NCL components</h3>
+      <h3>NCL and Bootstrap: separation and scope</h3>
 
       <p>
-        Bootstrap Vue and Font Awesome are included in the library, and the library does not generally override anything - it will stay
-        as unobtrusive as possible.
-        Instead, NCL is defined as scoped specializations of the Bootstrap components. 
-        When you use NCL components (prefixed with <code>n-</code>), they will fully implement the NCL styles and behaviours. 
-        When you use the Bootstrap components (prefixed with <code>b-</code>), they will generally display as default Bootstrap components.
+        The library exports all of Bootstrap in its vanilla / unchanged form.
+        Bootstrap components are prefixed by <code>b-</code> (see the Bootstrap Vue documentation).
+        The NCL-specific components are prefixed by <code>n-</code> (for example, <code>n-section</code>).
       </p>
-
-      <h3>The <code>.n-style</code> CSS class</h3>
 
       <p>
-        The styling of components is controlled by a CSS scope class called <code>.n-style</code>. This makes it possible to apply
-        the NCL style to Bootstrap components, when you want the original component with the new styling.
-        However, you should be aware <em>that not all styles are overridden by NCL - only the needed subset</em>.
+        When Bootstrap components are placed inside the CSS scope <code>.n-style</code> (for example, a
+        containing <code>div class="n-style"</code>), it will take on the styling intended in this
+        library. The <code>n-section</code> elments are central to all content in this library, and
+        since these sections use the <code>.n-style</code> class, all content inside these sections
+        will implement the library specific styling.
       </p>
-
-      <h4>A button directly from Bootstrap</h4>
-
-      <pre>
-&lt;b-button size="md" variant="primary"&gt;Primary&lt;/b-button&gt;</pre>
-
-      <b-button size="md" variant="primary">Primary</b-button>
-
-      <h4>With the <code>.n-style</code> class</h4>
-
-      <pre>
-&lt;b-button class="n-style" size="md" variant="primary"&gt;Primary&lt;/b-button&gt;</pre>
-      
-      <b-button class="n-style" size="md" variant="primary">Primary</b-button>
-
-      <h4>Equivalent to using the NCL button</h4>
-
-      <pre>
-&lt;n-button variant="primary"&gt;Primary&lt;/n-button&gt;</pre>
-
-      <n-button variant="primary">Primary</n-button>
-
-      <h3>Container level use of <code>.n-style</code></h3>
 
       <p>
-        When applied to a container level element ( <code>div</code>, <code>article</code>, <code>aside</code>, <code>header</code>, <code>footer</code>, etc.),
-        <code>.n-style</code> will define standard typography, font sizes, margins and paddings inside that container - but will leave all other component-level 
-        styles alone (buttons, form fields, etc.).
+        If you want a single element to be <code>.n-style</code>'d, you can also implement it on
+        element level.
       </p>
-
-      <p><pre>
-&lt;div class="n-style"&gt;&lt;h2&gt;This header will be Natmus styled&lt;/h2&gt;&lt;/div&gt;</pre></p>
-
-      <p>
-        Most page content should be wrapped in <code>n-section</code>, which implements the <code>.n-container</code> class - and if
-        this convention is upheld, there is no need to use the <code>.n-container class</code> manually.
-      </p>
-
-      <h3>Library &amp; Vue Bootstrap components</h3>
-
-      <p>
-        Likewise, no components from Vue Bootstrap are altered. Instead, they are composed in local and more specific components that make up the
-        visual and behavioural style of the library. This means that you can use bootstrap components directly:
-      </p>
-
-      <p><pre>
-</pre></p>
     </n-section>
 
     <n-section theme="white" no-pad style="padding-top: 5em">
@@ -221,7 +178,7 @@
           </b-row>
         </b-container>
       </n-section>
-    </template>
+    </template>      
   </div>
 </template>
 

@@ -10,7 +10,7 @@
 <script lang="ts">
 import Vue from 'vue';
 
-const variants : string[] = ['primary', 'secondary', 'passive', 'danger'];
+const variants : string[] = ['primary', 'secondary', 'darkred', 'lightgrey', 'rose'];
 
 export default Vue.extend({
     props: {

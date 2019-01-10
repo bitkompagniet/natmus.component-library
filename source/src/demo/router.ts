@@ -3,6 +3,7 @@ import Router from 'vue-router';
 import Structure from './views/Structure.vue';
 import Forms from './views/Forms.vue';
 import Elements from './views/Elements.vue';
+import FullExample from './views/FullExample.vue';
 
 Vue.use(Router);
 
@@ -22,6 +23,11 @@ export default new Router({
       path: '/forms',
       name: 'forms',
       component: Forms,
+    },
+    {
+      path: '/full',
+      name: 'full',
+      component: FullExample,
     },
     // {
     //   path: '/about',

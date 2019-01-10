@@ -1,0 +1,25 @@
+.n-style table, table.n-style {
+    thead {
+        th {
+            border-bottom: 2px solid $color-darkblue;
+        }
+    }
+
+    code {
+        color: $color-darkred;
+    }
+
+    &.table-striped {
+        tbody {
+            tr:nth-of-type(odd) {
+                background-color: lighten($color-darkblue, 80%);
+                // background-color: lighten($color-lightgrey, 30%);
+                // color: $color-white;
+
+                code {
+                    color: $color-darkred;
+                }
+            }
+        }
+    }
+}

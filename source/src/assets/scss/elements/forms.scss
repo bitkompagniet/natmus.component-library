@@ -1,0 +1,23 @@
+.n-style label, label.n-style {
+    font-weight: bold;
+}
+
+.n-style input, input.n-style {
+    border: 3px solid $color-white;
+    border-radius: 0;
+    padding: 25px 20px;
+}
+
+.n-style textarea.form-control, textarea.form-control.n-style {
+    border: 3px solid $color-white;
+    border-radius: 0;
+    padding: 15px 20px;
+}
+
+
+section.white .n-style input,
+section.white input.n-style,
+section.white .n-style textarea.form-control,
+section.white textarea.form-control.n-style {
+    border: 3px solid $color-black;
+}

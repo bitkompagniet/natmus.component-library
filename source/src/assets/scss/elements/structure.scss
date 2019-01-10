@@ -1,0 +1,33 @@
+div.n-style, 
+section.n-style, 
+header.n-style, 
+article.n-style, 
+aside.n-style, 
+details.n-style, 
+figcaption.n-style, 
+figure.n-style,
+footer.n-style, 
+main.n-style, 
+mark.n-style, 
+nav.n-style, 
+summary.n-style, 
+time.n-style {
+
+    font-family: 'Nationale';
+
+    h2 {
+        font-size: 3em;
+        font-weight: bold;
+    }
+
+    h3 {
+        margin-top: 1em;
+        margin-bottom: 0.5em;
+        font-weight: bold;
+    }
+
+    h4 {
+        margin-top: 1.5em;
+        font-size: 1.3em;
+    }
+}

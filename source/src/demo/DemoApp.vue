@@ -1,11 +1,15 @@
 <template>
   <div id="app">
-    <n-nav-topbar>
-      <div><router-link to="/">Structure</router-link></div>
-      <div><router-link to="/elements">Elements</router-link></div>
-      <div><router-link to="/forms">Forms</router-link></div>
+    <n-nav-topbar complex>
+      <b-nav-item to="/">Structure</b-nav-item>
+      <b-nav-item to="/elements">Elements</b-nav-item>
+      <b-nav-item to="/forms">Forms</b-nav-item>
+      <b-nav-item to="/full">Full page example</b-nav-item>
     </n-nav-topbar>
     <router-view />
+    <n-footer>
+      <p>This is a footer.</p>
+    </n-footer>
   </div>
 </template>
 

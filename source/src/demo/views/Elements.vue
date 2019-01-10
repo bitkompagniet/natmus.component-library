@@ -20,13 +20,13 @@
 			</p>
 
 			<pre>
-<span v-for="button in buttons" :key="button.variant">&lt;n-button variant="{{ button.variant }}"{{ button.disabled ? ' disabled' : '' }}&gt;{{ button.text }}&lt;/n-button&gt;
+<span v-for="button in buttons" :key="button.key">&lt;n-button variant="{{ button.variant }}"{{ button.disabled ? ' disabled' : '' }}&gt;{{ button.text }}&lt;/n-button&gt;
 </span>
 </pre>
 
 			<h3>Examples</h3>
 
-      <span v-for="button in buttons" :key="button.variant" style="margin-right: 1em;">
+      <span v-for="button in buttons" :key="button.key" style="margin-right: 1em;">
         <n-button
           :variant="button.variant"
           :disabled="button.disabled"
@@ -164,10 +164,10 @@ export default Vue.extend({
   data: function() {
     return {
       buttons: [
-        { variant: 'primary', text: 'OK' },
-				{ variant: 'primary', text: 'OK', disabled: true },
-        { variant: 'secondary', text: 'Cancel' },
-        { variant: 'secondary', text: 'Cancel', disabled: true },
+        { key: 'primary-active', variant: 'primary', text: 'OK' },
+				{ key: 'primary-disabled', variant: 'primary', text: 'OK', disabled: true },
+        { key: 'secondary-active', variant: 'secondary', text: 'Cancel' },
+        { key: 'secondary-disabled', variant: 'secondary', text: 'Cancel', disabled: true },
 			],
 			activeStep: 'one',
 			steps: [

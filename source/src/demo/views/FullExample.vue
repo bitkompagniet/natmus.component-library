@@ -1,0 +1,123 @@
+<template>
+    <div>
+        <n-section>
+            <div class="spaced-items">
+                <n-button variant="secondary" class="mr-3">Videre</n-button>
+                <n-button variant="primary" class="mr-3">Videre</n-button>
+                <n-button variant="darkred" class="mr-3">Videre</n-button>
+                <n-button variant="lightgrey" class="mr-3">Videre</n-button>
+                <n-button variant="rose">Videre</n-button>
+            </div>
+        </n-section>
+
+        <n-section theme="darkblue">
+            <b-row>
+                <b-col :cols="7">
+                    <img src="../assets/images/apartment_livingroom.jpg" style="width: 100%; border: 10px solid white" />
+                </b-col>
+                <b-col :cols="3" :offset="1" class="align-self-center">
+                    <h2>Bidrag til historien</h2>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea repudiandae eveniet architecto, illum dolor animi aperiam, eaque ducimus unde id quisquam, labore aliquid iure?
+                </b-col>
+            </b-row>
+
+            <div class="d-flex justify-content-end pad-top">
+                <n-button variant="primary" class="mr-3">Videre</n-button>
+                <n-button variant="darkred" class="mr-3">Videre</n-button>
+                <n-button variant="lightgrey" class="mr-3">Videre</n-button>
+                <n-button variant="rose">Videre</n-button>
+            </div>
+        </n-section>
+
+        <n-section theme="rose">
+            <n-slim>
+                <n-form-title title="Titel" subtitle="Beskrivelse"/>
+
+                <b-form>
+                    <n-form-field id="road" label="Vej og vejnummer" />
+
+                    <b-row>
+                        <b-col :cols="4">
+                            <n-form-field id="zipcode" label="Postnummer" />
+                        </b-col>
+                        <b-col :cols="8">
+                            <n-form-field id="city" label="By" />
+                        </b-col>
+                    </b-row>
+
+                    <div class="text-center">
+                        <h4>Hvor mange år har du boet i andelsforeningen?</h4>
+
+                        <div class="d-flex justify-content-center mt-3">
+                            <n-button variant="primary" class="mr-3">1-5 år</n-button>
+                            <n-button class="mr-3">6-10 år</n-button>
+                            <n-button>11-15 år</n-button>
+                        </div>
+                    </div>
+
+                </b-form>
+            </n-slim>
+        </n-section>
+
+        <n-section>
+            <n-form-title title="Titel" subtitle="Kan du beskrive jeres naboskab i andelsforeningen?" />
+
+            <p class="text-center">[Rich text]</p>
+        </n-section>
+
+        <n-section v-for="theme in ['darkblue', 'darkred', 'lightgrey']" :key="theme" :theme="theme">
+            <n-step-progress :steps="[
+                { key: 'one', title: 'Kort info' },
+                { key: 'two', title: 'Fortællinger' },
+                { key: 'three', title: 'Uploads' },
+                { key: 'four', title: 'Insend', icon: 'paper-plane' },
+            ]" active="one" />
+        </n-section>
+
+        <n-section theme="darkred">
+
+            <b-row>
+                <b-col v-for="(v, index) in ['light', 'dark', 'light']" :key="index">
+                    <n-infobox :variant="v">
+                        <h2>Titel på infoboks</h2>
+                        <p>
+                            Forklaringstekst til infoboksen og indhold.
+                            Her kan der stå flere ting.
+                            F.eks. citater.
+                        </p>
+                        <blockquote>
+                            Om vinteren legede vi i opgangene.
+                            Fru Madsen blev stiktosset.
+                        </blockquote>
+                    </n-infobox>
+                </b-col>
+            </b-row>
+
+            
+        </n-section>
+
+    </div>
+</template>
+
+<script lang="ts">
+import Vue from 'vue'
+export default Vue.extend({
+    data: function() {
+        return {
+            variant: [
+                { key: 'a', var: 'light' },
+                { key: 'b', var: 'dark' },
+                { key: 'c', var: 'light' },
+            ]
+        }
+    },
+})
+</script>
+
+
+
+<style lang="scss" scoped>
+
+
+
+</style>
