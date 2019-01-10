@@ -57,15 +57,6 @@ export default Vue.extend({
     top: -20px;
 }
 
-.orange { 
-    background-color: $color-orange; 
-    color: $color-white; 
-
-    pre {
-        color: $color-white;
-    }
-}
-
 .darkblue { 
     background-color: $color-darkblue; 
     color: $color-white; 
@@ -93,14 +84,13 @@ export default Vue.extend({
     }
 }
 
-.beige {
-    background-color: $color-beige;
-    color: $color-white;
-}
-
 .lightgrey {
     background-color: $color-lightgrey;
-    color: $color-darkblue;
+    color: $color-white;
+    
+    pre {
+        color: $color-white;
+    };
 }
 
 .vfill { 

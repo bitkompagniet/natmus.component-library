@@ -233,10 +233,8 @@ export default Vue.extend({
     sectionColors: [
       'rose',
       'darkblue',
-      'orange',
-      'darkred',
-      'beige',
       'lightgrey',
+      'darkred',
     ],
     fields: [
       { key: 'name', sortable: true },

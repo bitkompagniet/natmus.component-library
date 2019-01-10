@@ -53,29 +53,49 @@ textarea.form-control.n-style {
 
     min-width: 10em;
 
+    &:disabled {
+        opacity: 0.5;
+    }
+
     &.btn-primary {
+        background-color: $color-darkblue;
+        border-color: $color-darkblue;
 
-        $c: $color-orange;
-
-        background-color: $c;
-        border-color: $c;
+        &:disabled {
+            opacity: 0.3;
+            color: #999;
+        }
     }
 
     &.btn-secondary {
         color: $color-black;
-        background-color: $color-white;
+        background-color: transparent;
         border-color: $color-black;
     }
+}
 
-    &.btn-passive {
-        background-color: $color-lightgrey;
-        border-color: $color-lightgrey;
-        color: lighten($color-black, 50%);
-        font-weight: normal;
+table.n-style {
+    thead {
+        th {
+            border-bottom: 2px solid $color-darkblue;
+        }
     }
 
-    &.btn-danger {
-        background-color: $color-darkred;
-        border-color: $color-darkred;
+    code {
+        color: $color-darkred;
+    }
+
+    &.table-striped {
+        tbody {
+            tr:nth-of-type(odd) {
+                background-color: lighten($color-darkblue, 80%);
+                // background-color: lighten($color-lightgrey, 30%);
+                // color: $color-white;
+
+                code {
+                    color: $color-darkred;
+                }
+            }
+        }
     }
 }

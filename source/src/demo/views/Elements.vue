@@ -139,9 +139,9 @@ export default Vue.extend({
     return {
       buttons: [
         { variant: 'primary', text: 'OK' },
+				{ variant: 'primary', text: 'OK', disabled: true },
         { variant: 'secondary', text: 'Cancel' },
-        { variant: 'passive', text: 'Disabled', disabled: true },
-        { variant: 'danger', text: 'Danger!' }
+        { variant: 'secondary', text: 'Cancel', disabled: true },
 			],
 			fields: [
 				{ key: 'name', sortable: true },
