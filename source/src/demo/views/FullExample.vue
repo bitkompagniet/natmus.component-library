@@ -66,12 +66,7 @@
         </n-section>
 
         <n-section v-for="theme in ['darkblue', 'darkred', 'lightgrey']" :key="theme" :theme="theme">
-            <n-step-progress :steps="[
-                { key: 'one', title: 'Kort info' },
-                { key: 'two', title: 'Fortællinger' },
-                { key: 'three', title: 'Uploads' },
-                { key: 'four', title: 'Insend', icon: 'paper-plane' },
-            ]" active="one" />
+            <n-step-progress :steps="steps" :active="active" />
         </n-section>
 
         <n-section theme="darkred">
@@ -102,15 +97,37 @@
 <script lang="ts">
 import Vue from 'vue'
 export default Vue.extend({
+    created: function() {
+        setInterval(() => {
+            const i = this.index;
+            const n = i + 1;
+            const length = this.steps.length;
+            
+            this.index = n >= length ? 0 : n;
+
+        }, 3000);
+    },
     data: function() {
         return {
             variant: [
                 { key: 'a', var: 'light' },
                 { key: 'b', var: 'dark' },
                 { key: 'c', var: 'light' },
-            ]
+            ],
+            steps: [
+                { key: 'one', title: 'Kort info' },
+                { key: 'two', title: 'Fortællinger' },
+                { key: 'three', title: 'Uploads' },
+                { key: 'four', title: 'Insend', icon: 'paper-plane' },
+            ],
+            index: 0,
         }
     },
+    computed: {
+        active: function() {
+            return this.steps[this.index].key;
+        }
+    }
 })
 </script>
 
