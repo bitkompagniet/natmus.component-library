@@ -1,17 +1,13 @@
 <template>
-  <b-table striped class="n-style" :fields="[
+  <b-table striped :fields="[
         { key: 'name', sortable: true, class: 'no-wrap' },
-        { key: 'type', class: 'no-wrap' },
-        { key: 'default', class: 'no-wrap' },
-        { key: 'description' }
+        { key: 'scope', class: 'no-wrap' },
+        { key: 'description', class: 'no-wrap' }
     ]" :items="items">
     <template slot="name" slot-scope="data">
       <code>{{ data.value }}</code>
     </template>
-    <template slot="type" slot-scope="data">
-      <code>{{ data.value }}</code>
-    </template>
-    <template slot="default" slot-scope="data">
+    <template slot="scope" slot-scope="data">
       <code>{{ data.value }}</code>
     </template>
   </b-table>
@@ -25,6 +21,7 @@ export default Vue.extend({
     } 
 });
 </script>
+
 
 <style lang="scss">
 

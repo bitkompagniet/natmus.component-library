@@ -53,17 +53,27 @@
 
       <h3>Properties</h3>
 
-      <b-table striped :fields="fields" :items="buttonProperties">
-        <template slot="name" slot-scope="data">
-          <code>{{ data.value }}</code>
-        </template>
-        <template slot="type" slot-scope="data">
-          <code>{{ data.value }}</code>
-        </template>
-				<template slot="default" slot-scope="data">
-					<code>{{ data.value }}</code>
-				</template>
-      </b-table>
+			<property-table :items="[
+				{
+					name: '@click',
+					type: 'function',
+					default: 'undefined',
+					description: 'Bind the click event of the button.',
+				},
+				{
+					name: 'disabled',
+					type: 'bool',
+					default: 'false',
+					description: 'Display as disabled, which is separate from passive style',
+				},
+				{
+					name: 'variant',
+					type: 'string',
+					default: '&quot;secondary&quot;',
+					description: 'The button variant - one of &quot;primary&quot;, &quot;secondary&quot;, &quot;passive&quot; or &quot;danger&quot;.',
+				},
+			]"/>
+
     </n-section>
 
 		<n-section>
@@ -99,21 +109,24 @@
 
 			<h3>Example</h3>
 
-			<n-step-progress :steps="steps" :active="steps[1]" />
+			<n-step-progress :steps="steps" :active="activeStep" />
 
 			<h3>Properties</h3>
 
-			<b-table striped :fields="fields" :items="stepProgressProperties">
-        <template slot="name" slot-scope="data">
-          <code>{{ data.value }}</code>
-        </template>
-        <template slot="type" slot-scope="data">
-          <code>{{ data.value }}</code>
-        </template>
-				<template slot="default" slot-scope="data">
-					<code>{{ data.value }}</code>
-				</template>
-      </b-table>
+			<property-table :items="[
+				{
+					name: 'active',
+					type: 'IStep | string',
+					default: 'null',
+					description: 'The active step, as a reference to the actual object or the key as a string.',
+				},
+				{
+					name: 'steps',
+					type: 'IStep[]',
+					default: '[]',
+					description: 'An array describing the step keys, titles and descriptions.'
+				},
+			]"/>
 
 			<h4><code>IStep</code></h4>
 
@@ -128,13 +141,26 @@
 </pre>
 
 		</n-section>
+
+		<n-section>
+			<demo-wizard />
+		</n-section>
+
   </div>
 </template>
 
 <script lang="ts">
 import Vue from "vue";
+import PropertyTable from '../helpers/propertyTable.vue';
+import SlotTable from '../helpers/slotTable.vue';
+import DemoWizard from '../examples/DemoWizard.vue';
 
 export default Vue.extend({
+	components: {
+		'property-table': PropertyTable,
+		'slot-table': SlotTable,
+		'demo-wizard': DemoWizard,
+	},
   data: function() {
     return {
       buttons: [
@@ -143,46 +169,7 @@ export default Vue.extend({
         { variant: 'secondary', text: 'Cancel' },
         { variant: 'secondary', text: 'Cancel', disabled: true },
 			],
-			fields: [
-				{ key: 'name', sortable: true },
-				{ key: 'type' },
-				{ key: 'default' },
-				{ key: 'description' }
-			],
-      buttonProperties: [
-				{
-					name: '@click',
-					type: 'function',
-					default: 'undefined',
-					description: 'Bind the click event of the button.',
-				},
-				{
-					name: 'disabled',
-					type: 'bool',
-					default: 'false',
-					description: 'Display as disabled, which is separate from passive style',
-				},
-				{
-					name: 'variant',
-					type: 'string',
-					default: '"secondary"',
-					description: 'The button variant - one of "primary", "secondary", "passive" or "danger".',
-				},
-			],
-			stepProgressProperties: [
-				{
-					name: 'active',
-					type: 'IStep | string',
-					default: 'null',
-					description: 'The active step, as a reference to the actual object or the key as a string.',
-				},
-				{
-					name: 'steps',
-					type: 'Array<IStep>',
-					default: '[]',
-					description: 'The array of steps.'
-				},
-			],
+			activeStep: 'one',
 			steps: [
 				{
 					key: 'one',
@@ -199,13 +186,13 @@ export default Vue.extend({
 					title: 'Third step',
 					icon: 'hand-point-right',
 				},
-			]
+			],
     };
   },
   methods: {
     buttonPress(type: string) {
       window.alert(`Clicked button: ${type}`);
-    }
+		},
   }
 });
 </script>
