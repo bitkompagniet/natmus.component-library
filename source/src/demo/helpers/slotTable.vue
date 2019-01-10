@@ -1,5 +1,5 @@
 <template>
-  <b-table striped :fields="[
+  <b-table class="n-style" :fields="[
         { key: 'name', sortable: true, class: 'no-wrap' },
         { key: 'scope', class: 'no-wrap' },
         { key: 'description', class: 'no-wrap' }

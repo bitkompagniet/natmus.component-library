@@ -1,4 +1,6 @@
 @import 'colors.scss';
+@import 'fonts.scss';
+
 
 div.n-style, 
 section.n-style, 
@@ -14,13 +16,18 @@ mark.n-style,
 nav.n-style, 
 summary.n-style, 
 time.n-style {
+
+    font-family: 'Nationale';
+
     h2 {
         font-size: 3em;
+        font-weight: bold;
     }
 
     h3 {
         margin-top: 1em;
         margin-bottom: 0.5em;
+        font-weight: bold;
     }
 
     h4 {
