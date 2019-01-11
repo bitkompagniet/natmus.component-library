@@ -53,19 +53,98 @@
 
     </n-section>
 
-    <n-section theme="lightgrey">
+    <n-section>
+      <h2>Button Select</h2>
+
+      <p>
+        The Button Select is a group of toggleable buttons that can act as an alternative to a 
+        checkbox group, a radio group and a select box.
+      </p>
+
+      <h3>Basic usage</h3>
+
+      <pre>
+&lt;n-form-button-select
+  :options="[
+    { key: 'five', value: '1-5 år' },
+    { key: 'ten', value: '6-10 år' },
+    { key: 'fifteen', value: '11-15 år' },
+  ]"
+  v-model="years"
+/&gt;</pre>
+
+      <h3>Example</h3>
+
+      <n-slim class="text-center">
+        <h4>How many years have you lived there (single)?</h4>
+
+        <n-form-button-select
+            :options="[
+                { key: 'one', value: '1-5 år' },
+                { key: 'two', value: '6-10 år' },
+                { key: 'three', value: '11-15 år' },
+            ]"
+            v-model="years"
+        />
+
+        <h4>What colors do you like (multi-select)?</h4>
+
+        <n-form-button-select
+            :options="[
+                { key: 'red', value: 'Red' },
+                { key: 'blue', value: 'Blue' },
+                { key: 'green', value: 'Green' },
+            ]"
+            v-model="colors"
+            multi
+        />
+      </n-slim>
+
+      <h3>Properties</h3>
+
+      <property-table :items="[
+        {
+          name: 'options',
+          type: 'IOption[]',
+          default: 'null',
+          description: 'The array of options to choose from.',
+        },
+        {
+          name: 'value',
+          type: 'string | string[]',
+          default: 'null',
+          description: 'The currently selected key or an array of keys (for multiselect).',
+        },
+        {
+          name: 'multi',
+          type: 'bool',
+          default: 'false',
+          description: 'Whether selection of multiple items is enabled.'
+        }
+      ]" />
+
+      <h4><code>IOption</code></h4>
+
+      <pre>
+{
+  key: string,
+  value: string
+}</pre>
+
+    </n-section>
+
+    <n-section v-for="theme in ['lightgrey', 'white', 'darkblue', 'rose', 'darkred']" :key="theme" :theme="theme" >
       <n-slim>
-        <n-form-title title="Complete example" subtitle="A form with all input types"/>
+        <n-form-title title="Complete example" :subtitle="`A ${theme} form with all input types`"/>
 
         <b-form>
-          <b-form-group
-            id="group-vej"
-            label="Vej og vejnummer"
-            label-for="vej"
-            description="Denne oplysning er personlig, og vil ikke blive delt."
-          >
-            <b-form-input id="vej" type="text" required placeholder="Indtast vej og vejnummer"></b-form-input>
-          </b-form-group>
+          <n-form-field 
+            id="vej" 
+            label="Vej og vejnummer" 
+            type="text" 
+            placeholder="Vej, vejnummer, etage og dør" 
+            description="Vej, vejnummer, etage og dør" 
+          />
 
           <b-row>
             <b-col md="4">
@@ -78,12 +157,24 @@
 
           <n-form-field id="navn" label="Navn" type="text" v-model="name"/>
 
-          <p v-if="name.length > 0">Det indtastede navn er: {{ name }}</p>
-          <p v-else>Der er ikke indtastet et navn endnu.</p>
-
           <n-form-field id="witherror" label="Validering minimum 3 tegn" type="text" :state="witherrorState.state" :error="witherrorState.error" v-model="witherror" />
+
+          <h4>Antal år i foreningen</h4>
+
+          <n-form-button-select 
+            :options="[
+              { key: 'a', value: '1 year' },
+              { key: 'b', value: '2 years' },
+              { key: 'c', value: '3 years' },
+            ]"
+            v-model="years"
+          />
           
           <n-form-field id="longtext" label="Historie" type="textarea" :rows="8" v-model="long" :description="noCharacters" />
+
+          <div class="d-flex justify-content-end">
+            <n-button variant="primary">Submit</n-button>
+          </div>
 
         </b-form>
       </n-slim>
@@ -93,6 +184,7 @@
 
 <script lang="ts">
 import Vue from 'vue';
+import propertyTable from '../helpers/propertyTable.vue';
 
 interface IValidationState {
   state: boolean | null,
@@ -100,10 +192,15 @@ interface IValidationState {
 }
 
 export default Vue.extend({
+  components: {
+    'property-table': propertyTable
+  },
   data: () => ({
     name: '',
     witherror: '',
     long: '',
+    years: null,
+    colors: null,
   }),
   computed: {
     witherrorState(): IValidationState {
@@ -116,7 +213,7 @@ export default Vue.extend({
         return { state: false, error: 'Skriv minimum 3 tegn.' };
       }
 
-      return { state: true };
+      return { state: null };
     },
     noCharacters(): string {
       return this.long.length + ' tegn.';

@@ -1,17 +1,31 @@
 .n-style label, label.n-style {
     font-weight: bold;
+    padding-bottom: 2px;
 }
 
-.n-style input, input.n-style {
-    border: 3px solid $color-white;
-    border-radius: 0;
-    padding: 25px 20px;
-}
-
+.n-style input, input.n-style,
 .n-style textarea.form-control, textarea.form-control.n-style {
     border: 3px solid $color-white;
     border-radius: 0;
-    padding: 15px 20px;
+
+    &:focus {
+        border-color: darken($color-lightgrey, 5%);
+        outline: none;
+        outline-color: red;
+        box-shadow: none;
+    }
+
+    &::placeholder {
+        color: #ccc;
+    }
+}
+
+.n-style input, input.n-style {
+    padding: 20px 15px;
+}
+
+.n-style textarea.form-control, textarea.form-control.n-style {
+    padding: 10px 15px;
 }
 
 
@@ -19,5 +33,19 @@ section.white .n-style input,
 section.white input.n-style,
 section.white .n-style textarea.form-control,
 section.white textarea.form-control.n-style {
-    border: 3px solid $color-black;
+    border: 3px solid $color-darkblue;
+}
+
+.n-style fieldset .form-text.text-muted,
+fieldset.n-style .form-text.text-muted {
+    color: $color-white !important;
+    font-style: italic;
+}
+
+section.white {
+    &.n-style fieldset .form-text.text-muted,
+    fieldset.n-style .form-text.text-muted {
+        color: $color-black !important;
+        font-style: italic;
+    }
 }

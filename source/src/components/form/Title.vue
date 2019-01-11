@@ -33,7 +33,7 @@ export default Vue.extend({
 
     h3 {
         font-size: 1.5em;
-        font-weight: bold;
+        font-weight: normal;
     }
 }
 

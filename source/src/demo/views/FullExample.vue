@@ -48,11 +48,15 @@
                     <div class="text-center">
                         <h4>Hvor mange år har du boet i andelsforeningen?</h4>
 
-                        <div class="d-flex justify-content-center mt-3">
-                            <n-button variant="primary" class="mr-3">1-5 år</n-button>
-                            <n-button class="mr-3">6-10 år</n-button>
-                            <n-button>11-15 år</n-button>
-                        </div>
+                        <n-form-button-select
+                            :options="[
+                                { key: 'one', value: '1-5 år' },
+                                { key: 'two', value: '6-10 år' },
+                                { key: 'three', value: '11-15 år' },
+                            ]"
+                            v-model="yearsValue"
+                            multi
+                        />
                     </div>
 
                 </b-form>
@@ -121,6 +125,7 @@ export default Vue.extend({
                 { key: 'four', title: 'Insend', icon: 'paper-plane' },
             ],
             index: 0,
+            yearsValue: null,
         }
     },
     computed: {
