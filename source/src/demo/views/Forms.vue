@@ -152,7 +152,7 @@
 
       <h3>Value</h3>
 
-      {{ story }}
+      {{ story | emptyDisplay }}
 
       <h3>Properties</h3>
 
@@ -269,5 +269,11 @@ export default Vue.extend({
       return this.long.length + ' tegn.';
     }
   },
+  filters: {
+    emptyDisplay(value: string | null): string {
+      if (value == null || value === '') return "[empty]";
+      return value;
+    }
+  }
 });
 </script>
