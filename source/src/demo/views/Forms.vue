@@ -45,12 +45,6 @@
         <form><n-form-field id="name" label="Navn" type="text" :state="name.length >= 3" error="Navn skal være minimum 3 tegn." v-model="name" /></form>
       </n-slim>
 
-      <h3>Design guidelines</h3>
-
-      <ul>
-        <li>Keep forms on section themes "white" or "lightgrey".</li>
-      </ul>
-
     </n-section>
 
     <n-section>
@@ -66,9 +60,9 @@
       <pre>
 &lt;n-form-button-select
   :options="[
-    { key: 'five', value: '1-5 år' },
-    { key: 'ten', value: '6-10 år' },
-    { key: 'fifteen', value: '11-15 år' },
+    { key: '1-5', value: '1-5 år' },
+    { key: '6-10', value: '6-10 år' },
+    { key: '11-15', value: '11-15 år' },
   ]"
   v-model="years"
 /&gt;</pre>
@@ -80,12 +74,14 @@
 
         <n-form-button-select
             :options="[
-                { key: 'one', value: '1-5 år' },
-                { key: 'two', value: '6-10 år' },
-                { key: 'three', value: '11-15 år' },
+                { key: '1-5', value: '1-5 år' },
+                { key: '6-10', value: '6-10 år' },
+                { key: '11-15', value: '11-15 år' },
             ]"
             v-model="years"
         />
+
+        <p><strong>Value:</strong> {{ years }}</p>
 
         <h4>What colors do you like (multi-select)?</h4>
 
@@ -98,6 +94,8 @@
             v-model="colors"
             multi
         />
+
+        <p><strong>Value:</strong> {{ colors }}</p>
       </n-slim>
 
       <h3>Properties</h3>
@@ -130,6 +128,57 @@
   key: string,
   value: string
 }</pre>
+
+    </n-section>
+
+    <n-section>
+      <h2>Rich Text</h2>
+      
+      <p>
+        Display a rich text editor. This a wrapped 
+        <a href="https://quilljs.com/">Quill.js</a> editor
+        with a set of defaults applied. All those defaults
+        can be overridden.
+      </p>
+
+      <h3>Basic usage</h3>
+
+      <pre>
+&lt;n-form-rich-text v-model="story" /&gt;</pre>
+
+      <h3>Example</h3>
+
+      <n-form-rich-text v-model="story" />
+
+      <h3>Value</h3>
+
+      {{ story }}
+
+      <h3>Properties</h3>
+
+      <property-table
+        :items="[
+          {
+            name: 'options',
+            type: 'Configuration',
+            default: '{ ... }',
+            description: 'A Quill.js configuration object.'
+          }
+        ]"
+      />
+
+      <p>
+        When you supply your own configuration, it will be
+        merged into the default configuration given. 
+        See 
+        <a href="https://quilljs.com/docs/configuration/">
+          Quill.js docs about the configuration object
+        </a>
+        .
+        Please note that the editor will not be reactive to
+        any changes in the configuration object, as it is
+        only used during mount.
+      </p>
 
     </n-section>
 
@@ -201,6 +250,7 @@ export default Vue.extend({
     long: '',
     years: null,
     colors: null,
+    story: '',
   }),
   computed: {
     witherrorState(): IValidationState {
