@@ -66,7 +66,12 @@
         <n-section>
             <n-form-title title="Titel" subtitle="Kan du beskrive jeres naboskab i andelsforeningen?" />
 
-            <p class="text-center">[Rich text]</p>
+            <b-row>
+                <b-col :cols="8" :offset="2">
+                    <n-form-rich-text v-model="story" />
+                </b-col>
+            </b-row>
+
         </n-section>
 
         <n-section v-for="theme in ['darkblue', 'darkred', 'lightgrey']" :key="theme" :theme="theme">
@@ -126,11 +131,17 @@ export default Vue.extend({
             ],
             index: 0,
             yearsValue: null,
+            story: '',
         }
     },
     computed: {
         active: function() {
             return this.steps[this.index].key;
+        }
+    },
+    methods: {
+        log(e: any) : void {
+            console.log(e);
         }
     }
 })

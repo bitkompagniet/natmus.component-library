@@ -1,5 +1,5 @@
 <template>
-    <div class="d-flex justify-content-between mt-3">
+    <div class="d-flex justify-content-between mt-3 mb-3">
         <n-button 
             v-for="option in optionsWithSelected" 
             :key="option.key" 
