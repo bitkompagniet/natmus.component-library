@@ -13,14 +13,24 @@
 
 <script lang="ts">
 import Vue from 'vue'
+
+interface IOption {
+    key: string,
+    value: string,
+}
+
+interface IOptionWithSelected extends IOption {
+    selected: boolean,
+}
+
 export default Vue.extend({
     props: {
         value: {
-            type: [String, Array],
+            type: [String, Array as () => string[]],
             default: null,
         },
         options: {
-            type: Array,
+            type: Array as () => IOption[],
             default: () => [],
         },
         multi: {
@@ -29,24 +39,24 @@ export default Vue.extend({
         }
     },
     computed: {
-        optionsWithSelected() {
+        optionsWithSelected() : IOptionWithSelected[] {
             return this.options.map(option => ({ key: option.key, value: option.value, selected: this.valueAsArray.includes(option.key) }));
         },
-        valueAsArray: function() {
+        valueAsArray(): string[] {
             if (this.value == null) return [];
             if (Array.isArray(this.value)) return this.value;
             return [this.value];
         }
     },
     methods: {
-        updateValue: function(key) {
+        updateValue(key: string) : void {
 
             if (!this.multi) {
                 if (key != this.value) {
                     this.$emit('input', key);
                 }
             } else {
-                let result = this.valueAsArray.filter(x => x != key);
+                let result : string[] = this.valueAsArray.filter(x => x != key);
             
                 if (!this.valueAsArray.includes(key)) {
                     result = [ ...result, key ];
