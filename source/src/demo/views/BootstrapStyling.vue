@@ -11,5 +11,30 @@
                 On this page we present those different appearances.
             </p>
         </n-section>
+
+        <n-section>
+            <h2>Pagination</h2>
+
+            <h3>Usage</h3>
+            <pre>
+&lt;b-pagination size="md" :total-rows="250" v-model="page" :per-page="10" :limit="20"&gt;&lt;/b-pagination&gt;</pre>
+
+            <h3>Example</h3>
+            <b-pagination size="md" :total-rows="250" v-model="page" :per-page="10" :limit="20"></b-pagination>
+
+            <p>Selected page: {{ page }}</p>
+        </n-section>
     </div>
 </template>
+
+<script lang="ts">
+import Vue from 'vue';
+
+export default Vue.extend({
+   data()  {
+       return {
+           page: 1
+       }
+   }
+});
+</script>

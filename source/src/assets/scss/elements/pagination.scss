@@ -1,0 +1,17 @@
+$primary-color: $color-darkblue;
+$color-on-primary: $color-white;
+
+.n-style .pagination {
+
+    .page-item {
+        .page-link {
+            color: $primary-color;
+            border: none;
+        }
+
+        &.active .page-link {
+            background-color: $primary-color;
+            color: $color-on-primary;
+        }
+    }
+}
