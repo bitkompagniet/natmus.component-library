@@ -174,7 +174,7 @@
             </b-row>
 
           </section>
-          
+         
           <section class="form-section">
 
             <label>Antal år i foreningen</label>
@@ -197,6 +197,15 @@
               <n-button variant="primary">Submit</n-button>
             </div>
           </section>
+          <n-form-checkbox
+            v-model="checked"
+          >
+            Jeg accepterer brugen af min data.
+          </n-form-checkbox>
+
+          <div class="d-flex justify-content-end">
+            <n-button variant="primary">Submit</n-button>
+          </div>
 
         </b-form>
       </n-slim>
@@ -217,6 +226,7 @@ export default Vue.extend({
     colors: null,
     story: '',
     password: '',
+    checked: true,
   }),
   computed: {
     noCharacters(): string {
