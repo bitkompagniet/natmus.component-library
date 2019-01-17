@@ -1,0 +1,22 @@
+$color: $color-darkblue;
+$bg-color: lighten($color-lightgrey, 20%);
+$link-color: $color-white;
+
+
+.n-style .breadcrumb {
+    background-color: $bg-color;
+    padding: 0.5rem 0.75rem;
+    font-weight: 700;
+
+    .breadcrumb-item, .breadcrumb-item::before {
+        color: $color;
+    }
+
+    .breadcrumb-item a {
+        color: $link-color;
+    }
+
+    .breadcrumb-item + .breadcrumb-item::before {
+        content: '|'
+    }
+}
