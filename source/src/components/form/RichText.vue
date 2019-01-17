@@ -57,11 +57,11 @@ export default Vue.extend({
 
 .quill-wrapper {
     $shadow-color: #ddd;
-    // border: 1px solid $shadow-color;
     box-shadow: 0px 0px 5px 0px $shadow-color;
 
     .ql-editor {
         font-size: 16px;
+        font-family: 'Nationale';
 
         h2 {
             margin-bottom: 0.5em;
