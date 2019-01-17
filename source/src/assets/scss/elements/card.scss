@@ -1,0 +1,49 @@
+$color-subtitle: lighten($color-lightgrey, 20%);
+
+.card {
+    box-shadow: none;
+    border-radius: 0;
+    font-size: 1.1em;
+    border: none;
+
+    .card-body {
+        border: 3px solid black;
+    }
+
+    .card-img-top, .card-img-bottom {
+        border-radius: 0;
+    }
+
+    img + .card-body {
+        border-top: none;
+    }
+
+    &.darkblue, &.darkred, &.rose, &.lightgrey {
+        .card-body {
+            border: none;
+        }
+    }
+
+    .card-title {
+        font-weight: 900;
+        margin-top: 0.3em;
+        font-size: 1.4em;
+    }
+
+    .card-subtitle {
+        font-size: 1.2em;
+
+        &.text-muted {
+            color: $color-subtitle !important;
+        }
+    }
+    
+}
+
+.darkred .card-subtitle.text-muted {
+    color: $color-rose !important;
+}
+
+.rose .card-subtitle.text-muted {
+    color: lighten($color-rose, 25%) !important;
+}

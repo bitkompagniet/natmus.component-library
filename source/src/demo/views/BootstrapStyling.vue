@@ -33,6 +33,51 @@
             <h3>Example</h3>
             <b-breadcrumb :items="items"/>
         </n-section>
+
+        <n-section>
+            <h2>Cards</h2>
+
+            <h3>Guidelines</h3>
+
+            <ul>
+                <li>Only place images in top of card (<code>img-top</code> property).</li>
+                <li>Don't use the header and footer slots of the cards.</li>
+            </ul>
+
+            <h3>Examples</h3>
+
+            <b-card-group deck v-for="theme in ['white', 'darkblue', 'darkred', 'rose', 'lightgrey']" :key="theme" class="mb-4">
+                <b-card
+                    :class="theme"
+                >
+                    <p class="card-text">
+                        Basic, just text.
+                    </p>
+                </b-card>
+                <b-card
+                    :img-src="require('../assets/images/summer_party_2.jpg')"
+                    img-top
+                    title="Sommeraftener"
+                    :class="theme"
+                >
+                    <p class="card-text">
+                        A card with an image and a title.
+                    </p>
+                </b-card>
+                <b-card
+                    :img-src="require('../assets/images/summer_party_2.jpg')"
+                    img-top
+                    title="Sommeraftener"
+                    sub-title="Subtitle"
+                    :class="theme"
+                >
+                    <p class="card-text">
+                        A card with subtitle and button.
+                    </p>
+                    <n-button variant="primary">Continue</n-button>
+                </b-card>
+            </b-card-group>
+        </n-section>
     </div>
 </template>
 
