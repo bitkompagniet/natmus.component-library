@@ -4,6 +4,7 @@ import Structure from './views/Structure.vue';
 import Forms from './views/Forms.vue';
 import Elements from './views/Elements.vue';
 import FullExample from './views/FullExample.vue';
+import BootstrapStyling from './views/BootstrapStyling.vue';
 
 Vue.use(Router);
 
@@ -28,6 +29,11 @@ export default new Router({
       path: '/full',
       name: 'full',
       component: FullExample,
+    },
+    {
+      path: '/bootstrap-styling',
+      name: 'bootstrap-styling',
+      component: BootstrapStyling,
     },
     // {
     //   path: '/about',
