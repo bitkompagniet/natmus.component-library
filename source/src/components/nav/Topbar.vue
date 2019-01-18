@@ -2,7 +2,7 @@
     
     <div class="topbar-nav n-style" :class="{ simple: !complex, complex }">
         <div>
-            <img src="../../assets/images/nationalmuseum_logo_white.png" />
+            <n-logo white />
         </div>
         <b-nav>
             <slot></slot>
