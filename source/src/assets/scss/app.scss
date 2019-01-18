@@ -1,3 +1,12 @@
-@import "bootstrap-variable-override";
 @import "~bootstrap/scss/bootstrap.scss";
-@import "bootstrap-style-override";
+
+@import 'base/colors.scss';
+@import 'base/fonts.scss';
+@import 'base/utility.scss';
+@import 'base/structure.scss';
+@import 'elements/forms.scss';
+@import 'elements/tables.scss';
+@import 'elements/buttons.scss';
+@import 'elements/pagination.scss';
+@import 'elements/breadcrumb.scss';
+@import 'elements/card.scss';

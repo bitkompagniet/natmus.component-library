@@ -5,7 +5,7 @@
 </template>
 
 <style lang="scss" scoped>
-@import '../assets/scss/colors.scss';
+@import '../assets/scss/base/colors.scss';
 
 
 .standard {

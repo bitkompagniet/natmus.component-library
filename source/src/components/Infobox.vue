@@ -27,7 +27,7 @@ export default Vue.extend({
 
 <style lang="scss" scoped>
 
-@import '../assets/scss/colors.scss';
+@import '../assets/scss/base/colors.scss';
 
 @mixin border-lrb($stroke: 6px, $color: white) {
     border-left: $stroke solid $color;

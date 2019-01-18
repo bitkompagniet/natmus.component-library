@@ -30,7 +30,7 @@ export default Vue.extend({
 </script>
 
 <style lang="scss">
-@import '../../assets/scss/colors.scss';
+@import '../../assets/scss/base/colors.scss';
 
 .topbar-nav.n-style.simple {
     background-color: $color-darkblue;

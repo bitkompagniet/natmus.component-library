@@ -71,7 +71,7 @@ export default Vue.extend({
 
 <style lang="scss">
 
-@import '../../assets/scss/colors.scss';
+@import '../../assets/scss/base/colors.scss';
 
 .button-select {
     .btn.n-style {
