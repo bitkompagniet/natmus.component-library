@@ -1,0 +1,28 @@
+$primary-color: $color-darkblue;
+$color-on-primary: $color-white;
+
+.n-style .pagination {
+
+    .page-item {
+        .page-link {
+            color: $primary-color;
+            border: none;
+        }
+
+        &.active .page-link {
+            background-color: $primary-color;
+            color: $color-on-primary;
+        }
+
+        &:first-child, &:nth-child(2), &:nth-last-child(2), &:last-child {
+            font-size: 1.5em;
+            font-weight: bold;
+
+            .page-link {
+                padding-top: 0;
+            }
+        }
+    }
+
+    
+}
