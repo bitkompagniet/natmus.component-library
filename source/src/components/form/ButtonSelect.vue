@@ -1,5 +1,5 @@
 <template>
-    <div class="d-flex justify-content-between mt-3 mb-3">
+    <div class="button-select d-flex justify-content-between mb-3">
         <n-button 
             v-for="option in optionsWithSelected" 
             :key="option.key" 
@@ -69,3 +69,36 @@ export default Vue.extend({
 })
 </script>
 
+<style lang="scss">
+
+@import '../../assets/scss/colors.scss';
+
+.button-select {
+    .btn.n-style {
+        padding: 7px;
+    }
+}
+
+.darkred, .lightgrey, .darkblue, .rose {
+    .button-select .btn.n-style {
+        border-color: white;
+        color: white;
+        
+        &.btn-secondary {
+            background-color: transparent;
+        }
+    }
+}
+
+@each $name, $color in $themeColors {
+    @if $name != white {
+        .#{$name} .button-select .btn.n-style.btn-primary {
+            $c: darken($color, 10%);
+            border-color: $c;
+            background-color: $c;
+        } 
+    }
+}
+
+
+</style>

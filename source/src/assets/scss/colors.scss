@@ -1,3 +1,5 @@
+$themes: "white", "darkblue", "darkred", "lightgrey", "rose";
+
 $color-black: #000000;
 $color-white: #ffffff;
 
@@ -8,3 +10,17 @@ $color-rose: #bd9b93;
 
 $color-orange: #bb6722;
 $color-beige: #cfc6bc;
+
+$themesWithColors:  ("white" $color-white) 
+                    ("darkblue" $color-darkblue) 
+                    ("darkred" $color-darkred) 
+                    ("lightgrey" $color-lightgrey)
+                    ("rose" $color-rose);
+
+$themeColors: (
+    white: $color-white,
+    darkblue: $color-darkblue,
+    darkred: $color-darkred,
+    lightgrey: $color-lightgrey,
+    rose: $color-rose
+);

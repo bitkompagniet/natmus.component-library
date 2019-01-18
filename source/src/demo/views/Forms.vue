@@ -187,43 +187,54 @@
         <n-form-title title="Complete example" :subtitle="`A ${theme} form with all input types`"/>
 
         <b-form>
-          <n-form-field 
-            id="vej" 
-            label="Vej og vejnummer" 
-            type="text" 
-            placeholder="Vej, vejnummer, etage og dør" 
-            description="Vej, vejnummer, etage og dør" 
-          />
 
-          <b-row>
-            <b-col md="4">
-              <n-form-field id="postnummer" label="Postnummer" type="number"/>
-            </b-col>
-            <b-col md="8">
-              <n-form-field id="by" label="By" type="text"/>
-            </b-col>
-          </b-row>
+          <section class="form-section">
 
-          <n-form-field id="navn" label="Navn" type="text" v-model="name"/>
+            <n-form-field 
+              id="vej" 
+              label="Vej og vejnummer" 
+              type="text" 
+              placeholder="Vej, vejnummer, etage og dør" 
+              description="Vej, vejnummer, etage og dør" 
+            />
 
-          <n-form-field id="witherror" label="Validering minimum 3 tegn" type="text" :state="witherrorState.state" :error="witherrorState.error" v-model="witherror" />
+            <b-row>
+              <b-col md="4">
+                <n-form-field id="postnummer" label="Postnummer" type="number"/>
+              </b-col>
+              <b-col md="8">
+                <n-form-field id="by" label="By" type="text"/>
+              </b-col>
+            </b-row>
 
-          <h4>Antal år i foreningen</h4>
+            <n-form-field id="navn" label="Navn" type="text" v-model="name"/>
 
-          <n-form-button-select 
-            :options="[
-              { key: 'a', value: '1 year' },
-              { key: 'b', value: '2 years' },
-              { key: 'c', value: '3 years' },
-            ]"
-            v-model="years"
-          />
+            <n-form-field id="witherror" label="Validering minimum 3 tegn" type="text" :state="witherrorState.state" :error="witherrorState.error" v-model="witherror" />
+
+          </section>
           
-          <n-form-field id="longtext" label="Historie" type="textarea" :rows="8" v-model="long" :description="noCharacters" />
+          <section class="form-section">
 
-          <div class="d-flex justify-content-end">
-            <n-button variant="primary">Submit</n-button>
-          </div>
+            <label>Antal år i foreningen</label>
+
+            <n-form-button-select 
+              :options="[
+                { key: 'a', value: '1 year' },
+                { key: 'b', value: '2 years' },
+                { key: 'c', value: '3 years' },
+              ]"
+              v-model="years"
+            />
+
+          </section>
+
+          <section class="form-section">
+            <n-form-field id="longtext" label="Historie" type="textarea" :rows="8" v-model="long" :description="noCharacters" />
+  
+            <div class="d-flex justify-content-end">
+              <n-button variant="primary">Submit</n-button>
+            </div>
+          </section>
 
         </b-form>
       </n-slim>
