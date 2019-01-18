@@ -7,6 +7,10 @@
       <p>Font awesome icons are included by default.</p>
     </n-section>
 
+		<n-section>
+			<logo />
+		</n-section>
+
     <n-section>
       <h2>Buttons</h2>
 
@@ -159,6 +163,7 @@ import PropertyTable from '../helpers/propertyTable.vue';
 import SlotTable from '../helpers/slotTable.vue';
 import DemoWizard from '../examples/DemoWizard.vue';
 import DemoDotProgress from '../examples/DemoDotProgress.vue';
+import Logo from '../examples/Logo.vue';
 
 export default Vue.extend({
 	components: {
@@ -166,6 +171,7 @@ export default Vue.extend({
 		'slot-table': SlotTable,
 		'demo-wizard': DemoWizard,
 		'demo-dot-progress': DemoDotProgress,
+		'logo': Logo
 	},
   data: function() {
     return {
