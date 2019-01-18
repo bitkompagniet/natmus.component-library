@@ -20,7 +20,7 @@ interface IStep {
     key: string,
 }
 
-function firstOrDefault<T>(items: T[], predicate: (T) => boolean): T | null {
+function firstOrDefault<T>(items: T[], predicate: (item: T) => boolean): T | null {
     for (var i = 0; i < items.length; i++) {
         const result: boolean = predicate(items[i]);
         if (result) return items[i];
