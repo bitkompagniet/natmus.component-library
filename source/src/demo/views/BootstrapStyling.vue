@@ -24,6 +24,15 @@
 
             <p>Selected page: {{ page }}</p>
         </n-section>
+
+        <n-section>
+            <h2>Breadcrumb</h2>
+            <h3>Usage</h3>
+            <pre>
+&lt;b-breadcrumb :items="items"/&gt;</pre>
+            <h3>Example</h3>
+            <b-breadcrumb :items="items"/>
+        </n-section>
     </div>
 </template>
 
@@ -33,8 +42,18 @@ import Vue from 'vue';
 export default Vue.extend({
    data()  {
        return {
-           page: 1
-       }
-   }
+            page: 1,
+            items: [{
+                text: 'Admin',
+                href: '#'
+            }, {
+                text: 'Manage',
+                href: '#'
+            }, {
+                text: 'Library',
+                active: true
+            }]
+        };
+    }
 });
 </script>
