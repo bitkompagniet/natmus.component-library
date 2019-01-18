@@ -52,7 +52,7 @@ export default Vue.extend({
 .white + .white .container::before {
     content: "--------------";
     color: transparent;
-    border-top: 4px solid $color-orange;
+    border-top: 4px solid $color-lightgrey;
     position: relative;
     top: -20px;
 }
