@@ -121,7 +121,7 @@
     />
 
     <h3>
-      <code>IProgress</code>
+      <code>IProgress</code> interface
     </h3>
 
     <pre>

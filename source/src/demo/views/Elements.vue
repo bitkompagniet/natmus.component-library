@@ -128,7 +128,7 @@
 				},
 			]"/>
 
-			<h4><code>IStep</code></h4>
+			<h3><code>IStep</code> interface</h3>
 
 			<p>The key of <code>IStep</code> should be unique. The icon is optional.</p>
 
@@ -146,6 +146,10 @@
 			<demo-wizard />
 		</n-section>
 
+		<n-section>
+			<demo-dot-progress />
+		</n-section>
+
   </div>
 </template>
 
@@ -154,12 +158,14 @@ import Vue from "vue";
 import PropertyTable from '../helpers/propertyTable.vue';
 import SlotTable from '../helpers/slotTable.vue';
 import DemoWizard from '../examples/DemoWizard.vue';
+import DemoDotProgress from '../examples/DemoDotProgress.vue';
 
 export default Vue.extend({
 	components: {
 		'property-table': PropertyTable,
 		'slot-table': SlotTable,
 		'demo-wizard': DemoWizard,
+		'demo-dot-progress': DemoDotProgress,
 	},
   data: function() {
     return {
