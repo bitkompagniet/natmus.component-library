@@ -45,9 +45,9 @@
     }
 }
 
-section.darkblue .btn-primary.n-style, 
-section.darkblue .btn-darkblue.n-style {
-    $c: darken($color-darkblue, 7%);
+.darkblue .btn-primary.n-style, 
+.darkblue .btn-darkblue.n-style {
+    $c: $color-lightgrey;
     background-color: $c;
     border-color: $c;
 }
