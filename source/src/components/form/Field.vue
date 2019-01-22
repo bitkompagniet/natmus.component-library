@@ -9,7 +9,7 @@
         :placeholder="placeholder"
         :value="value"
         :rows="rows"
-        :state="state"
+        :state="$slots.default ? false : null"
         class="n-style"
         @input="$emit('input', $event)"
     />
@@ -19,14 +19,14 @@
         :type="type"
         :required="required"
         :placeholder="placeholder"
-        :state="state"
+        :state="$slots.default ? false : null"
         :value="value"
         class="n-style"
         @input="$emit('input', $event)"
     ></b-form-input>
 
-    <b-form-invalid-feedback :id="errorId" v-if="state === false">
-      {{ error }}
+    <b-form-invalid-feedback :id="errorId">
+      <slot></slot>
     </b-form-invalid-feedback>
 
   </b-form-group>
@@ -42,9 +42,13 @@ const allowedTypes = [
     'textarea',
 ];
 
+export interface IError {
+    active: boolean,
+    message: string,
+}
+
 export default Vue.extend({
     props: {
-        error: String,
         id: {
             type: String,
             required: true,
@@ -54,10 +58,6 @@ export default Vue.extend({
         required: Boolean,
         placeholder: String,
         rows: Number,
-        state: {
-            type: Boolean,
-            default: null
-        },
         type: {
             type: String,
             validator: (value: string) => allowedTypes.indexOf(value) !== -1,
@@ -71,10 +71,6 @@ export default Vue.extend({
         errorId(): string {
             return `error-${this.id}`;
         },
-        getState(): boolean | null {
-            if (this.state == null) return null;
-            return this.state;
-        }
     },
 });
 </script>

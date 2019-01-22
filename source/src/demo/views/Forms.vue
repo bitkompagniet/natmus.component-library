@@ -209,7 +209,10 @@
 
             <n-form-field id="navn" label="Navn" type="text" v-model="name"/>
 
-            <n-form-field id="witherror" label="Validering minimum 3 tegn" type="text" :state="witherrorState.state" :error="witherrorState.error" v-model="witherror" />
+            <n-form-field id="witherror" label="Validering minimum 3 tegn" type="text" v-model="witherror">
+              <div v-if="!$v.witherror.required">Feltet er påkrævet.</div>
+              <div v-else-if="!$v.witherror.minLength">Skal være minimum 3 tegn langt.</div>
+            </n-form-field>
 
           </section>
           
@@ -245,6 +248,8 @@
 <script lang="ts">
 import Vue from 'vue';
 import propertyTable from '../helpers/propertyTable.vue';
+import { required, minLength } from 'vuelidate/lib/validators';
+import { ComponentOptions } from 'vue';
 
 interface IValidationState {
   state: boolean | null,
@@ -264,18 +269,6 @@ export default Vue.extend({
     story: '',
   }),
   computed: {
-    witherrorState(): IValidationState {
-
-      if (this.witherror == null || this.witherror === '') {
-        return { state: null };
-      }
-
-      if (this.witherror == null || this.witherror.length < 3) {
-        return { state: false, error: 'Skriv minimum 3 tegn.' };
-      }
-
-      return { state: null };
-    },
     noCharacters(): string {
       return this.long.length + ' tegn.';
     }
@@ -285,6 +278,12 @@ export default Vue.extend({
       if (value == null || value === '') return "[empty]";
       return value;
     }
-  }
+  },
+  validations: {
+    witherror: {
+      required,
+      minLength: minLength(3)
+    }
+  },
 });
 </script>

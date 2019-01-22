@@ -1,14 +1,18 @@
-import { VueConstructor } from 'vue';
+import { VueConstructor, PluginFunction } from 'vue';
+
+import customBootstrap from './builds/customBootstrap';
+import fontawesome from './builds/fontawesome';
+import globalComponents from './builds/globalComponents';
+import vuelidate from 'vuelidate';
+
+const Vuelidate = vuelidate as unknown as PluginFunction<any>;
 
 const plugin = {
     install(vue: VueConstructor) {
-        const customBootstrap = require('./builds/customBootstrap').default;
-        const fontawesome = require('./builds/fontawesome').default;
-        const globalComponents = require('./builds/globalComponents').default;
-
         vue.use(customBootstrap);
         vue.use(fontawesome);
         vue.use(globalComponents);
+        vue.use(Vuelidate);
     },
 };
 
