@@ -1,10 +1,15 @@
-import Vue from 'vue';
-import DemoApp from '../demo/DemoApp.vue';
-import router from '../demo/router';
+import { VueConstructor } from 'vue';
 
-export default function() {
-    new Vue({
-        router,
-        render: (h) => h(DemoApp),
-    }).$mount('#app');
-}
+const plugin = {
+    install(vue: VueConstructor) {
+        const DemoApp = require('../demo/DemoApp.vue').default;
+        const router = require('../demo/router').default;
+
+        new vue({
+            router,
+            render: (h) => h(DemoApp),
+        }).$mount('#app');
+    },
+};
+
+export default plugin;

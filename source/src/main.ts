@@ -1,13 +1,9 @@
 import Vue from 'vue';
 
-import useCustomBootstrap from './builds/customBootstrap';
-import useFontawesome from './builds/fontawesome';
-import useGlobalComponents from './builds/globalComponents';
-import useDemoWebApp from './builds/demoWebApp';
+import common from './common';
+import demoWebApp from './builds/demoWebApp';
 
 Vue.config.productionTip = false;
 
-useCustomBootstrap();
-useFontawesome();
-useGlobalComponents();
-useDemoWebApp();
+Vue.use(common);
+Vue.use(demoWebApp);

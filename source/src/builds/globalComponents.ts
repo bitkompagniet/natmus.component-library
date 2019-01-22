@@ -1,12 +1,16 @@
-import Vue from 'vue';
-import _ from 'lodash';
+import { VueConstructor } from 'vue';
 
-export default function() {
-    const requireComponent = require.context('../components', true, /\w+\.(vue|js)$/);
+const plugin = {
+    install(vue: VueConstructor): void {
+        const _ = require('lodash');
+        const requireComponent = require.context('../components', true, /\w+\.(vue|js)$/);
 
-    requireComponent.keys().forEach((filename) => {
-        const componentConfig = requireComponent(filename);
-        const componentName = 'n-' + _.kebabCase(filename.replace(/^\.\/(.*)\.\w+$/, '$1'));
-        Vue.component(componentName, componentConfig.default || componentConfig);
-    });
-}
+        requireComponent.keys().forEach((filename) => {
+            const componentConfig = requireComponent(filename);
+            const componentName = 'n-' + _.kebabCase(filename.replace(/^\.\/(.*)\.\w+$/, '$1'));
+            vue.component(componentName, componentConfig.default || componentConfig);
+        });
+    },
+};
+
+export default plugin;
