@@ -1,0 +1,41 @@
+// $background: lighten($color-darkblue, 15%);
+// $standard-text: $color-white;
+// $keywords: #e83e8c;
+// $attributes: lighten($color-lightgrey, 30%);
+// $strings: $color-rose;
+// $numbers: $color-white;
+
+$color1: rgba(144, 190, 109, 1);
+$color2: rgba(215, 252, 212, 1);
+$color3: rgba(234, 63, 89, 1);
+$color4: rgba(40, 175, 176, 1);
+$color5: rgba(84, 84, 84, 1);
+
+$background: $color-darkblue;
+$standard-text: $color-white;
+$keywords: #e83e8c;
+$attributes: $color4;
+$strings: $color3;
+$numbers: $color2;
+
+code.hljs {
+    background-color: $background;
+    color: $standard-text;
+    padding: 1.5em 2em;
+
+    .hljs-keyword {
+        color: $keywords;
+    }
+
+    .hljs-attr {
+        color: $attributes;
+    }
+
+    .hljs-string {
+        color: $strings;
+    }
+
+    .hljs-number, .hljs-built_in {
+        color: $numbers;
+    }
+}

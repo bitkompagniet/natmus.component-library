@@ -4,7 +4,7 @@
 
     <h3>Usage</h3>
 
-    <pre>
+<d-helpers-highlight lang="html">
 &lt;n-step-wizard 
   :steps="[{
     key: 'one',
@@ -41,7 +41,7 @@
 
   &lt;step-in-component slot="three" /&gt;
 &lt;/n-step-wizard&gt;
-</pre>
+</d-helpers-highlight>
 
     <h3>Example</h3>
 
@@ -67,14 +67,14 @@
             </div>
           </template>
 
-          <step-in-component slot="three"/>
+          <d-examples-step-in-component slot="three"/>
         </n-step-wizard>
       </b-col>
     </b-row>
 
     <h3>Properties</h3>
 
-    <property-table
+    <d-helpers-property-table
       :items="[
 				{
 					name: '@continue',
@@ -111,7 +111,7 @@
 
     <h3>Slots</h3>
 
-    <slot-table
+    <d-helpers-slot-table
       :items="[
 				{ name: '[key]', scope: 'progress: IProgress', description: 'A template corresponding with the step key to be displayed on that step.' },
 				{ name: 'wizard-header', scope: 'progress: IProgress', description: 'Rendered as top-most element. No default content.' },
@@ -158,16 +158,8 @@
 
 <script lang="ts">
 import Vue from "vue";
-import StepInComponent from "./StepInComponent.vue";
-import PropertyTable from "../helpers/propertyTable.vue";
-import SlotTable from "../helpers/slotTable.vue";
 
 export default Vue.extend({
-  components: {
-    "step-in-component": StepInComponent,
-    "property-table": PropertyTable,
-    "slot-table": SlotTable
-  },
   data: function() {
     return {
       activeStep: "one",

@@ -34,7 +34,7 @@
       object to your component options.
     </p>
 
-    <pre>
+<d-helpers-highlight lang="javascript">
 import Vue from 'vue';
 import { required, minLength } from 'vuelidate/lib/validators';
 
@@ -51,21 +51,21 @@ export default Vue.extend({
         }
     }
 });
-</pre>
+</d-helpers-highlight>
 
     <p>
       Then nested inside your field definition, you can add messages for specific
       error cases:
     </p>
 
-    <pre>
+<d-helpers-highlight lang="html">
 &lt;form&gt;
   &lt;n-form-field id="name" label="Navn" type="text" v-model="name"&gt;
     &lt;div v-if="!$v.name.required"&gt;This field is required.&lt;/div&gt;
     &lt;div v-else-if="!$v.name.minLength"&gt;Minimum 3 characters.&lt;/div&gt;
   &lt;/n-form-field&gt;
 &lt;/form&gt;
-</pre>
+</d-helpers-highlight>
 
     <h3>Example</h3>
 

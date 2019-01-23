@@ -24,7 +24,7 @@
         This could be a standard <code>div</code>.
       </p>
 
-      <pre>
+<d-helpers-highlight lang="html">
 &lt;div&gt;
   &lt;n-nav-topbar&gt;
     &lt;div&gt;&lt;router-link to="/"&gt;Home&lt;/router-link&gt;
@@ -37,7 +37,8 @@
     &lt;h2&gt;Section header&lt;/h2&gt;
     &lt;p&gt;A paragraph&lt;/p&gt;
   &lt;/n-section&gt;
-&lt;/div&gt;</pre>
+&lt;/div&gt;
+</d-helpers-highlight>
 
       <p>The page you are currently reading follows the above markup.</p>
 
@@ -73,11 +74,11 @@
 
       <h3>Basic usage</h3>
 
-      <pre>
+<d-helpers-highlight lang="html">
 &lt;n-nav-topbar&gt;
   &lt;div&gt;&lt;router-link to="/"&gt;A link&lt;/router-link&gt;&lt;/div&gt;
 &lt;/n-nav-topbar&gt;
-</pre>
+</d-helpers-highlight>
 
       <h3>Example</h3>
 
@@ -106,11 +107,11 @@
 
       <h3>Basic usage</h3>
 
-      <pre>
+<d-helpers-highlight lang="html">
 &lt;n-section theme="white"&gt;
   &lt;h2&gt;Section header&lt;/h2&gt;
 &lt;/n-section&gt;
-</pre>
+</d-helpers-highlight>
 
       <h3>Properties</h3>
 
@@ -141,18 +142,21 @@
         You can use a <code>n-slim</code> inside a <code>n-section</code> to get a half-width container.
       </p>
 
+      <h3>Basic usage</h3>
+
+<d-helpers-highlight lang="html">
+&lt;n-slim&gt;
+  This is inside a &lt;code&gt;n-slim&lt;/code&gt;. This is very useful for forms or condensed text snippets, since
+  very long or wide views of this sort can be difficult to follow.
+&lt;/n-slim&gt;
+</d-helpers-highlight>
+
+      <h3>Example</h3>
+
       <n-slim>
         This is inside a <code>n-slim</code>. This is very useful for forms or condensed text snippets, since
         very long or wide views of this sort can be difficult to follow.
       </n-slim>
-
-      <h3>Basic usage</h3>
-
-      <pre>
-&lt;n-slim&gt;
-  This is inside a n-slim.
-&lt;/n-slim&gt;
-</pre>
 
       <h3>Design guidelines</h3>
 

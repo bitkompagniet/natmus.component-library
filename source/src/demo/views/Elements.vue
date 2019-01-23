@@ -8,7 +8,7 @@
     </n-section>
 
 		<n-section>
-			<logo />
+			<d-examples-logo />
 		</n-section>
 
     <n-section>
@@ -19,14 +19,16 @@
 			<h3>Basic usage</h3>
 
 			<p>
-				There are four basic button variants: <code>primary</code>,
-				<code>secondary</code>, <code>passive</code> and <code>danger</code>.
+				There are two basic button variants: <code>primary</code> and <code>secondary</code>. The primary
+				button color depends on the background section it is placed on.
 			</p>
 
-			<pre>
-<span v-for="button in buttons" :key="button.key">&lt;n-button variant="{{ button.variant }}"{{ button.disabled ? ' disabled' : '' }}&gt;{{ button.text }}&lt;/n-button&gt;
-</span>
-</pre>
+<d-helpers-highlight lang="html">
+&lt;n-button variant="primary"&gt;OK&lt;/n-button&gt;
+&lt;n-button variant="primary" disabled&gt;OK&lt;/n-button&gt;
+&lt;n-button variant="secondary"&gt;Cancel&lt;/n-button&gt;
+&lt;n-button variant="secondary" disabled&gt;Cancel&lt;/n-button&gt;
+</d-helpers-highlight>
 
 			<h3>Examples</h3>
 
@@ -37,6 +39,15 @@
           @click="buttonPress(button.variant)"
         >{{ button.text }}</n-button>
       </span>
+
+			<h3>Specific colors</h3>
+
+			<p>
+				There are also a variant for each of the colors in the theme: 
+				<code>darkblue</code>, <code>darkred</code>, <code>rose</code> and <code>lightgrey</code>.
+				These can be used when you need more variation. In most cases, however, we recommend
+				having one primary button and let all others be secondary.
+			</p>
 
 			<h3>Button with icon</h3>
 
@@ -57,7 +68,7 @@
 
       <h3>Properties</h3>
 
-			<property-table :items="[
+			<d-helpers-property-table :items="[
 				{
 					name: '@click',
 					type: 'function',
@@ -69,6 +80,12 @@
 					type: 'bool',
 					default: 'false',
 					description: 'Display as disabled, which is separate from passive style',
+				},
+				{
+					name: 'icon',
+					type: 'string',
+					default: 'null',
+					description: 'Name of Font Awesome icon to prefix with.'
 				},
 				{
 					name: 'variant',
@@ -90,7 +107,7 @@
 
 			<h3>Basic usage</h3>
 
-			<pre>
+<d-helpers-highlight lang="html">
 &lt;n-step-progress
   :active="two"
   :steps="[{
@@ -109,7 +126,7 @@
     icon: 'hand-point-right',
   }]"
 /&gt;
-</pre>
+</d-helpers-highlight>
 
 			<h3>Example</h3>
 
@@ -117,7 +134,7 @@
 
 			<h3>Properties</h3>
 
-			<property-table :items="[
+			<d-helpers-property-table :items="[
 				{
 					name: 'active',
 					type: 'IStep | string',
@@ -136,22 +153,22 @@
 
 			<p>The key of <code>IStep</code> should be unique. The icon is optional.</p>
 
-			<pre>
+<d-helpers-highlight lang="typescript">
 {
   key: string,
   title: string,
   icon?: string,
 }
-</pre>
+</d-helpers-highlight>
 
 		</n-section>
 
 		<n-section>
-			<demo-wizard />
+			<d-examples-wizard />
 		</n-section>
 
 		<n-section>
-			<demo-dot-progress />
+			<d-examples-dot-progress />
 		</n-section>
 
   </div>
@@ -159,20 +176,9 @@
 
 <script lang="ts">
 import Vue from "vue";
-import PropertyTable from '../helpers/propertyTable.vue';
-import SlotTable from '../helpers/slotTable.vue';
-import DemoWizard from '../examples/DemoWizard.vue';
-import DemoDotProgress from '../examples/DemoDotProgress.vue';
-import Logo from '../examples/Logo.vue';
+
 
 export default Vue.extend({
-	components: {
-		'property-table': PropertyTable,
-		'slot-table': SlotTable,
-		'demo-wizard': DemoWizard,
-		'demo-dot-progress': DemoDotProgress,
-		'logo': Logo
-	},
   data: function() {
     return {
       buttons: [

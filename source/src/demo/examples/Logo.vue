@@ -9,8 +9,9 @@
 
         <h3>Basic usage</h3>
 
-        <pre>
-&lt;n-logo full /&gt;</pre>
+<d-helpers-highlight lang="html">
+&lt;n-logo full /&gt;
+</d-helpers-highlight>
 
         <h3>Example</h3>
 
@@ -18,7 +19,7 @@
 
         <h3>Properties</h3>
 
-        <property-table
+        <d-helpers-property-table
             :items="[
                 {
                     name: 'white',
@@ -31,7 +32,7 @@
                     type: 'bool',
                     default: 'false',
                     description: 'Display the full logo with name. If false, only the N logo will be displayed.'
-                }
+                },
             ]"
         />
 
@@ -41,11 +42,7 @@
 
 <script lang="ts">
 import Vue from 'vue';
-import PropertyTable from '../helpers/propertyTable.vue';
 
 export default Vue.extend({
-    components: {
-        'property-table': PropertyTable
-    }
 })
 </script>

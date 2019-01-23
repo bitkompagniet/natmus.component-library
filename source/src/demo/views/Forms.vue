@@ -2,7 +2,7 @@
   <div>
 
     <n-section>
-      <form-field-example />
+      <d-examples-form-field />
     </n-section>
 
     <n-section>
@@ -10,12 +10,14 @@
 
       <p>
         The Button Select is a group of toggleable buttons that can act as an alternative to a 
-        checkbox group, a radio group and a select box.
+        checkbox group, a radio group and a select box. It will work as a radio / select when
+        the <code>multi</code> prop is omitted / false, and as an alternative to checkboxes when
+        <code>multi</code> is set / true.
       </p>
 
       <h3>Basic usage</h3>
 
-      <pre>
+<d-helpers-highlight lang="html">
 &lt;n-form-button-select
   :options="[
     { key: '1-5', value: '1-5 år' },
@@ -23,7 +25,8 @@
     { key: '11-15', value: '11-15 år' },
   ]"
   v-model="years"
-/&gt;</pre>
+/&gt;
+</d-helpers-highlight>
 
       <h3>Example</h3>
 
@@ -58,7 +61,7 @@
 
       <h3>Properties</h3>
 
-      <property-table :items="[
+      <d-helpers-property-table :items="[
         {
           name: 'options',
           type: 'IOption[]',
@@ -101,8 +104,9 @@
 
       <h3>Basic usage</h3>
 
-      <pre>
-&lt;n-form-rich-text v-model="story" /&gt;</pre>
+<d-helpers-highlight lang="html">
+&lt;n-form-rich-text v-model="story" /&gt;
+</d-helpers-highlight>
 
       <h3>Example</h3>
 
@@ -114,7 +118,7 @@
 
       <h3>Properties</h3>
 
-      <property-table
+      <d-helpers-property-table
         :items="[
           {
             name: 'options',
@@ -200,15 +204,9 @@
 
 <script lang="ts">
 import Vue from 'vue';
-import FormField from '../examples/FormField.vue';
-import propertyTable from '../helpers/propertyTable.vue';
 import { required, minLength } from 'vuelidate/lib/validators';
 
 export default Vue.extend({
-  components: {
-    'property-table': propertyTable,
-    'form-field-example': FormField,
-  },
   data: () => ({
     name: '',
     witherror: '',

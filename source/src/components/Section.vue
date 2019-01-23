@@ -43,7 +43,7 @@ export default Vue.extend({
 
     pre {
         background-color: rgba($color-white, 0.1);
-        padding: 0.5em 0.5em;
+        //padding: 0.5em 0.5em;
         margin: 0;
         color: $color-orange;
     }

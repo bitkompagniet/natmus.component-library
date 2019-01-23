@@ -10,13 +10,14 @@
 
         <h3>Basic usage</h3>
 
-        <pre>
+<d-helpers-highlight lang="html">
 &lt;n-step-dot-progress
   :steps="steps"
   :active="active"
   class="lg"
   @click="clickHandler"
-/&gt;</pre>
+/&gt;
+</d-helpers-highlight>
 
         <h3>Example</h3>
 
@@ -37,7 +38,7 @@
 
         <h3>Properties</h3>
 
-        <property-table
+        <d-helpers-property-table
             :items="[
                 {
                     name: '@click',
@@ -79,12 +80,7 @@
 <script lang="ts">
 import Vue from 'vue';
 
-import PropertyTable from '../helpers/propertyTable.vue';
-
 export default Vue.extend({
-    components: {
-        'property-table': PropertyTable
-    },
     mounted() {
         let counter = 0;
 
