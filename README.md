@@ -72,3 +72,17 @@ source
 | babel.config.js: babel presets
 
 ```
+
+## Azure specific changes
+Due to Azures handling of fonts, this file needs to be created at the root of the site, ie. the location where index.html is:
+
+web.config:
+
+<configuration>
+	<system.webServer>    
+	   <staticContent>
+		   <remove fileExtension=".otf" />
+		   <mimeMap fileExtension=".otf" mimeType="font/otf" />
+		</staticContent>
+	</system.webServer>
+</configuration>
