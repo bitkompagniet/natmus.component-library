@@ -2,49 +2,7 @@
   <div>
 
     <n-section>
-      <h2>Forms</h2>
-
-      <p>
-        You can build form fields exactly like in Vue Bootstrap (using <code>b-form-group</code> and <code>b-form-input</code>, etc), but for convenience
-        we have created an abstract component for handling fields.
-      </p>
-
-      <h3>Basic usage</h3>
-
-      <pre>
-&lt;form&gt;
-  &lt;n-form-field id="name" label="Navn" type="text" v-model="name" /&gt;
-&lt;/form&gt;
-</pre>
-
-      <n-slim>
-        <form>
-          <n-form-field id="name" label="Navn" type="text" v-model="name" />
-        </form>
-      </n-slim>
-      
-      <p>This will create an input with label "Navn" bound to the 'name' data field.</p>
-
-      <p>If you omit the label, the group will still be rendered, but will not take up the label space.</p>
-
-      <h3>Validation</h3>
-
-      <p>
-        The state and error system from Bootstrap is kept intact, so it is easy to implement validation using a third party lib, such as <code>vuelidate</code>. State should be
-        <code>null</code> (no state / black), <code>false</code> (invalid / red) or <code>true</code> (valid / green). When the state is invalid, the error text will be shown
-        below the field. State and error properties can easily be controlled by either computed or watched properties.
-      </p>
-
-      <pre>
-&lt;form&gt;
-  &lt;n-form-field id="name" label="Navn" type="text" :state="name.length >= 3" error="Navn skal være minimum 3 tegn." v-model="name" /&gt;
-&lt;/form&gt;
-</pre>
-
-      <n-slim>
-        <form><n-form-field id="name" label="Navn" type="text" :state="name.length >= 3" error="Navn skal være minimum 3 tegn." v-model="name" /></form>
-      </n-slim>
-
+      <form-field-example />
     </n-section>
 
     <n-section>
@@ -190,6 +148,8 @@
 
           <section class="form-section">
 
+            <n-form-field id="navn" label="Navn" type="text" v-model="name"/>
+
             <n-form-field 
               id="vej" 
               label="Vej og vejnummer" 
@@ -206,13 +166,6 @@
                 <n-form-field id="by" label="By" type="text"/>
               </b-col>
             </b-row>
-
-            <n-form-field id="navn" label="Navn" type="text" v-model="name"/>
-
-            <n-form-field id="witherror" label="Validering minimum 3 tegn" type="text" v-model="witherror">
-              <div v-if="!$v.witherror.required">Feltet er påkrævet.</div>
-              <div v-else-if="!$v.witherror.minLength">Skal være minimum 3 tegn langt.</div>
-            </n-form-field>
 
           </section>
           
@@ -247,18 +200,14 @@
 
 <script lang="ts">
 import Vue from 'vue';
+import FormField from '../examples/FormField.vue';
 import propertyTable from '../helpers/propertyTable.vue';
 import { required, minLength } from 'vuelidate/lib/validators';
-import { ComponentOptions } from 'vue';
-
-interface IValidationState {
-  state: boolean | null,
-  error?: string | null,
-}
 
 export default Vue.extend({
   components: {
-    'property-table': propertyTable
+    'property-table': propertyTable,
+    'form-field-example': FormField,
   },
   data: () => ({
     name: '',
