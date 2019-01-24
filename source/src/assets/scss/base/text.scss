@@ -1,0 +1,59 @@
+.page-title {
+    text-align: center;
+    margin-top: 5em;
+
+    small {
+        display: block;
+        margin-top: 0.5em;
+    }
+
+    h1 {
+        color: $color-darkblue;
+        font-size: 4em;
+        font-weight: 900;
+
+        small {
+            font-size: 0.6em;
+        }
+    }
+}
+
+h4 {
+    font-weight: 700;
+}
+
+.page-title + section.n-style {
+    padding-top: 2em;
+}
+
+p + img {
+    margin-top: 2em;
+}
+
+img {
+    width: 100%;
+}
+
+img + p {
+    margin-top: 3em;
+}
+
+.item-grid {
+
+    $ig-margin: 10px;
+
+    @extend .d-flex;
+    @extend .flex-wrap;
+    @extend .justify-content-between;
+
+    @for $i from 1 through 16 {
+        &.ipl-#{$i} {
+            > * {
+                max-width: calc((100% / #{$i}) - (#{$ig-margin} / 2));
+                height: 100%;
+                object-fit: cover;
+                margin-bottom: $ig-margin;
+            }
+        }
+    }
+}

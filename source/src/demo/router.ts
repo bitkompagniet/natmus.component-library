@@ -5,6 +5,7 @@ import Forms from './views/Forms.vue';
 import Elements from './views/Elements.vue';
 import FullExample from './views/FullExample.vue';
 import BootstrapStyling from './views/BootstrapStyling.vue';
+import TextPage from './views/TextPage.vue';
 
 Vue.use(Router);
 
@@ -35,6 +36,11 @@ export default new Router({
       name: 'bootstrap-styling',
       component: BootstrapStyling,
     },
+    {
+      path: '/text-page',
+      name: 'text-page',
+      component: TextPage,
+    }
     // {
     //   path: '/about',
     //   name: 'about',
