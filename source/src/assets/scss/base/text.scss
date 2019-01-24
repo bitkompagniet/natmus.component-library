@@ -26,15 +26,15 @@ h4 {
     padding-top: 2em;
 }
 
-p + img {
+p + img.full {
     margin-top: 2em;
 }
 
-img {
+img.full {
     width: 100%;
 }
 
-img + p {
+img.full + p {
     margin-top: 3em;
 }
 
@@ -53,6 +53,7 @@ img + p {
                 height: 100%;
                 object-fit: cover;
                 margin-bottom: $ig-margin;
+                width: 100%;
             }
         }
     }

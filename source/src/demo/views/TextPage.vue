@@ -16,7 +16,7 @@
             close to 40,000 years ago, where humans reached continental Eurasia.
           </p>
 
-          <img src="../assets/images/globe.jpg" />
+          <img class="full" src="../assets/images/globe.jpg" />
           
           <p>
             Modern humans (50,000 – 10,000 years ago) completed the migration to all the continents
