@@ -42,7 +42,7 @@ export default Vue.extend({
     },
     computed: {
         activeStep(): IStep {
-            const match = firstOrDefault(this.steps, item => item.key === this.active);
+            const match = firstOrDefault(this.steps as IStep[], item => item.key === this.active);
             return match || this.steps[0];
         }
     }
