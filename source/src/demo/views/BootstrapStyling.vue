@@ -129,6 +129,10 @@
             </ul>
 
         </n-section>
+
+        <n-section>
+            <d-examples-popover />
+        </n-section>
     </div>
 </template>
 

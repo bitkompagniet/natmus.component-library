@@ -1,0 +1,57 @@
+
+
+.popover {
+    $popover-bg-color: $color-darkblue;
+
+    background-color: $popover-bg-color;
+    border: 3px solid $popover-bg-color;
+    border-radius: 0;
+    color: $color-white;
+
+    .popover-header, .popover-body {
+        color: $color-white;
+    }
+
+    .popover-header {
+        background-color: $popover-bg-color;
+        border: none;
+        padding: 0.5rem 0.75rem 0 0.75rem;
+    }
+
+    $directions: top left right bottom;
+
+    @each $direction in $directions {
+        &.bs-popover-#{$direction}, &.bs-popover-auto[x-placement^="#{$direction}"] {
+            .arrow {
+                &::before, &::after {
+                    border-#{$direction}-color: $popover-bg-color;
+                }
+            }
+        }
+    }
+
+    &.bs-popover-top, &.bs-popover-auto[x-placement^="top"] {
+
+        top: -20px;
+
+        .arrow {
+
+            bottom: calc((0.6rem + 1px) * -1);
+
+            &::before, &::after {
+                border-top-color: $popover-bg-color;
+                //border-width: 0.5rem 2rem 0;
+            }
+        }
+    }
+
+    .arrow {
+        background-color: transparent;
+        // border-color: $popover-bg-color;
+
+        &::after, &::before {
+            // border-color: $popover-bg-color;
+            // border-top-color: $popover-bg-color;
+        }
+    }
+}
