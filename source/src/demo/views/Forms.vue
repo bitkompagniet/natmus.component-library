@@ -156,6 +156,14 @@
             
             <n-form-field id="password" label="Hemmeligt" type="password" v-model="password"/>
 
+            <b-form-select v-model="selected" :options="[
+              { value: null, text: 'Vælg antal kæledyr' },
+              { value: '1', text: 'Ét kæledyr' },
+              { value: '2', text: 'To kæledyr' },
+              { value: '3', text: 'Tre kæledyr' },
+              { value: '4+', text: 'Fire eller flere kæledyr' },
+            ]" />
+
             <n-form-field 
               id="vej" 
               label="Vej og vejnummer" 
@@ -217,6 +225,7 @@ export default Vue.extend({
     colors: null,
     story: '',
     password: '',
+    selected: null,
   }),
   computed: {
     noCharacters(): string {

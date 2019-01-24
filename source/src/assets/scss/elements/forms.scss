@@ -28,6 +28,11 @@
     padding: 10px 15px;
 }
 
+.n-style select.form-control {
+    border: $input-border-width solid black;
+    border-radius: 0;
+}
+
 
 section.white .n-style input,
 section.white input.n-style,
