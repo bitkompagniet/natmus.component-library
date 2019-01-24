@@ -98,6 +98,10 @@
     </n-section>
 
 		<n-section>
+			<d-examples-alert />
+		</n-section>
+
+		<n-section>
 			<h2>StepProgress</h2>
 
 			<p>

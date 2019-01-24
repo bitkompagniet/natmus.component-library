@@ -2,7 +2,7 @@
   <div id="app">
     <n-nav-topbar complex>
       <b-nav-item to="/">Structure</b-nav-item>
-      <b-nav-item to="/elements">Elements</b-nav-item>
+      <b-nav-item to="/components">Components</b-nav-item>
       <b-nav-item to="/forms">Forms</b-nav-item>
       <b-nav-item to="/bootstrap-styling">Bootstrap styling</b-nav-item>
       <b-nav-item to="/full">Full page example</b-nav-item>

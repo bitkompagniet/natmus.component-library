@@ -2,7 +2,7 @@ import Vue from 'vue';
 import Router from 'vue-router';
 import Structure from './views/Structure.vue';
 import Forms from './views/Forms.vue';
-import Elements from './views/Elements.vue';
+import Components from './views/Components.vue';
 import FullExample from './views/FullExample.vue';
 import BootstrapStyling from './views/BootstrapStyling.vue';
 import TextPage from './views/TextPage.vue';
@@ -17,9 +17,9 @@ export default new Router({
       component: Structure,
     },
     {
-      path: '/elements',
-      name: 'elements',
-      component: Elements,
+      path: '/components',
+      name: 'components',
+      component: Components,
     },
     {
       path: '/forms',
