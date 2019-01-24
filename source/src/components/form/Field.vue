@@ -40,6 +40,8 @@ const allowedTypes = [
     'email',
     'number',
     'textarea',
+    'password',
+    'url'
 ];
 
 export interface IError {
@@ -61,6 +63,7 @@ export default Vue.extend({
         type: {
             type: String,
             validator: (value: string) => allowedTypes.indexOf(value) !== -1,
+            default: 'text'
         },
         value: [String, Number],
     },

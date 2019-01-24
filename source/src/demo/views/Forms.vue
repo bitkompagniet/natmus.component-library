@@ -153,6 +153,8 @@
           <section class="form-section">
 
             <n-form-field id="navn" label="Navn" type="text" v-model="name"/>
+            
+            <n-form-field id="password" label="Hemmeligt" type="password" v-model="password"/>
 
             <n-form-field 
               id="vej" 
@@ -214,6 +216,7 @@ export default Vue.extend({
     years: null,
     colors: null,
     story: '',
+    password: '',
   }),
   computed: {
     noCharacters(): string {

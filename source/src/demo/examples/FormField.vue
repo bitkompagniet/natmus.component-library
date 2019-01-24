@@ -75,6 +75,61 @@ export default Vue.extend({
         <div v-else-if="!$v.validated.minLength">Minimum 3 characters.</div>
       </n-form-field>
     </form>
+
+    <h3>Properties</h3>
+
+    <d-helpers-property-table :items="[
+        {
+          name: '@input',
+          type: 'function(newValue)',
+          default: 'null',
+          description: 'The function to call when the input requests a value update. Alternatively, use v-model.',
+        },
+        {
+          name: 'description',
+          type: 'string',
+          default: 'null',
+          description: 'Optional. Show a description below the field',
+        },
+        {
+          name: 'id',
+          type: 'string',
+          default: 'null',
+          description: 'Required. id of field.',
+        },
+        {
+          name: 'label',
+          type: 'string',
+          default: 'null',
+          description: 'Optional. Label to put above field. If omitted, will not show or take up space for label.',
+        },
+        {
+          name: 'placeholder',
+          type: 'string',
+          default: 'null',
+          description: 'Optional. Placeholder description in field shown before any input.',
+        },
+        {
+          name: 'rows',
+          type: 'number',
+          default: 'null',
+          description: 'Optional. When type is &quot;textarea&quot;, this decides the control height in rows.',
+        },
+        {
+          name: 'type',
+          type: 'string',
+          default: '&quot;text&quot;',
+          description: 'The type. One of &quot;text&quot;, &quot;email&quot;, &quot;number&quot;, &quot;textarea&quot;, &quot;password&quot; or &quot;url&quot;.',
+        },
+        {
+          name: 'value',
+          type: 'string | number',
+          default: 'null',
+          description: 'The current value of the input. Alternatively, use v-model.',
+        },
+
+      ]"
+    />
   </div>
 </template>
 
