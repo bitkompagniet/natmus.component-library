@@ -56,6 +56,7 @@ export default Vue.extend({
 
 <style lang="scss" scoped>
 
+@import '../../assets/scss/base/vars.scss';
 @import '../../assets/scss/base/colors.scss';
 
 .step-progress-container {
@@ -78,7 +79,7 @@ $active: $color-orange;
         flex: 1;
         min-width: 12em;
         background-color: transparent;
-        border: 4px solid $color-white;
+        border: $button-border-width solid $color-white;
         padding: 0.7em;
         text-align: center;
         font-weight: 500;

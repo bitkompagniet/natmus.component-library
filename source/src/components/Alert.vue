@@ -25,6 +25,7 @@ export default Vue.extend({
 
 <style lang="scss">
 
+@import '../assets/scss/base/vars.scss';
 @import '../assets/scss/base/colors.scss';
 
 .n-style.alert {
@@ -59,7 +60,7 @@ export default Vue.extend({
 
     &.alert-info {
         background-color: transparent;
-        border: 2px solid black;
+        border: $button-border-width solid black;
         color: $color-black;
 
         .close {

@@ -5,7 +5,7 @@
 
 .n-style input, input.n-style,
 .n-style textarea.form-control, textarea.form-control.n-style {
-    border: 3px solid $color-white;
+    border: $input-border-width solid $color-white;
     border-radius: 0;
 
     &:focus {
@@ -33,7 +33,7 @@ section.white .n-style input,
 section.white input.n-style,
 section.white .n-style textarea.form-control,
 section.white textarea.form-control.n-style {
-    border: 3px solid $color-darkblue;
+    border: $input-border-width solid $color-darkblue;
 }
 
 .n-style fieldset .form-text.text-muted,
