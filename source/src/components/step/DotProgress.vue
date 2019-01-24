@@ -30,9 +30,6 @@ function firstOrDefault<T>(items: T[], predicate: (item: T) => boolean): T | nul
 }
 
 export default Vue.extend({
-    mounted() {
-        console.log(this.$listeners);
-    },
     props: {
         steps: {
             type: Array as () => IStep[],

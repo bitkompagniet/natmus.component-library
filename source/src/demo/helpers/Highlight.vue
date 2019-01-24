@@ -22,8 +22,5 @@ export default Vue.extend({
            return null;
        }
    },
-   mounted() {
-       console.log(this.$slots);
-   }
 });
 </script>

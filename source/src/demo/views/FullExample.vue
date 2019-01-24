@@ -139,11 +139,6 @@ export default Vue.extend({
             return this.steps[this.index].key;
         }
     },
-    methods: {
-        log(e: any) : void {
-            console.log(e);
-        }
-    }
 })
 </script>
 

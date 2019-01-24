@@ -9,14 +9,11 @@
 <script lang="ts">
 import Vue from 'vue'
 export default Vue.extend({
-    mounted() {
-        console.log(this);
-    },
     computed: {
-        isSuccess() {
+        isSuccess(): boolean {
             return this.$attrs.variant === "success";
         },
-        isDanger() {
+        isDanger(): boolean {
             return this.$attrs.variant === "danger";
         },
     }

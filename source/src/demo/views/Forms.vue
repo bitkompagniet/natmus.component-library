@@ -152,12 +152,12 @@
 
           <section class="form-section">
 
-            <n-form-field id="navn" label="Navn" type="text" v-model="name"/>
+            <n-form-field :id="`navn-${theme}`" label="Navn" type="text" v-model="name"/>
             
-            <n-form-field id="password" label="Hemmeligt" type="password" v-model="password"/>
+            <n-form-field :id="`password-${theme}`" label="Hemmeligt" type="password" v-model="password"/>
 
             <n-form-field 
-              id="vej" 
+              :id="`vej-${theme}`" 
               label="Vej og vejnummer" 
               type="text" 
               placeholder="Vej, vejnummer, etage og dør" 
@@ -166,10 +166,10 @@
 
             <b-row>
               <b-col md="4">
-                <n-form-field id="postnummer" label="Postnummer" type="number"/>
+                <n-form-field :id="`postnummer-${theme}`" label="Postnummer" type="number"/>
               </b-col>
               <b-col md="8">
-                <n-form-field id="by" label="By" type="text"/>
+                <n-form-field :id="`by-${theme}`" label="By" type="text"/>
               </b-col>
             </b-row>
 
@@ -191,21 +191,19 @@
           </section>
 
           <section class="form-section">
-            <n-form-field id="longtext" label="Historie" type="textarea" :rows="8" v-model="long" :description="noCharacters" />
+            <n-form-field :id="`longtext-${theme}`" label="Historie" type="textarea" :rows="8" v-model="long" :description="noCharacters" />
   
+            <n-form-checkbox
+              v-model="checked"
+            >
+              Jeg accepterer brugen af min data.
+            </n-form-checkbox>
+
             <div class="d-flex justify-content-end">
               <n-button variant="primary">Submit</n-button>
             </div>
           </section>
-          <n-form-checkbox
-            v-model="checked"
-          >
-            Jeg accepterer brugen af min data.
-          </n-form-checkbox>
-
-          <div class="d-flex justify-content-end">
-            <n-button variant="primary">Submit</n-button>
-          </div>
+          
 
         </b-form>
       </n-slim>
