@@ -1,20 +1,20 @@
 <template>
     <n-section theme="darkblue">
-        <b-row>
+        <b-row style="min-height: 420px">
             <b-col :cols="5">
-                <div class="introduction as fade-in" :key="'1'" v-if="step === '1'">
+                <div class="introduction fade-in" :key="'1'" v-if="step === '1'">
                     <h2>Bidrag til historien</h2>
 
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur vel ipsam, quisquam officiis quibusdam ipsa explicabo maiores dolorum commodi qui sunt in suscipit sint cum assumenda esse labore unde iusto?</p>
                 </div>
 
-                <div class="introduction de fade-in" :key="'2'" v-if="step === '2'">
+                <div class="introduction fade-in" :key="'2'" v-if="step === '2'">
                     <h2>Opret en bruger</h2>
                     
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate soluta in quod hic labore facere qui, maiores officiis ex nihil error sit nisi itaque fugiat mollitia corporis unde eum dicta.</p>
                 </div>
 
-                <div class="introduction er fade-in" :key="'3'" v-if="step === '3'">
+                <div class="introduction fade-in" :key="'3'" v-if="step === '3'">
                     <h2>Skriv din historie</h2>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, rerum suscipit temporibus perspiciatis beatae esse illum pariatur atque, assumenda animi voluptas voluptatibus perferendis dignissimos? Minus voluptates a numquam fugit voluptas?</p>
                 </div>
@@ -27,8 +27,14 @@
                 />
             </b-col>
             <b-col :cols="6" :offset="1">
-                <div class="image">
+                <div class="image fade-in" :key="'1'" v-if="step === '1'">
+                    <img class="full framed" src="../assets/images/summer_party_2.jpg" />
+                </div>
+                <div class="image fade-in" :key="'2'" v-if="step === '2'">
                     <img class="full framed" src="../assets/images/globe.jpg" />
+                </div>
+                <div class="image fade-in" :key="'3'" v-if="step === '3'">
+                    <img class="full framed" src="../assets/images/apartment_livingroom.jpg" />
                 </div>
             </b-col>
         </b-row>

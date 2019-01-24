@@ -11,7 +11,12 @@
     </n-nav-topbar>
     <router-view />
     <n-footer>
-      <p>This is a footer.</p>
+      <b-row>
+        <b-col>BL</b-col>
+        <b-col>NM</b-col>
+        <b-col>Kontakt</b-col>
+        <b-col>Mere</b-col>
+      </b-row>
     </n-footer>
   </div>
 </template>

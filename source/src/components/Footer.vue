@@ -1,6 +1,8 @@
 <template>
     <footer class="standard">
-        <p>This is the footer.</p>
+        <b-container>
+            <slot></slot>
+        </b-container>
     </footer>
 </template>
 
