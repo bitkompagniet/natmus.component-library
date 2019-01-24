@@ -45,9 +45,15 @@
     }
 }
 
-.darkblue .btn-primary.n-style, 
-.darkblue .btn-darkblue.n-style {
-    $c: $color-lightgrey;
-    background-color: $c;
-    border-color: $c;
+.darkblue {
+    .btn-primary.n-style, .btn-darkblue.n-style {
+        $c: $color-lightgrey;
+        background-color: $c;
+        border-color: $c;
+    }
+
+    .btn-secondary.n-style {
+        color: $color-white;
+        border-color: $color-white;
+    }
 }

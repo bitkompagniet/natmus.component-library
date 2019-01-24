@@ -1,3 +1,7 @@
 .pad-top {
     @extend .mt-5;
 }
+
+img.framed {
+    border: 7px solid white;
+}

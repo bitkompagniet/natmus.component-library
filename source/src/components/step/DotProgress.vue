@@ -79,6 +79,14 @@ $sizes: (
         .circle + .circle {
             margin-left: $spacing;
         }
+
+        &.white .circle {
+            border-color: white;
+
+            &.active {
+                background-color: white;
+            }
+        }
     }
 
     .dot-progress {

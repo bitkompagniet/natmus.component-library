@@ -6,6 +6,7 @@ import Components from './views/Components.vue';
 import FullExample from './views/FullExample.vue';
 import BootstrapStyling from './views/BootstrapStyling.vue';
 import TextPage from './views/TextPage.vue';
+import StepPage from './views/StepPage.vue';
 
 Vue.use(Router);
 
@@ -40,7 +41,12 @@ export default new Router({
       path: '/text-page',
       name: 'text-page',
       component: TextPage,
-    }
+    },
+    {
+      path: '/step-page',
+      name: 'step-page',
+      component: StepPage,
+    },
     // {
     //   path: '/about',
     //   name: 'about',
