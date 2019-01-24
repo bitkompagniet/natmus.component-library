@@ -87,6 +87,26 @@
     <n-nav-topbar><router-link to="/">A link</router-link></n-nav-topbar>
 
     <n-section>
+      <h2>Title</h2>
+
+      <p>
+        When you want to start a page with a colossal title, use this <em>before</em>
+        and <em>outside</em> any sections. The section that follows will have a special
+        padding and no divider.
+      </p>
+
+      <h3>Usage</h3>
+
+<d-helpers-highlight lang="html">
+&lt;n-title title="My title" subtitle="With a subtitle" /&gt;
+</d-helpers-highlight>
+
+      <h3>Example</h3>
+    </n-section>
+
+    <n-title title="My title" subtitle="With a subtitle" />
+
+    <n-section>
       <h2>Sections</h2>
 
       <p>

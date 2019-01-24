@@ -58,3 +58,13 @@ img.full + p {
         }
     }
 }
+
+a {
+    $a-color: lighten($color-darkred, 25%);
+
+    color: $a-color;
+
+    &:hover {
+        color: $a-color;
+    }
+}

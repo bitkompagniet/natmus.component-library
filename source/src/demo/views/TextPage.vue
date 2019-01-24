@@ -7,7 +7,7 @@
           <h3>Homo Sapiens Migration</h3>
           <p>
             While Homo sapiens were decidedly more advanced than other hominids, when they first
-            moved out of Africa some 45,000 years ago, they were only equipped with stone tools for hunting
+            moved out of <a href="https://goo.gl/maps/f2kpMNxa5j52">Africa</a> some 45,000 years ago, they were only equipped with stone tools for hunting
             and cutting. Despite those initial limitations, 30,000 years later Homo sapiens would inhabit
             almost every environment on earth and had a presence in every continent except Antarctica. Homo
             sapiens in fact moved further and faster than all other hominids. While it is hard to attribute a
@@ -71,8 +71,10 @@
             for the coast.
           </p>
 
-          <div class="d-flex flex-wrap justify-content-between">
-            <img v-for="n in 4" :key="n" src="../assets/images/globe.jpg" style="width: 359px; height: 239px; margin-bottom: 15px;" />
+          <h2>Image grid</h2>
+
+          <div class="item-grid ipl-2">
+            <img v-for="n in 4" :key="n" src="../assets/images/globe.jpg" />
           </div>
 
           <div class="item-grid ipl-3">
