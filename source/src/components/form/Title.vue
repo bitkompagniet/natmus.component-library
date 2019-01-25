@@ -26,6 +26,10 @@ export default Vue.extend({
     text-align: center;
     margin-bottom: 3em;
 
+    &:not(:first-child) {
+        margin-top: 5em;
+    }
+
     h2 {
         font-size: 2em;
         font-weight: bold;
@@ -33,6 +37,7 @@ export default Vue.extend({
 
     h3 {
         font-size: 1.5em;
+        margin-top: 0;
         font-weight: normal;
     }
 }

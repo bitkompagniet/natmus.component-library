@@ -56,13 +56,19 @@ export default Vue.extend({
 <style lang="scss">
 
 .quill-wrapper {
-    $shadow-color: #ddd;
-    box-shadow: 0px 0px 5px 0px $shadow-color;
+    $shadow-color: #ccc;
+    box-shadow: 0px 0px 4px 0px $shadow-color;
+    border: none;
+
+    .ql-toolbar, .ql-container, .ql-editor {
+        border: none;
+    }
 
     .ql-editor {
         font-size: 16px;
         font-family: 'Nationale';
         padding: 3em 3em 2em 3em;
+        border: none;
 
         &::before {
             left: 48px;

@@ -61,6 +61,7 @@ export default Vue.extend({
 
 .step-progress-container {
     display: flex;
+    justify-content: center;
 }
 
 $passive: $color-beige;
@@ -74,6 +75,7 @@ $active: $color-orange;
 .step-progress-step {
     // flex-basis: 0;
     display: flex;
+    
 
     .step-progress-content {
         flex: 1;
@@ -82,7 +84,7 @@ $active: $color-orange;
         border: $button-border-width solid $color-white;
         padding: 0.7em;
         text-align: center;
-        font-weight: 500;
+        font-weight: 700;
         color: $color-white;
     }
 

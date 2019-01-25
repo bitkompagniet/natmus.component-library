@@ -7,6 +7,7 @@ import FullExample from './views/FullExample.vue';
 import BootstrapStyling from './views/BootstrapStyling.vue';
 import TextPage from './views/TextPage.vue';
 import StepPage from './views/StepPage.vue';
+import RichTextExample from './views/RichTextExample.vue';
 
 Vue.use(Router);
 
@@ -51,6 +52,11 @@ export default new Router({
       path: '/examples/full',
       name: 'full',
       component: FullExample,
+    },
+    {
+      path: '/examples/rich-text',
+      name: 'rich-text',
+      component: RichTextExample,
     },
     // {
     //   path: '/about',
