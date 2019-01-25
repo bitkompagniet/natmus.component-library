@@ -63,7 +63,11 @@ export default Vue.extend({
         setInterval(() => {
             if (this.auto) {
                 const steps = this.steps as IKey[];
-                const max = parseInt(_.maxBy(steps, item => item.key).key, 10);
+                const maxStep = _.maxBy(steps, item => item.key);
+
+                if (maxStep == null) return;
+
+                const max = parseInt(maxStep.key, 10);
                 const current = parseInt(this.step as string, 10);
 
                 const next = current === max ? 1 : current + 1;
