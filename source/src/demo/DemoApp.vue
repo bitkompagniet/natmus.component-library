@@ -7,9 +7,9 @@
       <b-nav-item to="/bootstrap-styling">Styling</b-nav-item>
 
       <b-nav-item-dropdown id="example-dropdown" text="Examples">
-        <b-dropdown-item to="/text-page">Example: Text</b-dropdown-item>
-        <b-dropdown-item to="/step-page">Example: Steps</b-dropdown-item>
-        <b-dropdown-item to="/full">Example: Mix</b-dropdown-item>
+        <b-dropdown-item to="/examples/text-page">Full text page</b-dropdown-item>
+        <b-dropdown-item to="/examples/step-page">Auto-sliding introduction</b-dropdown-item>
+        <b-dropdown-item to="/examples/full">Sections and elements</b-dropdown-item>
       </b-nav-item-dropdown>
       
     </n-nav-topbar>

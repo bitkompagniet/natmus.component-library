@@ -51,6 +51,7 @@ export default Vue.extend({
 
                 &.active {
                     color: $color-lightgrey;
+                    font-weight: bold;
                 }
             }
         }

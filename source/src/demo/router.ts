@@ -33,24 +33,24 @@ export default new Router({
       component: Forms,
     },
     {
-      path: '/full',
-      name: 'full',
-      component: FullExample,
-    },
-    {
       path: '/bootstrap-styling',
       name: 'bootstrap-styling',
       component: BootstrapStyling,
     },
     {
-      path: '/text-page',
+      path: '/examples/text-page',
       name: 'text-page',
       component: TextPage,
     },
     {
-      path: '/step-page',
+      path: '/examples/step-page',
       name: 'step-page',
       component: StepPage,
+    },
+    {
+      path: '/examples/full',
+      name: 'full',
+      component: FullExample,
     },
     // {
     //   path: '/about',
