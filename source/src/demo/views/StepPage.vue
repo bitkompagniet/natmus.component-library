@@ -20,7 +20,7 @@
                 </div>
 
                 <n-step-dot-progress 
-                    class="white"
+                    class="white sm"
                     :active="step"
                     :steps="steps"
                     @click="stepClick"

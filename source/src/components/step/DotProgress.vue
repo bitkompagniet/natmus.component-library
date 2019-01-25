@@ -89,6 +89,12 @@ $sizes: (
         }
     }
 
+    .dot-progress.sm {
+        .circle {
+            border-width: 1px;
+        }
+    }
+
     .dot-progress {
         @extend .dot-progress.md;
     }

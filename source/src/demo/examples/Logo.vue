@@ -10,17 +10,23 @@
         <h3>Basic usage</h3>
 
 <d-helpers-highlight lang="html">
-&lt;n-logo full /&gt;
+&lt;n-logo full width="400" /&gt;
 </d-helpers-highlight>
 
         <h3>Example</h3>
 
-        <n-logo full />
+        <n-logo full width="400" />
 
         <h3>Properties</h3>
 
         <d-helpers-property-table
             :items="[
+                {
+                    name: 'full',
+                    type: 'bool',
+                    default: 'false',
+                    description: 'Display the full logo with name. If false, only the N logo will be displayed.'
+                },
                 {
                     name: 'white',
                     type: 'bool',
@@ -28,10 +34,10 @@
                     description: 'Display as white against a dark background.'
                 },
                 {
-                    name: 'full',
-                    type: 'bool',
-                    default: 'false',
-                    description: 'Display the full logo with name. If false, only the N logo will be displayed.'
+                    name: 'width',
+                    type: 'number',
+                    default: 'null',
+                    description: 'Optional. Set the logo width. Otherwise it will scale to container width.'
                 },
             ]"
         />
