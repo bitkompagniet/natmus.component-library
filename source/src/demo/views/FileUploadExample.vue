@@ -50,5 +50,11 @@
 <script lang="ts">
 import Vue from 'vue';
 
-export default Vue.extend({});
+export default Vue.extend({
+    methods: {
+        log(message: string): void {
+            window.alert(message);
+        }
+    }
+});
 </script>

@@ -82,9 +82,11 @@
 
       <h3>Example</h3>
 
-    </n-section>
+      <p>
+        A good example can be seen at the top of this page.
+      </p>
 
-    <n-nav-topbar><router-link to="/">A link</router-link></n-nav-topbar>
+    </n-section>
 
     <n-section>
       <h2>Title</h2>

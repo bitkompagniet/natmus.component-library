@@ -168,10 +168,6 @@
 		</n-section>
 
 		<n-section>
-			<d-examples-wizard />
-		</n-section>
-
-		<n-section>
 			<d-examples-dot-progress />
 		</n-section>
 
