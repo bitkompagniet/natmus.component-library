@@ -2,6 +2,10 @@
     <div>
         <h2>FileList</h2>
 
+        <p>
+            Displays a list of files, sorted by extension. Exposes handlers for open and/or delete.
+        </p>
+
         <h3>Usage</h3>
 
 <d-helpers-highlight lang="html">
