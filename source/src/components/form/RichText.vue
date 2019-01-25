@@ -62,6 +62,11 @@ export default Vue.extend({
     .ql-editor {
         font-size: 16px;
         font-family: 'Nationale';
+        padding: 3em 3em 2em 3em;
+
+        &::before {
+            left: 48px;
+        }
 
         h2 {
             margin-bottom: 0.5em;
