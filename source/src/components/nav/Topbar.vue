@@ -36,7 +36,7 @@ export default Vue.extend({
 
     ul.nav {
         margin-top: auto;
-        margin-bottom: 13px;
+        margin-bottom: 11px;
 
         li.nav-item {
 
