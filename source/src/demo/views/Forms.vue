@@ -144,6 +144,10 @@
 
     </n-section>
 
+    <n-section>
+      <d-examples-file-list />
+    </n-section>
+
     <n-section v-for="theme in ['lightgrey', 'white', 'darkblue', 'rose', 'darkred']" :key="theme" :theme="theme" >
       <n-slim>
         <n-form-title title="Complete example" :subtitle="`A ${theme} form with all input types`"/>
