@@ -31,13 +31,13 @@
             </b-col>
             <b-col :cols="7" :offset="1" style="min-height: 428px;">
                 <div class="image fade-in" :key="'1'" v-if="step === '1'">
-                    <img class="full framed" src="../assets/images/summer_party_2.jpg" />
+                    <img class="full framed" src="../assets/images/introduction_1.png" />
                 </div>
                 <div class="image fade-in" :key="'2'" v-if="step === '2'">
-                    <img class="full framed" src="../assets/images/globe.jpg" />
+                    <img class="full framed" src="../assets/images/introduction_2.png" />
                 </div>
                 <div class="image fade-in" :key="'3'" v-if="step === '3'">
-                    <img class="full framed" src="../assets/images/apartment_livingroom.jpg" />
+                    <img class="full framed" src="../assets/images/introduction_3.png" />
                 </div>
             </b-col>
         </b-row>
@@ -73,7 +73,7 @@ export default Vue.extend({
                 const next = current === max ? 1 : current + 1;
                 this.step = next.toString();
             }
-        }, 5000);
+        }, 10000);
     },
     data(): IData {
         return {
