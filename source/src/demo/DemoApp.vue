@@ -17,7 +17,7 @@
     <n-footer>
       <b-row>
         <b-col><img src="../assets/images/BL.svg" style="width: 120px" /></b-col>
-        <b-col><n-logo white /></b-col>
+        <b-col><n-logo white :width="100" /></b-col>
         <b-col>
           <h3>Generelt</h3>
           <ul>
