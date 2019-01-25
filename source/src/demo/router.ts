@@ -14,6 +14,11 @@ export default new Router({
   routes: [
     {
       path: '/',
+      name: 'home',
+      redirect: 'structure',
+    },
+    {
+      path: '/structure',
       name: 'structure',
       component: Structure,
     },

@@ -4,24 +4,28 @@
         alt="Nationalmuseet"
         v-if="!full && !white"
         :style="styles"
+        @click="$emit('click')"
     />
     <img 
         src="../assets/images/nm_logo_full.svg" 
         :alt="styles.width"
         v-else-if="full && !white"
         :style="styles"
+        @click="$emit('click')"
     />
     <img 
         src="../assets/images/nm_logo_white.svg" 
         alt="Nationalmuseet"
         v-else-if="!full && white"
         :style="styles"
+        @click="$emit('click')"
     />
     <img 
         src="../assets/images/nm_logo_white_full.svg" 
         alt="Nationalmuseet"
         v-else-if="full && white"
         :style="styles"
+        @click="$emit('click')"
     />
 </template>
 
@@ -30,6 +34,7 @@ import Vue from 'vue';
 
 interface IComputedStyles {
     width?: string;
+    cursor?: string;
 }
 
 export default Vue.extend({
@@ -55,7 +60,10 @@ export default Vue.extend({
                 result.width = this.width + 'px';
             }
 
-            console.log(result);
+            if (this.$listeners.click) {
+                result.cursor = 'pointer';
+            }
+
             return result;
         }
     }

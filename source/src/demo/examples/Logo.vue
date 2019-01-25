@@ -15,12 +15,18 @@
 
         <h3>Example</h3>
 
-        <n-logo full width="400" />
+        <n-logo full :width="400" />
 
         <h3>Properties</h3>
 
         <d-helpers-property-table
             :items="[
+                {
+                    name: '@click',
+                    type: 'function()',
+                    default: 'null',
+                    description: 'Event handler for the click event. When bound, cursor is pointer on hover.'
+                },
                 {
                     name: 'full',
                     type: 'bool',

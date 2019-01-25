@@ -1,12 +1,18 @@
 <template>
     
-    <div class="topbar-nav n-style" :class="{ simple: !complex, complex }">
-        <div>
-            <n-logo white />
-        </div>
-        <b-nav>
-            <slot></slot>
-        </b-nav>
+    <div class="topbar-nav n-style">
+        <b-container>
+            <b-row>
+                <b-col>
+                    <div class="d-flex" style="height: 130px">
+                        <n-logo @click="$emit('logoClick')" white :width="80" />
+                        <b-nav>
+                            <slot></slot>
+                        </b-nav>
+                    </div>
+                </b-col>
+            </b-row>
+        </b-container>
     </div>
 
 </template>
@@ -16,74 +22,55 @@ import Vue from 'vue';
 
 export default Vue.extend({
     props: {
-        primary: Boolean,
-        links: Array,
-        complex: {
-            type: Boolean,
-            default: false,
-        },
     },
-    computed: {
-
-    }
 });
 </script>
 
 <style lang="scss">
 @import '../../assets/scss/base/colors.scss';
 
-.topbar-nav.n-style.simple {
+.topbar-nav.n-style {
     background-color: $color-darkblue;
-    color: white;
-    display: flex;
-    justify-content: center;
-    padding: 30px 0;
-    
-    ul.nav {
-        display: flex;
-        flex-direction: column;
-        padding: 0 0 0 1.5em;
+    color: $color-white;
+    padding: 20px 0;
 
-        li {
-            display: flex;
-            
-            font-weight: bold;
-            font-size: 1.6em;
-            margin: 0;
+    ul.nav {
+        margin-top: auto;
+        margin-bottom: 13px;
+
+        li.nav-item {
+
+            margin-left: 1.5em;
+
+            font-weight: 400;
+            font-size: 1.4em;
 
             a.nav-link {
                 color: $color-white;
                 padding: 0;
-                font-weight: normal;
+
+                &.active {
+                    color: $color-lightgrey;
+                }
             }
         }
-    }
-}
 
-.topbar-nav.n-style.complex {
-    background-color: $color-darkblue;
-    color: white;
-    display: flex;
-    padding: 30px 2em;
-    
-    ul.nav {
-        display: flex;
-        flex-direction: row;
-        padding: 0 0 0 1.5em;
-        
+        .dropdown-menu {
+            border-radius: 0;
+            border: 2px solid $color-darkblue;
+            font-size: 0.8em;
 
-        li.nav-item {
-            display: flex;
-            margin-bottom: 0;
-            font-weight: bold;
-            font-size: 1.6em;
-            margin: 0;
+            .dropdown-item {
 
-            a.nav-link {
-                color: $color-white;
-                margin: auto 0 0 0;
-                padding: 0 1em 0 0;
-                font-weight: normal;
+                &:hover, &:focus {
+                    background-color: $color-white;
+                    color: $color-black;
+                }
+
+                &.active {
+                    background-color: $color-lightgrey;
+                    color: $color-white;
+                }
             }
         }
     }

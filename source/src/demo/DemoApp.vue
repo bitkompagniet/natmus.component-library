@@ -1,13 +1,17 @@
 <template>
   <div id="app">
-    <n-nav-topbar complex>
-      <b-nav-item to="/">Structure</b-nav-item>
+    <n-nav-topbar @logoClick="logoClick">
+      <b-nav-item to="/structure">Structure</b-nav-item>
       <b-nav-item to="/components">Components</b-nav-item>
       <b-nav-item to="/forms">Forms</b-nav-item>
       <b-nav-item to="/bootstrap-styling">Styling</b-nav-item>
-      <b-nav-item to="/text-page">Example: Text</b-nav-item>
-      <b-nav-item to="/step-page">Example: Steps</b-nav-item>
-      <b-nav-item to="/full">Example: Mix</b-nav-item>
+
+      <b-nav-item-dropdown id="example-dropdown" text="Examples">
+        <b-dropdown-item to="/text-page">Example: Text</b-dropdown-item>
+        <b-dropdown-item to="/step-page">Example: Steps</b-dropdown-item>
+        <b-dropdown-item to="/full">Example: Mix</b-dropdown-item>
+      </b-nav-item-dropdown>
+      
     </n-nav-topbar>
     <router-view />
     <n-footer>
@@ -41,9 +45,15 @@
 </template>
 
 <script lang="ts">
-export default {
-  name: 'DemoApp',
-};
+import Vue from 'vue';
+
+export default Vue.extend({
+  methods: {
+    logoClick() {
+      this.$router.push('/');
+    }
+  }
+});
 </script>
 
 
