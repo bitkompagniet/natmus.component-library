@@ -8,6 +8,7 @@ import BootstrapStyling from './views/BootstrapStyling.vue';
 import TextPage from './views/TextPage.vue';
 import StepPage from './views/StepPage.vue';
 import RichTextExample from './views/RichTextExample.vue';
+import FileUploadExample from './views/FileUploadExample.vue';
 
 Vue.use(Router);
 
@@ -57,6 +58,11 @@ export default new Router({
       path: '/examples/rich-text',
       name: 'rich-text',
       component: RichTextExample,
+    },
+    {
+      path: '/examples/file-uploads',
+      name: 'file-uploads',
+      component: FileUploadExample,
     },
     // {
     //   path: '/about',

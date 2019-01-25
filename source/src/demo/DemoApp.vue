@@ -9,6 +9,7 @@
       <b-nav-item-dropdown id="example-dropdown" text="Examples">
         <b-dropdown-item to="/examples/step-page">Auto-sliding introduction</b-dropdown-item>
         <b-dropdown-item to="/examples/rich-text">Rich text example</b-dropdown-item>
+        <b-dropdown-item to="/examples/file-uploads">File attachment example</b-dropdown-item>
         <b-dropdown-item to="/examples/text-page">Full text page</b-dropdown-item>
         <b-dropdown-item to="/examples/full">Sections and elements</b-dropdown-item>
       </b-nav-item-dropdown>
