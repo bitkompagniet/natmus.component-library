@@ -81,9 +81,9 @@ export default Vue.extend({
     <d-helpers-property-table :items="[
         {
           name: '@input',
-          type: 'function(newValue)',
+          type: '(value: any) => void',
           default: 'null',
-          description: 'The function to call when the input requests a value update. Alternatively, use v-model.',
+          description: 'The handler called with the new value on update. Alternatively, use v-model.',
         },
         {
           name: 'description',
@@ -123,7 +123,7 @@ export default Vue.extend({
         },
         {
           name: 'value',
-          type: 'string | number',
+          type: 'any',
           default: 'null',
           description: 'The current value of the input. Alternatively, use v-model.',
         },

@@ -71,7 +71,7 @@
 			<d-helpers-property-table :items="[
 				{
 					name: '@click',
-					type: 'function',
+					type: '() => void',
 					default: 'undefined',
 					description: 'Bind the click event of the button.',
 				},

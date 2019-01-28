@@ -40,13 +40,13 @@
             :items="[
                 { 
                     name: '@delete',
-                    type: 'function(filename)',
+                    type: '(filename: string) => void',
                     default: 'null',
                     description: 'Handler for when a delete request is sent. Delete link is shown on hover when this is bound.',
                 },
                 { 
                     name: '@open',
-                    type: 'function(filename)',
+                    type: '(filename: string) => void',
                     default: 'null',
                     description: 'Handler for when a open request is sent. Emphasis on hover when this is bound.',
                 },
@@ -54,7 +54,7 @@
                     name: 'files',
                     type: 'string[]',
                     default: '[]',
-                    description: 'List of filenames with extensions. If path is prefixed, it will be included in the display.',
+                    description: 'List of filenames with extensions. If path is prefixed (full path), it will be included in the display.',
                 },
             ]"
         />
