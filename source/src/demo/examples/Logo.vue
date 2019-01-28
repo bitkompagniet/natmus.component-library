@@ -23,7 +23,7 @@
             :items="[
                 {
                     name: '@click',
-                    type: 'function()',
+                    type: '() => void',
                     default: 'null',
                     description: 'Event handler for the click event. When bound, cursor is pointer on hover.'
                 },

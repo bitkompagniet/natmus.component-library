@@ -102,6 +102,10 @@
 		</n-section>
 
 		<n-section>
+			<d-examples-wait />
+		</n-section>		
+
+		<n-section>
 			<h2>StepProgress</h2>
 
 			<p>
