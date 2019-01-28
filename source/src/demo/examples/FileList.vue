@@ -66,7 +66,7 @@ import Vue from 'vue';
 
 export default Vue.extend({
     methods: {
-        log(e) {
+        log(e: string): void {
             window.alert(e);
         }
     }

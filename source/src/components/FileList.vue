@@ -21,7 +21,7 @@ import { Dictionary } from 'lodash';
 
 interface IFile {
     filename: string,
-    extension: string,
+    extension: string | null,
 }
 
 export default Vue.extend({
@@ -36,16 +36,25 @@ export default Vue.extend({
             const pattern = /(?:\.([^.]+))?$/;
 
             const unsorted: string[] = this.files;
-            const wrapped: IFile[] = _.map(unsorted, name => ({ filename: name, extension: pattern.exec(name)[1] }));
+            const wrapped: IFile[] = _.map(unsorted, name => {
+                const matches = pattern.exec(name);
+                let extension = null;
+
+                if (matches && matches.length > 0) {
+                    extension = matches[1];
+                }
+
+                return { filename: name, extension };
+            });
 
             const sorted = _.sortBy(wrapped, item => item.extension);
             const files: Dictionary<IFile[]> = _.groupBy(sorted, item => item.extension);
             return files;
         },
-        canDelete() {
+        canDelete(): boolean {
             return Boolean(this.$listeners.delete);
         },
-        canOpen() {
+        canOpen(): boolean {
             return Boolean(this.$listeners.open);
         }
     }
