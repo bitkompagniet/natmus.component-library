@@ -5,6 +5,16 @@
         <font-awesome-icon icon="thumbs-up"/>
       </h2>
       <p>Font awesome icons are included by default.</p>
+
+			<h3>Usage</h3>
+<d-helpers-highlight lang="html">
+&lt;font-awesome-icon icon="thumbs-up" /&gt;
+</d-helpers-highlight>
+
+			<h3>Example</h3>
+
+			<font-awesome-icon icon="thumbs-up" />
+
     </n-section>
 
 		<n-section>

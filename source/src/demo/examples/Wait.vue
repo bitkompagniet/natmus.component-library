@@ -48,7 +48,7 @@ export default Vue.extend({
 
         <div><n-button @click="reload" variant="rose">Reload content</n-button></div>
 
-        <n-wait :until="loaded" text="Please wait, loading content..." style="min-height: 95px; margin-top: 2em;">
+        <n-wait :until="loaded" text="Please wait, loading content..." style="min-height: 97px; margin-top: 2em;">
             <p class="text-center">Content load completed.</p>
         </n-wait>
 
@@ -60,13 +60,23 @@ export default Vue.extend({
                     name: 'text',
                     type: 'string',
                     default: 'null',
-                    description: 'A text to be displayed below the load spinner while loading.'
+                    description: 'A text to be displayed below the load spinner while loading.',
                 },
                 {
                     name: 'until',
                     type: 'any',
                     default: 'true',
                     description: 'A function or other value that will be resolved to a truthyness value. If this value is true, the slot content is displayed. Otherwise, the spinner is shown.'
+                },
+            ]"
+        />
+
+        <d-helpers-slot-table
+            :items="[
+                {
+                    name: 'waiting',
+                    scope: '(none)',
+                    description: 'This named slot can be used to override the entire waiting state content, for when you don\'t want the default spinner.',
                 },
             ]"
         />

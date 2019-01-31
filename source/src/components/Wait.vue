@@ -1,11 +1,12 @@
 <template>
     <div class="awaited-content">
-        <div class="waiting" v-if="!until">
+        <slot v-if="!isComplete && $slots.waiting" name="waiting"></slot>
+        <div class="waiting" v-else-if="!isComplete">
           <div class="lds-dual-ring"></div>
           <div class="wait-text" v-if="text">{{ text }}</div>
         </div>
 
-        <slot v-if="until"></slot>
+        <slot v-if="isComplete"></slot>
     </div>
 </template>
 
