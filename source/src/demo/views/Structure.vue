@@ -2,13 +2,17 @@
   <div class="home">
 
     <n-section>
-      <h2>Nationalmuseet Component Library (NCL)</h2>
-
+      <h2>NM Component Library v.{{ version }} <br/><small>National Museum of Denmark</small></h2>
+      
       <p>
         This component library is built on top of Bootstrap Vue.
         It defines a set of components that are specific to the specification and design guides
         created by <a href="http://bitkompagniet.dk/">Bitkompagniet</a> and approved by 
         <a href="http://natmus.dk/">Nationalmuseet</a>.
+      </p>
+
+      <p>
+        See the <code>CHANGELOG.md</code> file for a version history.
       </p>
 
       <h3>Basic structure</h3>
@@ -24,19 +28,68 @@
         This could be a standard <code>div</code>.
       </p>
 
+      <p>
+        <code>n-section</code> elements are the major building blocks. On this page,
+        each component presentation is placed inside its own <code>n-section</code>.
+        Notice the large padding and the clear divider between sections. Sections with
+        colored backgrounds also exist. See the examples in the bottom of this page.
+      </p>
+
 <d-helpers-highlight lang="html">
 &lt;div&gt;
+
   &lt;n-nav-topbar&gt;
-    &lt;div&gt;&lt;router-link to="/"&gt;Home&lt;/router-link&gt;
+    &lt;b-nav-item to="/structure"&gt;Structure&lt;/b-nav-item&gt;
+    &lt;b-nav-item to="/components"&gt;Components&lt;/b-nav-item&gt;
+    &lt;b-nav-item to="/forms"&gt;Forms&lt;/b-nav-item&gt;
+    &lt;b-nav-item to="/bootstrap-styling"&gt;Styling&lt;/b-nav-item&gt;
+
+    &lt;b-nav-item-dropdown id="example-dropdown" text="Examples"&gt;
+      &lt;b-dropdown-item to="/examples/step-page"&gt;Auto-sliding introduction&lt;/b-dropdown-item&gt;
+      &lt;b-dropdown-item to="/examples/rich-text"&gt;Rich text example&lt;/b-dropdown-item&gt;
+      &lt;b-dropdown-item to="/examples/file-uploads"&gt;File attachment example&lt;/b-dropdown-item&gt;
+      &lt;b-dropdown-item to="/examples/text-page"&gt;Full text page&lt;/b-dropdown-item&gt;
+      &lt;b-dropdown-item to="/examples/full"&gt;Sections and elements&lt;/b-dropdown-item&gt;
+    &lt;/b-nav-item-dropdown&gt;
   &lt;/n-nav-topbar&gt;
+
   &lt;n-section&gt;
     &lt;h2&gt;Section header&lt;/h2&gt;
     &lt;p&gt;A paragraph&lt;/p&gt;
   &lt;/n-section&gt;
+
   &lt;n-section theme="darkred"&gt;
     &lt;h2&gt;Section header&lt;/h2&gt;
     &lt;p&gt;A paragraph&lt;/p&gt;
   &lt;/n-section&gt;
+
+  &lt;n-footer&gt;
+    &lt;b-row&gt;
+      &lt;b-col&gt;&lt;img src="../assets/images/BL.svg" style="width: 120px" /&gt;&lt;/b-col&gt;
+      &lt;b-col&gt;&lt;n-logo white :width="100" /&gt;&lt;/b-col&gt;
+      &lt;b-col&gt;
+        &lt;h3&gt;Generelt&lt;/h3&gt;
+        &lt;ul&gt;
+          &lt;li&gt;Om os&lt;/li&gt;
+          &lt;li&gt;Projektet&lt;/li&gt;
+          &lt;li&gt;Vejledning&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/b-col&gt;
+      &lt;b-col&gt;
+        &lt;h3&gt;Følg os&lt;/h3&gt;
+        &lt;ul&gt;
+          &lt;li&gt;Facebook&lt;/li&gt;
+          &lt;li&gt;LinkedIn&lt;/li&gt;
+          &lt;li&gt;Website&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/b-col&gt;
+    &lt;/b-row&gt;
+    &lt;b-row class="mt-3"&gt;
+      &lt;b-col&gt;
+        I samarbejde med BL - Danmarks Almene Boliger
+      &lt;/b-col&gt;
+    &lt;/b-row&gt;
+  &lt;/n-footer&gt;
 &lt;/div&gt;
 </d-helpers-highlight>
 
@@ -65,27 +118,7 @@
     </n-section>
 
     <n-section theme="white" no-pad style="padding-top: 5em">
-      <h2>Navigation</h2>
-      <p>
-        Most pages should have a top navigation bar, like the one you see
-        above. It could be defined in the top-most <code>App</code> component
-        for a smaller site, or it could be defined on the page level.
-      </p>
-
-      <h3>Basic usage</h3>
-
-<d-helpers-highlight lang="html">
-&lt;n-nav-topbar&gt;
-  &lt;div&gt;&lt;router-link to="/"&gt;A link&lt;/router-link&gt;&lt;/div&gt;
-&lt;/n-nav-topbar&gt;
-</d-helpers-highlight>
-
-      <h3>Example</h3>
-
-      <p>
-        A good example can be seen at the top of this page.
-      </p>
-
+      <d-examples-navigation />
     </n-section>
 
     <n-section>
@@ -210,6 +243,7 @@
 
 <script>
 import Vue from 'vue';
+import Package from '../../../package.json';
 
 export default Vue.extend({
   data: () => ({
@@ -258,5 +292,10 @@ export default Vue.extend({
       },
     ],
   }),
+  computed: {
+    version() {
+      return Package.version;
+    }
+  }
 });
 </script>

@@ -2,6 +2,7 @@ import Vue from 'vue';
 import Router from 'vue-router';
 import Structure from './views/Structure.vue';
 import Forms from './views/Forms.vue';
+import Features from './views/Features.vue';
 import Components from './views/Components.vue';
 import FullExample from './views/FullExample.vue';
 import BootstrapStyling from './views/BootstrapStyling.vue';
@@ -9,10 +10,12 @@ import TextPage from './views/TextPage.vue';
 import StepPage from './views/StepPage.vue';
 import RichTextExample from './views/RichTextExample.vue';
 import FileUploadExample from './views/FileUploadExample.vue';
+import Callback from './views/Callback.vue';
 
 Vue.use(Router);
 
 export default new Router({
+  mode: 'history',
   routes: [
     {
       path: '/',
@@ -33,6 +36,11 @@ export default new Router({
       path: '/forms',
       name: 'forms',
       component: Forms,
+    },
+    {
+      path: '/features',
+      name: 'features',
+      component: Features,
     },
     {
       path: '/bootstrap-styling',
@@ -65,9 +73,9 @@ export default new Router({
       component: FileUploadExample,
     },
     {
-      path: '*',
-      name: 'page-not-found',
-      redirect: 'structure',
+      path: '/auth-callback',
+      name: 'auth-callback',
+      component: Callback,
     },
     // {
     //   path: '/about',

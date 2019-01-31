@@ -19,7 +19,36 @@ This will produce the flat site in `source/dist/demo`. The contents of this fold
 
 ## Install as Node module
 
-TODO: write when we have decided how to do this in detail.
+When included as an NPM module in another Vue project, the exported top level object is a [Vue plugin](https://vuejs.org/v2/guide/plugins.html). 
+
+```javascript
+import Vue from 'vue';
+import nmComponentLibrary from 'nm-component-library';
+
+const options = { ... };
+
+Vue.use(nmComponentLibrary, options);
+```
+
+The plugin can _optionally_ be given an option object of the type `INclOptions`:
+
+```typescript
+interface INclOptions {
+  auth?: IAuth0Options
+}
+
+interface IAuth0Options {
+  domain: string;
+  clientID: string;
+  redirectUri: string;
+  responseType?: string;
+  scope?: string;
+}
+```
+
+Note that when the `auth` object is omitted from the configuration, the authentication sub-plugin will not be initialized, so `this.$auth` will not exist on components.
+
+The `domain` and `clientID` can be found in your [admin panel at Auth0](https://manage.auth0.com/#/applications).
 
 ## Run in development mode
 
@@ -78,6 +107,7 @@ Due to Azures handling of fonts, this file needs to be created at the root of th
 
 web.config:
 
+```xml
 <configuration>
 	<system.webServer>    
 	   <staticContent>
@@ -86,3 +116,4 @@ web.config:
 		</staticContent>
 	</system.webServer>
 </configuration>
+```

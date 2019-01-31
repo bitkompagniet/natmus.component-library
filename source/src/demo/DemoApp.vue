@@ -4,6 +4,7 @@
       <b-nav-item to="/structure">Structure</b-nav-item>
       <b-nav-item to="/components">Components</b-nav-item>
       <b-nav-item to="/forms">Forms</b-nav-item>
+      <b-nav-item to="/features">Features</b-nav-item>
       <b-nav-item to="/bootstrap-styling">Styling</b-nav-item>
 
       <b-nav-item-dropdown id="example-dropdown" text="Examples">
