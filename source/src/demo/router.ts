@@ -64,6 +64,11 @@ export default new Router({
       name: 'file-uploads',
       component: FileUploadExample,
     },
+    {
+      path: '*',
+      name: 'page-not-found',
+      redirect: 'structure',
+    },
     // {
     //   path: '/about',
     //   name: 'about',
