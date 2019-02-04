@@ -11,6 +11,8 @@ const Vuelidate = vuelidate as unknown as PluginFunction<any>;
 
 const plugin = {
     install(vue: VueConstructor, authOptions: IAuth0Options) {
+        console.log('common.ts');
+
         if (authOptions) {
             vue.use(authentication, authOptions);
         }

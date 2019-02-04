@@ -7,7 +7,7 @@ export interface INclOptions {
 
 const plugin: PluginObject<INclOptions> = {
     install(vue: VueConstructor, options: INclOptions | undefined): void {
-        window.alert('XLAF2');
+        console.log('module.ts');
         const common = require('./common');
         vue.config.productionTip = false;
 
