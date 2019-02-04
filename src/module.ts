@@ -1,7 +1,7 @@
 import { IAuth0Options } from './builds/authentication';
 import { VueConstructor, PluginObject } from 'vue';
 
-console.log('mod1x');
+window.alert('XLAF1');
 
 export interface INclOptions {
     auth?: IAuth0Options;
@@ -9,7 +9,7 @@ export interface INclOptions {
 
 const plugin: PluginObject<INclOptions> = {
     install(vue: VueConstructor, options: INclOptions | undefined): void {
-        console.log('Using NCL as module.');
+        window.alert('XLAF2');
         const common = require('./common');
         vue.config.productionTip = false;
 
