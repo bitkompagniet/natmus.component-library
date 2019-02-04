@@ -1,6 +1,8 @@
 import { IAuth0Options } from './builds/authentication';
 import { VueConstructor, PluginObject } from 'vue';
 
+console.log('mod1x');
+
 export interface INclOptions {
     auth?: IAuth0Options;
 }
