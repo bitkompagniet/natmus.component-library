@@ -7,6 +7,7 @@ export interface INclOptions {
 
 const plugin: PluginObject<INclOptions> = {
     install(vue: VueConstructor, options: INclOptions | undefined): void {
+        console.log('Using NCL as module.');
         const common = require('./common');
         vue.config.productionTip = false;
 
