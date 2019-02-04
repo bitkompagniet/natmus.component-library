@@ -19,7 +19,16 @@
 <script lang="ts">
 import Vue from 'vue';
 
+import bContainer from 'bootstrap-vue/es/components/layout/container';
+import bRow from 'bootstrap-vue/es/components/layout/row';
+import bCol from 'bootstrap-vue/es/components/layout/col';
+
 export default Vue.extend({
+    components: {
+        'b-container': bContainer,
+        'b-row': bRow,
+        'b-col': bCol,
+    },
     props: {
         theme: {
             type: String,

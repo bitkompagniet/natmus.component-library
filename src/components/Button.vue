@@ -9,10 +9,16 @@
 
 <script lang="ts">
 import Vue from 'vue';
+import bButton from 'bootstrap-vue/es/components/button/button';
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 
 const variants : string[] = ['primary', 'secondary', 'darkred', 'lightgrey', 'rose'];
 
 export default Vue.extend({
+    components: {
+        'b-button': bButton,
+        'font-awesome-icon': FontAwesomeIcon,
+    },
     props: {
         icon: String,
         disabled: Boolean,

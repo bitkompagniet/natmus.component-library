@@ -1,4 +1,6 @@
 import { VueConstructor } from 'vue';
+import 'bootstrap-vue/dist/bootstrap-vue.css';
+import '../assets/scss/app.scss';
 
 const plugin = {
     install(vue: VueConstructor) {

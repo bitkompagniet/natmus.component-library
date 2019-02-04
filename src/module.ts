@@ -1,19 +1,41 @@
-import { IAuth0Options } from './builds/authentication';
-import { VueConstructor, PluginObject } from 'vue';
+import { VueConstructor, PluginObject, PluginFunction } from 'vue';
+import authentication, { IAuth0Options } from './builds/authentication';
+import vuelidate from 'vuelidate';
+import customBootstrap from './builds/customBootstrap';
+import globalComponents from './builds/globalComponents';
+
+const Vuelidate = vuelidate as unknown as PluginFunction<any>;
 
 export interface INclOptions {
     auth?: IAuth0Options;
+    globalBootstrap: boolean;
+    globalComponents: boolean;
 }
 
 const plugin: PluginObject<INclOptions> = {
     install(vue: VueConstructor, options: INclOptions | undefined): void {
-        const common = require('./common');
         vue.config.productionTip = false;
 
-        const defaults: INclOptions = {};
+        const defaults: INclOptions = {
+            globalBootstrap: true,
+            globalComponents: true,
+        };
+
         const finalOptions: INclOptions = { ...defaults, ...options };
 
-        vue.use(common, finalOptions.auth);
+        if (finalOptions.auth) {
+            vue.use(authentication, finalOptions.auth);
+        }
+
+        if (finalOptions.globalBootstrap) {
+            vue.use(customBootstrap);
+        }
+
+        if (finalOptions.globalComponents) {
+            vue.use(globalComponents);
+        }
+
+        vue.use(Vuelidate);
     },
 };
 

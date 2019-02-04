@@ -14,6 +14,7 @@
 
 <script lang="ts">
 import Vue from 'vue';
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 
 interface IStep {
     key: string,
@@ -27,6 +28,10 @@ function getKey(step: IStep | string) {
 }
 
 export default Vue.extend({
+    components: {
+        'font-awesome-icon': FontAwesomeIcon,
+    },
+
     props: {
         active: [Object, String],
         steps: {

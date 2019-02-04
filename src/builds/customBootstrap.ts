@@ -1,11 +1,10 @@
 import { VueConstructor } from 'vue';
+import BootstrapVue from 'bootstrap-vue';
+import 'bootstrap-vue/dist/bootstrap-vue.css';
+import '../assets/scss/app.scss';
 
 const plugin = {
     install(vue: VueConstructor): void {
-        const BootstrapVue = require('bootstrap-vue').default;
-        require('bootstrap-vue/dist/bootstrap-vue.css');
-        require('../assets/scss/app.scss');
-
         vue.use(BootstrapVue);
     },
 };

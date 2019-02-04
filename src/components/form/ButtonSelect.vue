@@ -13,6 +13,7 @@
 
 <script lang="ts">
 import Vue from 'vue'
+import Button from '../Button.vue';
 
 interface IOption {
     key: string,
@@ -24,6 +25,9 @@ interface IOptionWithSelected extends IOption {
 }
 
 export default Vue.extend({
+    components: {
+        'n-button': Button,
+    },
     props: {
         value: {
             type: [String, Array as () => string[]],
