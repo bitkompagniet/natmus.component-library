@@ -1,5 +1,6 @@
 import { IAuth0Options } from './builds/authentication';
 import { VueConstructor, PluginObject } from 'vue';
+import common from './common';
 
 export interface INclOptions {
     auth?: IAuth0Options;
@@ -7,8 +8,6 @@ export interface INclOptions {
 
 const plugin: PluginObject<INclOptions> = {
     install(vue: VueConstructor, options: INclOptions | undefined): void {
-        console.log('module.ts');
-        const common = require('./common');
         vue.config.productionTip = false;
 
         const defaults: INclOptions = {};
