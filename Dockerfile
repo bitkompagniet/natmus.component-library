@@ -2,7 +2,7 @@ FROM node:alpine as builder
 
 WORKDIR /build
 
-COPY source .
+COPY . .
 
 ENV VUE_APP_URL http://localhost:8080
 
