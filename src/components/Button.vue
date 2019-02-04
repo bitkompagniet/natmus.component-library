@@ -9,7 +9,7 @@
 
 <script lang="ts">
 import Vue from 'vue';
-import bButton from 'bootstrap-vue/es/components/Button';
+import bButton from 'bootstrap-vue/es/components/button';
 
 const variants : string[] = ['primary', 'secondary', 'darkred', 'lightgrey', 'rose'];
 
