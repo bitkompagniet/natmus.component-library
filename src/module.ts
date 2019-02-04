@@ -13,6 +13,7 @@ export interface INclOptions {
 
 const plugin: PluginObject<INclOptions> = {
     install(vue: VueConstructor, options: INclOptions | undefined): void {
+        console.log('Start build');
         vue.config.productionTip = false;
 
         const defaults: INclOptions = {};
@@ -26,6 +27,7 @@ const plugin: PluginObject<INclOptions> = {
         // vue.use(fontawesome);
         vue.use(globalComponents);
         // vue.use(Vuelidate);
+        console.log('Complete build');
     },
 };
 

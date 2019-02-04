@@ -9,14 +9,13 @@
 
 <script lang="ts">
 import Vue from 'vue';
+import bButton from 'bootstrap-vue/es/components/Button';
 
 const variants : string[] = ['primary', 'secondary', 'darkred', 'lightgrey', 'rose'];
 
 export default Vue.extend({
-    mounted() {
-        const x = Vue as any;
-        console.log('This is the button');
-        console.log(x.options.components);
+    components: {
+        'b-button': bButton,
     },
     props: {
         icon: String,
