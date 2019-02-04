@@ -4,6 +4,8 @@ WORKDIR /build
 
 COPY source .
 
+ENV VUE_APP_URL http://localhost:8080
+
 RUN yarn
 RUN yarn build:demo
 
