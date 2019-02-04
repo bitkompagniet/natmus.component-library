@@ -2,6 +2,7 @@ import Vue from 'vue';
 
 import module from './module';
 import demoWebApp from './builds/demoWebApp';
+import VueHighlightJS from 'vue-highlightjs';
 
 import { IAuth0Options } from './builds/authentication';
 
@@ -14,4 +15,5 @@ const authOptions: IAuth0Options = {
 };
 
 Vue.use(module, { auth: authOptions });
+Vue.use(VueHighlightJS);
 Vue.use(demoWebApp);
