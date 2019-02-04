@@ -9,6 +9,7 @@ const plugin = {
             const componentConfig = requireComponent(filename);
             const componentName = 'n-' + _.kebabCase(filename.replace(/^\.\/(.*)\.\w+$/, '$1'));
             vue.component(componentName, componentConfig.default || componentConfig);
+            console.log(componentName);
         });
     },
 };

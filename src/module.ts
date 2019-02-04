@@ -1,8 +1,6 @@
 import { IAuth0Options } from './builds/authentication';
 import { VueConstructor, PluginObject } from 'vue';
 
-window.alert('XLAF1');
-
 export interface INclOptions {
     auth?: IAuth0Options;
 }
