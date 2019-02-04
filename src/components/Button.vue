@@ -13,6 +13,11 @@ import Vue from 'vue';
 const variants : string[] = ['primary', 'secondary', 'darkred', 'lightgrey', 'rose'];
 
 export default Vue.extend({
+    mounted() {
+        const x = Vue as any;
+        console.log('This is the button');
+        console.log(x.options.components);
+    },
     props: {
         icon: String,
         disabled: Boolean,

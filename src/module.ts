@@ -14,6 +14,8 @@ export interface INclOptions {
 
 const plugin: PluginObject<INclOptions> = {
     install(vue: VueConstructor, options: INclOptions | undefined): void {
+        const x = vue as any;
+        console.log(x.options.components);
         vue.config.productionTip = false;
 
         const defaults: INclOptions = {};
@@ -24,10 +26,16 @@ const plugin: PluginObject<INclOptions> = {
         }
 
         vue.use(customBootstrap);
+        console.log('AFTER');
+        console.log(x.options.components);
         vue.use(fontawesome);
+        console.log(x.options.components);
         vue.use(globalComponents);
-        vue.use(Vuelidate);
+        console.log(x.options.components);
+        // vue.use(Vuelidate);
+        // console.log(x.options.components);
         vue.use(VueHighlightJS);
+        console.log(x.options.components);
     },
 };
 
