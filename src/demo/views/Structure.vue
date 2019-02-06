@@ -245,6 +245,8 @@
 import Vue from 'vue';
 import Package from '../../../package.json';
 
+import nSection from '../../components/Section.vue';
+
 export default Vue.extend({
   data: () => ({
     sectionColors: [

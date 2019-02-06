@@ -9,10 +9,12 @@
 <script lang="ts">
 import Vue from 'vue'
 import bAlert from 'bootstrap-vue/es/components/alert/alert';
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 
 export default Vue.extend({
     components: {
         'b-alert': bAlert,
+        'font-awesome-icon': FontAwesomeIcon,
     },
     computed: {
         isSuccess(): boolean {

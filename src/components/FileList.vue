@@ -18,6 +18,7 @@
 import Vue from 'vue';
 import _ from 'lodash';
 import { Dictionary } from 'lodash';
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 
 interface IFile {
     filename: string,
@@ -25,6 +26,10 @@ interface IFile {
 }
 
 export default Vue.extend({
+    components: {
+        'font-awesome-icon': FontAwesomeIcon,
+    },
+
     props: {
         files: {
             type: Array as () => string[],

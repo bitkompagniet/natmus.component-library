@@ -1,8 +1,10 @@
 import Vue from 'vue';
 
-import module from './module';
+import core from './module';
 import demoWebApp from './builds/demoWebApp';
 import VueHighlightJS from 'vue-highlightjs';
+import fontawesome from './builds/fontawesome';
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 
 import { IAuth0Options } from './builds/authentication';
 
@@ -14,6 +16,15 @@ const authOptions: IAuth0Options = {
     redirectUri: `${process.env.VUE_APP_URL}/auth-callback`,
 };
 
-Vue.use(module, { auth: authOptions });
+Vue.use(core, {
+    globalBootstrap: true,
+    globalComponents: true,
+    auth: authOptions,
+});
+
+Vue.use(fontawesome);
+
+Vue.component('font-awesome-icon', FontAwesomeIcon);
+
 Vue.use(VueHighlightJS);
 Vue.use(demoWebApp);
