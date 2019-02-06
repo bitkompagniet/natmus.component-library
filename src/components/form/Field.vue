@@ -34,6 +34,10 @@
 
 <script lang="ts">
 import Vue from 'vue';
+import bFormGroup from 'bootstrap-vue/es/components/form-group/form-group';
+import bFormTextarea from 'bootstrap-vue/es/components/form-textarea/form-textarea';
+import bFormInput from 'bootstrap-vue/es/components/form-input/form-input';
+import bFormInvalidFeedback from 'bootstrap-vue/es/components/form/form-invalid-feedback';
 
 const allowedTypes = [
     'text',
@@ -50,6 +54,12 @@ export interface IError {
 }
 
 export default Vue.extend({
+    components: {
+        'b-form-group': bFormGroup,
+        'b-form-textarea': bFormTextarea,
+        'b-form-input': bFormInput,
+        'b-form-invalid-feedback': bFormInvalidFeedback,
+    },
     props: {
         id: {
             type: String,

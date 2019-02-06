@@ -13,7 +13,7 @@
 
 <script lang="ts">
 import Vue from 'vue'
-import NButton from '../Button.vue';
+import Button from '../Button.vue';
 
 interface IOption {
     key: string,
@@ -26,7 +26,7 @@ interface IOptionWithSelected extends IOption {
 
 export default Vue.extend({
     components: {
-        'n-button': NButton,
+        'n-button': Button,
     },
     props: {
         value: {

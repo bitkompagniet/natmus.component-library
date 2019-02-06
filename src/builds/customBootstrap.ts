@@ -5,9 +5,7 @@ import '../assets/scss/app.scss';
 
 const plugin = {
     install(vue: VueConstructor): void {
-        console.log('Start Bootstrap');
         vue.use(BootstrapVue);
-        console.log('End Bootstrap');
     },
 };
 

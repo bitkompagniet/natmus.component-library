@@ -6,6 +6,18 @@
     </footer>
 </template>
 
+<script lang="ts">
+import Vue from 'vue';
+import bContainer from 'bootstrap-vue/es/components/layout/container';
+
+export default Vue.extend({
+    components: {
+        'b-container': bContainer,
+    }
+})
+</script>
+
+
 <style lang="scss" scoped>
 @import '../assets/scss/base/colors.scss';
 

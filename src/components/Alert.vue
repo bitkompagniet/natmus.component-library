@@ -8,7 +8,12 @@
 
 <script lang="ts">
 import Vue from 'vue'
+import bAlert from 'bootstrap-vue/es/components/alert/alert';
+
 export default Vue.extend({
+    components: {
+        'b-alert': bAlert,
+    },
     computed: {
         isSuccess(): boolean {
             return this.$attrs.variant === "success";

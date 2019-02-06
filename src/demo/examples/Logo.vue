@@ -10,7 +10,7 @@
         <h3>Basic usage</h3>
 
 <d-helpers-highlight lang="html">
-&lt;n-logo full width="400" /&gt;
+&lt;n-logo full width="100" /&gt;
 </d-helpers-highlight>
 
         <h3>Example</h3>
