@@ -1,21 +1,21 @@
 <template>
-    <b-button class="n-style" :variant="variant" :disabled="disabled" @click="$emit('click')">
+    <c-button class="n-style" :variant="variant" :disabled="disabled" @click="$emit('click')">
         <span v-if="isIconSet" style="margin-right: 0.4em;">
             <font-awesome-icon :icon="icon" />
         </span>
         <slot></slot>
-    </b-button>
+    </c-button>
 </template>
 
 <script lang="ts">
 import Vue from 'vue';
-import bButton from 'bootstrap-vue/es/components/button';
+import bButton from 'bootstrap-vue/es/components/button/button';
 
 const variants : string[] = ['primary', 'secondary', 'darkred', 'lightgrey', 'rose'];
 
 export default Vue.extend({
     components: {
-        'b-button': bButton,
+        'c-button': bButton,
     },
     props: {
         icon: String,
