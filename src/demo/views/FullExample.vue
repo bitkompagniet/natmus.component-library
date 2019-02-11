@@ -74,7 +74,7 @@
 
         </n-section>
 
-        <n-section v-for="theme in ['darkblue', 'darkred', 'lightgrey']" :key="theme" :theme="theme">
+        <n-section v-for="theme in ['darkblue', 'darkred', 'lightgrey', 'rose']" :key="theme" :theme="theme">
             <n-step-progress :steps="steps" :active="active" />
         </n-section>
 

@@ -132,4 +132,8 @@ section.lightgrey .step-progress-step.active .step-progress-content {
     @include back-and-border($color-darkblue);
 }
 
+section.rose .step-progress-step.active .step-progress-content {
+    @include back-and-border($color-darkblue);
+}
+
 </style>
