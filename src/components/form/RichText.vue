@@ -57,7 +57,7 @@ export default Vue.extend({
 
 .quill-wrapper {
     $shadow-color: #ccc;
-    box-shadow: 0px 0px 4px 0px $shadow-color;
+    box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.2);
     border: none;
 
     .ql-toolbar, .ql-container, .ql-editor {
