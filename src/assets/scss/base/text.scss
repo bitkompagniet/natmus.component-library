@@ -68,3 +68,9 @@ a {
         color: $a-color;
     }
 }
+
+.error {
+    @extend .invalid-feedback;
+    display: block;
+    font-size: 100%;
+}
