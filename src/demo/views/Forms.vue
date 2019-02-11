@@ -206,6 +206,7 @@
                 { key: 'c', value: '3 years' },
               ]"
               v-model="years"
+              class="justify-content-between"
             />
 
           </section>
