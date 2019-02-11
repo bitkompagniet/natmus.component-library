@@ -25,8 +25,11 @@
     { key: '11-15', value: '11-15 år' },
   ]"
   v-model="years"
+  class="justify-content-center"
 /&gt;
 </d-helpers-highlight>
+
+      <p>The <code>justify-content-center</code> will place the button in the center. Omit to left-align.</p>
 
       <h3>Example</h3>
 
@@ -40,6 +43,7 @@
                 { key: '11-15', value: '11-15 år' },
             ]"
             v-model="years"
+            class="justify-content-center"
         />
 
         <p><strong>Value:</strong> {{ years }}</p>
@@ -54,9 +58,21 @@
             ]"
             v-model="colors"
             multi
+            class="justify-content-center"
         />
 
         <p><strong>Value:</strong> {{ colors }}</p>
+
+        <h4>Yes or no?</h4>
+
+        <n-form-button-select
+          :options="[
+            { key: true, value: 'Yes' },
+            { key: false, value: 'No' },
+          ]"
+          v-model="yesno"
+          class="justify-content-center"
+        />
       </n-slim>
 
       <h3>Properties</h3>
@@ -229,6 +245,7 @@ export default Vue.extend({
     story: '',
     password: '',
     checked: true,
+    yesno: null,
   }),
   computed: {
     noCharacters(): string {
