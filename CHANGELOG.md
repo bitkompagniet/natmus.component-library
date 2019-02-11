@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.2.3
+
+- Fixed version problems.
+
+## 1.2.2
+
+- Fixed build problems.
+
 ## 1.2.1
 
 ### Changes

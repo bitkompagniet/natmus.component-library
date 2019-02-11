@@ -1,0 +1,7 @@
+#!/bin/bash
+
+MILESTONE="$1"
+
+rm -rf node_modules
+npm install
+npm run build:demo && npm run build:lib && npm version "$MILESTONE"
