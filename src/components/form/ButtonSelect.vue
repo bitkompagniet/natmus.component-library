@@ -1,10 +1,11 @@
 <template>
-    <div class="button-select d-flex justify-content-between mb-3">
+    <div class="button-select d-flex mb-3">
         <n-button 
             v-for="option in optionsWithSelected" 
             :key="option.key" 
             :variant="option.selected ? 'primary' : 'secondary'"
             @click="updateValue(option.key)"
+            class="button-select-item"
         >
             {{ option.value }}
         </n-button>
@@ -104,5 +105,8 @@ export default Vue.extend({
     }
 }
 
+.button-select-item + .button-select-item {
+    margin-left: 1em;
+}
 
 </style>

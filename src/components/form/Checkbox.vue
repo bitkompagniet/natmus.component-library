@@ -25,6 +25,8 @@ export default Vue.extend({
 
 <style lang="scss" scoped>
 
+@import '../../assets/scss/base/colors.scss';
+
 @mixin q($size) {
     width: $size;
     height: $size;
@@ -39,14 +41,25 @@ export default Vue.extend({
 .checkbox {    
     display: inline-block;
     @include q(30px);
-    border: 3px solid black;
+    border: 3px solid $color-black;
     margin-right: 15px;
     font-size: 19px;
     padding-left: 5px;
 
     &.checked {
-        background-color: black;
-        color: white;
+        background-color: $color-black;
+        color: $color-white;
+    }
+}
+
+section.darkblue, section.rose, section.darkred, section.lightgrey {
+    .checkbox {
+        border: 3px solid $color-white;
+
+        &.checked {
+            background-color: $color-white;
+            color: $color-darkblue;
+        }
     }
 }
 

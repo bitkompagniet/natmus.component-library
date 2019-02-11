@@ -132,6 +132,7 @@
 			<h3>Example</h3>
 
 			<n-step-progress :steps="steps" :active="activeStep" />
+			<n-step-progress :steps="steps" :active="activeStep" small class="mt-5" />
 
 			<h3>Properties</h3>
 
@@ -141,6 +142,12 @@
 					type: 'IStep | string',
 					default: 'null',
 					description: 'The active step, as a reference to the actual object or the key as a string.',
+				},
+				{
+					name: 'small',
+					type: 'boolean',
+					default: 'false',
+					description: 'A smaller variant for sub-steps or a higher quantity of steps.'
 				},
 				{
 					name: 'steps',

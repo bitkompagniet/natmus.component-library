@@ -38,7 +38,7 @@ export default Vue.extend({
     text-align: center;
     font-weight: 700;
     font-size: 1.2em;
-    box-shadow: 2px 2px 2px #ddd;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
 
     button.close {
         text-shadow: none;

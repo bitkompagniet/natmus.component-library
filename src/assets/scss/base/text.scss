@@ -9,7 +9,7 @@
 
     h1 {
         color: $color-darkblue;
-        font-size: 4em;
+        font-size: 3.1em;
         font-weight: 900;
 
         small {
@@ -67,4 +67,10 @@ a {
     &:hover {
         color: $a-color;
     }
+}
+
+.error {
+    @extend .invalid-feedback;
+    display: block;
+    font-size: 100%;
 }
