@@ -17,7 +17,7 @@ import Vue from 'vue';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 
 interface IStep {
-    key: string,
+    key: string | number,
     title: string,
     icon?: string,
 }
@@ -33,7 +33,7 @@ export default Vue.extend({
     },
 
     props: {
-        active: [Object, String],
+        active: [Object, String, Number],
         steps: {
             type: Array as () => IStep[],
             default: [],

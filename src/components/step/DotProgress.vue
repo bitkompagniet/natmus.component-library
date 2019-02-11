@@ -17,7 +17,7 @@
 import Vue from 'vue';
 
 interface IStep {
-    key: string,
+    key: string | number,
 }
 
 function firstOrDefault<T>(items: T[], predicate: (item: T) => boolean): T | null {
@@ -36,7 +36,7 @@ export default Vue.extend({
             default: () => []
         },
         active: {
-            type: String,
+            type: [String, Number],
             default: null,
         }
     },
