@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.2.1
+
+### Changes
+
+- Fixed Bootstrap style import.
+
 ## 1.2.0
 
 ### Added
