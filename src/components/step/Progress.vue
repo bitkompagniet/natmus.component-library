@@ -2,11 +2,11 @@
     <div class="step-progress-container">
         <div class="step-progress-step" v-for="step in steps" :key="step.key" :class="{ active: isActive(step) }">
             <slot :step="step">
-                <div class="step-progress-content">
+                <div class="step-progress-content" :class="{ small }">
                     <span v-if="step.icon" style="margin-right: 0.5em"><font-awesome-icon :icon="step.icon" /></span>
                     <span>{{ step.title }}</span>
                 </div>
-                <div class="step-progress-divider align-self-center" v-if="showTail(step)">›</div>
+                <div class="step-progress-divider align-self-center" :class="{ small }" v-if="showTail(step)">›</div>
             </slot>
         </div>
     </div>
@@ -37,6 +37,10 @@ export default Vue.extend({
         steps: {
             type: Array as () => IStep[],
             default: [],
+        },
+        small: {
+            type: Boolean,
+            default: false,
         }
     },
 
@@ -78,10 +82,8 @@ $active: $color-orange;
 }
 
 .step-progress-step {
-    // flex-basis: 0;
     display: flex;
     
-
     .step-progress-content {
         flex: 1;
         min-width: 12em;
@@ -91,17 +93,33 @@ $active: $color-orange;
         text-align: center;
         font-weight: 700;
         color: $color-white;
+
+        &.small {
+            font-size: 0.9em;
+            border: none;
+            padding: 0.7em;
+            min-width: 0;
+        }
     }
 
     &.active .step-progress-content {
         background-color: $active;
         border-color: $active;
+
+        &.small {
+            background-color: transparent;
+            border-bottom: 2px solid $color-rose;
+        }
     }
 
     .step-progress-divider {
         margin: 0 0.5em;
         font-weight: normal;
         font-size: 30px;
+
+        &.small {
+            font-size: 20px;
+        }
     }
 }
 
@@ -112,27 +130,25 @@ section.white .step-progress-step {
         color: $color-darkblue;
     }
 
-    &.active .step-progress-content {
+    &.active .step-progress-content:not(.small) {
         @include back-and-border($color-darkblue);
         color: $color-white;
     }
-
-    
 }
 
-section.darkblue .step-progress-step.active .step-progress-content {
+section.darkblue .step-progress-step.active .step-progress-content:not(.small) {
     @include back-and-border($color-lightgrey);
 }
 
-section.darkred .step-progress-step.active .step-progress-content {
+section.darkred .step-progress-step.active .step-progress-content:not(.small) {
     @include back-and-border($color-rose);
 }
 
-section.lightgrey .step-progress-step.active .step-progress-content {
+section.lightgrey .step-progress-step.active .step-progress-content:not(.small) {
     @include back-and-border($color-darkblue);
 }
 
-section.rose .step-progress-step.active .step-progress-content {
+section.rose .step-progress-step.active .step-progress-content:not(.small) {
     @include back-and-border($color-darkblue);
 }
 
