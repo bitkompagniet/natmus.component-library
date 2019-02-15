@@ -1,5 +1,15 @@
 # Changelog
 
+## 1.2.4
+
+### Changes
+
+- StepProgress clickable and slot for the text.
+- Fixed some wrong colors.
+- Allow more ButtonSelect key types (string, number and boolean).
+- Fix checkbox rendering.
+- Fix invalid colors on certain backgrounds.
+
 ## 1.2.3
 
 - Fixed version problems.
