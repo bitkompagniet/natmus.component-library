@@ -55,12 +55,12 @@ export default Vue.extend({
     .checkbox {    
         display: inline-block;
         @include q(30px);
-        border: 3px solid $color-black;
+        border: 3px solid $color-darkblue;
         margin-right: 15px;
         font-size: 19px;
 
         &.checked {
-            background-color: $color-black;
+            background-color: $color-darkblue;
             color: $color-white;
         }
 
@@ -76,8 +76,8 @@ export default Vue.extend({
 }
 
 section.white .checkmark path {
-    stroke: white;
-    fill: white;
+    stroke: $color-white;
+    fill: $color-white;
 }
 
 section.darkblue, section.rose, section.darkred, section.lightgrey {

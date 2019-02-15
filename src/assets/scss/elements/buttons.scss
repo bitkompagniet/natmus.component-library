@@ -10,7 +10,7 @@
         opacity: 0.5;
     }
 
-    &.btn-primary {
+    &.btn-primary, &.btn-primary:active {
         background-color: $color-darkblue;
         border-color: $color-darkblue;
 
@@ -20,25 +20,25 @@
         }
     }
 
-    &.btn-secondary {
-        color: $color-black;
+    &.btn-secondary, &.btn-secondary:active {
+        color: $color-darkblue;
         background-color: transparent;
-        border-color: $color-black;
+        border-color: $color-darkblue;
     }
 
-    &.btn-darkred {
+    &.btn-darkred, &.btn-darkred:active {
         color: $color-white;
         background-color: $color-darkred;
         border-color: $color-darkred;
     }
 
-    &.btn-lightgrey {
+    &.btn-lightgrey, &.btn-lightgrey:active {
         color: $color-white;
         background-color: $color-lightgrey;
         border-color: $color-lightgrey;
     }
 
-    &.btn-rose {
+    &.btn-rose, &.btn-rose:active {
         color: $color-white;
         background-color: $color-rose;
         border-color: $color-rose;
