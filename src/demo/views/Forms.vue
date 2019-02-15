@@ -176,6 +176,10 @@
             
             <n-form-field :id="`password-${theme}`" label="Hemmeligt" type="password" v-model="password"/>
 
+            <n-form-field :id="`some-errors-${theme}`" label="Felt med fejl" type="text" v-model="alwayserror">
+              <div>En fejl her.</div>
+            </n-form-field>
+
             <n-form-field 
               :id="`vej-${theme}`" 
               label="Vej og vejnummer" 
@@ -247,6 +251,7 @@ export default Vue.extend({
     password: '',
     checked: true,
     yesno: null,
+    alwayserror: '',
   }),
   computed: {
     noCharacters(): string {

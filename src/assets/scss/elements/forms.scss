@@ -53,3 +53,18 @@ section.white {
 .n-style .form-section {
     margin-bottom: 2em;
 }
+
+.n-style .form-control.is-invalid {
+    background-image: none;
+}
+
+section.lightgrey,
+section.rose {
+    .invalid-feedback {
+        color: $color-darkred;
+    }
+
+    .form-control.is-invalid {
+        border-color: $color-darkred;
+    }
+}
