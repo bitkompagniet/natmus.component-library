@@ -16,8 +16,10 @@
 import Vue from 'vue'
 import Button from '../Button.vue';
 
+type IKey = string | number | boolean;
+
 interface IOption {
-    key: string,
+    key: IKey,
     value: string,
 }
 
@@ -31,7 +33,7 @@ export default Vue.extend({
     },
     props: {
         value: {
-            type: [String, Array as () => string[]],
+            type: [Number, Boolean, String, Array as () => string[]],
             default: null,
         },
         options: {
@@ -47,21 +49,21 @@ export default Vue.extend({
         optionsWithSelected() : IOptionWithSelected[] {
             return this.options.map(option => ({ key: option.key, value: option.value, selected: this.valueAsArray.includes(option.key) }));
         },
-        valueAsArray(): string[] {
+        valueAsArray(): IKey[] {
             if (this.value == null) return [];
             if (Array.isArray(this.value)) return this.value;
             return [this.value];
         }
     },
     methods: {
-        updateValue(key: string) : void {
+        updateValue(key: IKey) : void {
 
             if (!this.multi) {
                 if (key != this.value) {
                     this.$emit('input', key);
                 }
             } else {
-                let result : string[] = this.valueAsArray.filter(x => x != key);
+                let result : IKey[] = this.valueAsArray.filter(x => x != key);
             
                 if (!this.valueAsArray.includes(key)) {
                     result = [ ...result, key ];
