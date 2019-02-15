@@ -117,3 +117,19 @@ web.config:
 	</system.webServer>
 </configuration>
 ```
+
+## Release Checklist
+
+When releasing a new version, go through this checklist.
+
+- Decide on next version number:
+  - Public API backwards incompatible: MAJOR
+  - Public API has new features: MINOR
+  - Public API is unchanged (bug fixes): PATCH
+- Run builds:
+  - `npm run build:demo`
+  - `npm run build:lib`
+- Update [CHANGELOG.md](CHANGELOG.md) with the new version.
+- Commit build and changelog. You cannot commit as a part of 
+- Run `npm version [major|minor|patch]`.
+- Push to master.
