@@ -1,25 +1,22 @@
 <template>
     <div class="step-progress-container">
         <div class="step-progress-step" v-for="step in steps" :key="step.key" :class="{ active: isActive(step) }">
-            <slot :step="step">
-                <div class="step-progress-content" :class="{ small }">
-                    <span v-if="step.icon" style="margin-right: 0.5em"><font-awesome-icon :icon="step.icon" /></span>
+            <div class="step-progress-content" :class="{ small, hand: clickable }" @click="clickStep(step)">
+                <slot name="text" :step="step">
                     <span>{{ step.title }}</span>
-                </div>
-                <div class="step-progress-divider align-self-center" :class="{ small }" v-if="showTail(step)">›</div>
-            </slot>
+                </slot>
+            </div>
+            <div class="step-progress-divider align-self-center" :class="{ small }" v-if="showTail(step)">›</div>
         </div>
     </div>
 </template>
 
 <script lang="ts">
 import Vue from 'vue';
-import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 
 interface IStep {
     key: string | number,
     title: string,
-    icon?: string,
 }
 
 function getKey(step: IStep | string) {
@@ -28,10 +25,6 @@ function getKey(step: IStep | string) {
 }
 
 export default Vue.extend({
-    components: {
-        'font-awesome-icon': FontAwesomeIcon,
-    },
-
     props: {
         active: [Object, String, Number],
         steps: {
@@ -39,6 +32,10 @@ export default Vue.extend({
             default: [],
         },
         small: {
+            type: Boolean,
+            default: false,
+        },
+        clickable: {
             type: Boolean,
             default: false,
         }
@@ -58,6 +55,10 @@ export default Vue.extend({
             }
 
             return this.active;
+        },
+        clickStep(step: IStep): void {
+            if (!this.clickable) return;
+            this.$emit('click', step);
         }
     },
 });
@@ -99,6 +100,10 @@ $active: $color-orange;
             border: none;
             padding: 0.7em;
             min-width: 0;
+        }
+
+        &.hand {
+            cursor: pointer;
         }
     }
 

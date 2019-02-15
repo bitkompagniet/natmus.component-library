@@ -99,76 +99,7 @@
 		</n-section>		
 
 		<n-section>
-			<h2>StepProgress</h2>
-
-			<p>
-				A component of a wizard or step flow, this is a visual aid showing all steps and
-				the current step being shown.
-			</p>
-
-			<h3>Basic usage</h3>
-
-<d-helpers-highlight lang="html">
-&lt;n-step-progress
-  :active="two"
-  :steps="[{
-    key: 'one',
-    title: 'First step',
-    icon: 'info-circle',
-  },
-  {
-    key: 'two',
-    title: 'Second step',
-    icon: 'comment',
-  },
-  {
-    key: 'three',
-    title: 'Third step',
-    icon: 'hand-point-right',
-  }]"
-/&gt;
-</d-helpers-highlight>
-
-			<h3>Example</h3>
-
-			<n-step-progress :steps="steps" :active="activeStep" />
-			<n-step-progress :steps="steps" :active="activeStep" small class="mt-5" />
-
-			<h3>Properties</h3>
-
-			<d-helpers-property-table :items="[
-				{
-					name: 'active',
-					type: 'IStep | string',
-					default: 'null',
-					description: 'The active step, as a reference to the actual object or the key as a string.',
-				},
-				{
-					name: 'small',
-					type: 'boolean',
-					default: 'false',
-					description: 'A smaller variant for sub-steps or a higher quantity of steps.'
-				},
-				{
-					name: 'steps',
-					type: 'IStep[]',
-					default: '[]',
-					description: 'An array describing the step keys, titles and descriptions.'
-				},
-			]"/>
-
-			<h3><code>IStep</code> interface</h3>
-
-			<p>The key of <code>IStep</code> should be unique. The icon is optional.</p>
-
-<d-helpers-highlight lang="typescript">
-{
-  key: string,
-  title: string,
-  icon?: string,
-}
-</d-helpers-highlight>
-
+			<d-examples-progress />
 		</n-section>
 
 		<n-section>
@@ -190,24 +121,6 @@ export default Vue.extend({
 				{ key: 'primary-disabled', variant: 'primary', text: 'OK', disabled: true },
         { key: 'secondary-active', variant: 'secondary', text: 'Cancel' },
         { key: 'secondary-disabled', variant: 'secondary', text: 'Cancel', disabled: true },
-			],
-			activeStep: 'one',
-			steps: [
-				{
-					key: 'one',
-					title: 'First step',
-					icon: 'info-circle',
-				},
-				{
-					key: 'two',
-					title: 'Second step',
-					icon: 'comment',
-				},
-				{
-					key: 'three',
-					title: 'Third step',
-					icon: 'hand-point-right',
-				},
 			],
     };
   },
