@@ -1,7 +1,17 @@
 <template>
     <div class="checkbox-with-label" @click="update">
-        <div class="checkbox" :class="{ checked: value }">{{ value ? '✔' : '' }}</div>
-        <div class="label"><slot></slot></div>
+        <div class="check-column">
+            <div class="checkbox" :class="{ checked: value }">
+                <span v-if="value" class="checkmark">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                        <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
+                    </svg>
+                </span>
+            </div>
+        </div>
+        <div class="label">
+            <slot></slot>
+        </div>
     </div>
 </template>
 
@@ -34,22 +44,40 @@ export default Vue.extend({
 
 .checkbox-with-label {
     display: flex;
-    align-items: center;
     cursor: default;
+
+    .check-column {
+        min-width: 45px;
+        width: 45px;
+        height: 30px;
+    }
+
+    .checkbox {    
+        display: inline-block;
+        @include q(30px);
+        border: 3px solid $color-black;
+        margin-right: 15px;
+        font-size: 19px;
+
+        &.checked {
+            background-color: $color-black;
+            color: $color-white;
+        }
+
+        .checkmark {
+            position: relative;
+            top: -3px;
+        }
+    }
+
+    .label {
+        padding-top:  5px;
+    }
 }
 
-.checkbox {    
-    display: inline-block;
-    @include q(30px);
-    border: 3px solid $color-black;
-    margin-right: 15px;
-    font-size: 19px;
-    padding-left: 5px;
-
-    &.checked {
-        background-color: $color-black;
-        color: $color-white;
-    }
+section.white .checkmark path {
+    stroke: white;
+    fill: white;
 }
 
 section.darkblue, section.rose, section.darkred, section.lightgrey {

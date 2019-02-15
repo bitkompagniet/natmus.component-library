@@ -224,7 +224,14 @@
               Jeg accepterer brugen af min data.
             </n-form-checkbox>
 
-            <div class="d-flex justify-content-end">
+            <n-form-checkbox
+              v-model="checked"
+              class="mt-3"
+            >
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque est excepturi reprehenderit eius eum, facere culpa! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id, voluptate. Itaque praesentium dolores error sunt, earum harum dignissimos quis vitae hic, aspernatur non iure atque sapiente? Rerum accusamus ea vel!
+            </n-form-checkbox>
+
+            <div class="d-flex justify-content-end mt-3">
               <n-button variant="primary">Submit</n-button>
             </div>
           </section>
