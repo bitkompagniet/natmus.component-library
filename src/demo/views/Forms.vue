@@ -181,6 +181,15 @@
             </n-form-field>
 
             <n-form-field 
+              :id="`overridden-${theme}`" 
+              label="Vil kun beholde tal" 
+              type="text" 
+              @input="overridden = $event"
+              @change="overridden = $event.replace(/\D/g, '')"
+              :value="overridden"
+            />
+
+            <n-form-field 
               :id="`vej-${theme}`" 
               label="Vej og vejnummer" 
               type="text" 
@@ -259,6 +268,7 @@ export default Vue.extend({
     checked: true,
     yesno: null,
     alwayserror: '',
+    overridden: '0',
   }),
   computed: {
     noCharacters(): string {

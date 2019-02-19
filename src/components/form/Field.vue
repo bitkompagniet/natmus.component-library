@@ -3,31 +3,33 @@
     <slot name="label">
         <label :id="groupId + '-label'" :for="id" class="col-form-label n-style">{{ label }}</label>
     </slot>
-    <b-form-textarea 
+    <textarea 
         v-if="type === 'textarea'"
         :id="id"
         :placeholder="placeholder"
         :value="value"
         :rows="rows"
-        :state="$slots.default ? false : null"
-        class="n-style"
-        @input="$emit('input', $event)"
+        class="n-style form-control"
+        :class="{ 'is-invalid': $slots.default }"
+        @input="$emit('input', $event.target.value)"
+        @change="$emit('change', $event.target.value)"
     />
-    <b-form-input 
+    <input 
         v-else
         :id="id"
         :type="type"
         :required="required"
         :placeholder="placeholder"
-        :state="$slots.default ? false : null"
         :value="value"
-        class="n-style"
-        @input="$emit('input', $event)"
-    ></b-form-input>
+        class="n-style form-control"
+        :class="{ 'is-invalid': $slots.default }"
+        @input="$emit('input', $event.target.value)"
+        @change="$emit('change', $event.target.value)"
+    />
 
-    <b-form-invalid-feedback :id="errorId">
-      <slot></slot>
-    </b-form-invalid-feedback>
+    <div :id="errorId" v-if="$slots.default" class="invalid-feedback">
+        <slot></slot>
+    </div>
 
   </b-form-group>
 </template>
@@ -83,7 +85,7 @@ export default Vue.extend({
         },
         errorId(): string {
             return `error-${this.id}`;
-        },
+        }
     },
 });
 </script>
