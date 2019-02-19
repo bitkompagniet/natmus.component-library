@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.3.0
+
+### Added
+
+- Expose audience on the Auth0 configuration object.
+
 ## 1.2.4
 
 ### Changes

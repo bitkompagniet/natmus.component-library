@@ -5,6 +5,7 @@ export interface IAuth0Options {
     domain: string;
     clientID: string;
     redirectUri: string;
+    audience: string;
     responseType?: string;
     scope?: string;
 }
@@ -26,7 +27,7 @@ export default {
             // make sure this line is contains the port: 8080
             redirectUri: configuration.redirectUri,
             // we will use the api/v2/ to access the user information as payload
-            audience: 'https://' + configuration.domain + '/api/v2/',
+            audience: configuration.audience,
             responseType: configuration.responseType,
             scope: configuration.scope,
         });

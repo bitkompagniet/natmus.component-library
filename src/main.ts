@@ -14,6 +14,7 @@ const authOptions: IAuth0Options = {
     domain: process.env.VUE_APP_AUTH0_DOMAIN,
     clientID: process.env.VUE_APP_AUTH0_CLIENT_ID,
     redirectUri: `${process.env.VUE_APP_URL}/auth-callback`,
+    audience: `https://${process.env.VUE_APP_AUTH0_DOMAIN}/api/v2/`,
 };
 
 Vue.use(core, {
