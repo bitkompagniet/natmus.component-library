@@ -190,6 +190,16 @@
             />
 
             <n-form-field 
+              :id="`enterkey-${theme}`" 
+              label="Reagerer på enter key" 
+              type="text"
+              v-model="enterkey"
+              @keyup.enter="enterPressed"
+            />
+
+            <p v-if="displayEnterKeyBanner">Enter pressed.</p>
+
+            <n-form-field 
               :id="`vej-${theme}`" 
               label="Vej og vejnummer" 
               type="text" 
@@ -269,6 +279,8 @@ export default Vue.extend({
     yesno: null,
     alwayserror: '',
     overridden: '0',
+    enterkey: '',
+    displayEnterKeyBanner: false,
   }),
   computed: {
     noCharacters(): string {
@@ -279,6 +291,13 @@ export default Vue.extend({
     emptyDisplay(value: string | null): string {
       if (value == null || value === '') return "[empty]";
       return value;
+    }
+  },
+  methods: {
+    enterPressed() {
+      this.displayEnterKeyBanner = true;
+
+      setTimeout(() => this.displayEnterKeyBanner = false, 2000);
     }
   },
   validations: {

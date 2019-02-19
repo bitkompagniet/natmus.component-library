@@ -11,8 +11,13 @@
         :rows="rows"
         class="n-style form-control"
         :class="{ 'is-invalid': $slots.default }"
-        @input="$emit('input', $event.target.value)"
-        @change="$emit('change', $event.target.value)"
+        @input="input"
+        @change="change"
+        @keypress="$emit('keypress', $event)"
+        @keydown="$emit('keydown', $event)"
+        @keyup="$emit('keyup', $event)"
+        @focus="$emit('focus', $event)"
+        @blur="$emit('blur', $event)"
     />
     <input 
         v-else
@@ -23,8 +28,13 @@
         :value="value"
         class="n-style form-control"
         :class="{ 'is-invalid': $slots.default }"
-        @input="$emit('input', $event.target.value)"
-        @change="$emit('change', $event.target.value)"
+        @input="input"
+        @change="change"
+        @keypress="$emit('keypress', $event)"
+        @keydown="$emit('keydown', $event)"
+        @keyup="$emit('keyup', $event)"
+        @focus="$emit('focus', $event)"
+        @blur="$emit('blur', $event)"
     />
 
     <div :id="errorId" v-if="$slots.default" class="invalid-feedback">
@@ -87,6 +97,18 @@ export default Vue.extend({
             return `error-${this.id}`;
         }
     },
+
+    methods: {
+        input($event: any) {
+            this.$emit('input', $event.target.value);
+            this.$emit('raw-input', $event);
+        },
+
+        change($event: any) {
+            this.$emit('change', $event.target.value);
+            this.$emit('raw-change', $event);
+        }
+    }
 });
 </script>
 
