@@ -1,5 +1,16 @@
 # Changelog
 
+## 1.4.0
+
+### Added
+
+- Expose Auth0 lang option and set default to 'da'.
+- More versatile FileList with object, key, filename and slots for more control.
+
+### Changed
+
+- Revised logo version.
+
 ## 1.3.0
 
 ### Added
