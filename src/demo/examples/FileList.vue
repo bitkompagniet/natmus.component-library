@@ -11,10 +11,10 @@
 <d-helpers-highlight lang="html">
 &lt;n-file-list 
     :files="[
-        'thesis.docx',
-        'video.mp4',
-        'music.mp3',
-        'recording.mp4',
+        { file: { guid: 'id1', fileName: 'thesis.docx' }, key: 'id1', filename: 'thesis.docx' },
+        { file: { guid: 'id2', fileName: 'video.mp4' }, key: 'id2', filename: 'video.mp4' },
+        { file: { guid: 'id3', fileName: 'music.mp3' }, key: 'id3', filename: 'music.mp3' },
+        { file: { guid: 'id4', fileName: 'recording.mp4'}, key: 'id4', filename: 'recording.mp4' },
     ]"
     @open="openHandler"
     @delete="deleteHandler"
@@ -25,13 +25,13 @@
 
         <n-file-list 
             :files="[
-                'thesis.docx',
-                'video.mp4',
-                'music.mp3',
-                'recording.mp4',
+                { file: { guid: 'id1', fileName: 'thesis.docx' }, key: 'id1', filename: 'thesis.docx' },
+                { file: { guid: 'id2', fileName: 'video.mp4' }, key: 'id2', filename: 'video.mp4' },
+                { file: { guid: 'id3', fileName: 'music.mp3' }, key: 'id3', filename: 'music.mp3' },
+                { file: { guid: 'id4', fileName: 'recording.mp4'}, key: 'id4', filename: 'recording.mp4' },
             ]"
-            @open="log('open: ' + $event)"
-            @delete="log('delete: ' + $event)"
+            @open="log('open: ' + $event.fileName)"
+            @delete="log('delete: ' + $event.fileName)"
         />
 
         <h3>Properties</h3>
@@ -40,24 +40,65 @@
             :items="[
                 { 
                     name: '@delete',
-                    type: '(filename: string) => void',
+                    type: '(file: any) => void',
                     default: 'null',
-                    description: 'Handler for when a delete request is sent. Delete link is shown on hover when this is bound.',
+                    description: 'Delete request handler. Delete link is shown on hover when this is bound.',
                 },
                 { 
                     name: '@open',
-                    type: '(filename: string) => void',
+                    type: '(file: any) => void',
                     default: 'null',
-                    description: 'Handler for when a open request is sent. Emphasis on hover when this is bound.',
+                    description: 'Open request handler. Emphasis on hover when this is bound.',
                 },
                 { 
                     name: 'files',
-                    type: 'string[]',
+                    type: 'IFileDescription[]',
                     default: '[]',
-                    description: 'List of filenames with extensions. If path is prefixed (full path), it will be included in the display.',
+                    description: 'List of files with file object, filename and key.',
                 },
             ]"
         />
+
+        <h3>Slots</h3>
+
+        <d-helpers-slot-table
+            :items="[
+                {
+                    name: 'filetext',
+                    scope: 'file: IFileDescription & IExtension',
+                    description: 'Presentation of the actual filename.',
+                },
+                {
+                    name: 'deletetext',
+                    scope: 'file: IFileDescription & IExtension',
+                    description: 'Presentation of the remove link.',
+                }
+            ]"
+        />
+
+        <h3><code>IFileDescription</code></h3>
+
+<d-helpers-highlight lang="typescript">
+{
+    file: any;
+    filename: string;
+    key: string;
+}
+</d-helpers-highlight>
+
+        <p>
+            The <code>file</code> object can be of any type. It is not used by the
+            component, but will be sent to the event handlers.
+        </p>
+
+        <h3><code>IExtension</code></h3>
+
+<d-helpers-highlight lang="typescript">
+{
+    extension: string;
+}
+</d-helpers-highlight>
+
     </div>
 </template>
 
