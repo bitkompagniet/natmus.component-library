@@ -4,18 +4,32 @@
         <h2>Logo</h2>
 
         <p>
-            The National Museum of Denmark logo as a component.
+            The National Museum of Denmark logo as a SVG
+            component.
         </p>
 
         <h3>Basic usage</h3>
 
 <d-helpers-highlight lang="html">
-&lt;n-logo full width="100" /&gt;
+&lt;n-logo full width="400" /&gt;
 </d-helpers-highlight>
 
         <h3>Example</h3>
 
-        <n-logo full :width="400" />
+        <div class="mb-3"><n-logo full :width="400" /></div>
+        <div><n-logo :width="100" /></div>
+
+        <h3>Custom styling</h3>
+
+        <p>
+            To make the logo any non-standard color, just add
+            a style attribute. You can also add custom classes
+            this way. SVG's are fully stylable.
+        </p>
+
+<d-helpers-highlight lang="html">
+&lt;n-logo full width="400" style="fill: blue;" /&gt;
+</d-helpers-highlight>        
 
         <h3>Properties</h3>
 
