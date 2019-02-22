@@ -8,6 +8,7 @@ export interface IAuth0Options {
     audience: string;
     responseType?: string;
     scope?: string;
+    language?: string;
 }
 
 export default {
@@ -84,7 +85,10 @@ export default {
                         localStorage.removeItem('passthrough');
                     }
 
-                    webAuth.authorize();
+                    const language = configuration.language || 'da';
+                    const lockOptions: auth0.AuthorizeOptions = { language };
+
+                    webAuth.authorize(lockOptions);
                 },
                 logout(): Promise<never> {
                     return new Promise((resolve, reject) => {
