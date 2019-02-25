@@ -17,7 +17,7 @@
         <h3>Example</h3>
 
         <div class="mb-3"><n-logo full :width="400" /></div>
-        <div><n-logo :width="100" /></div>
+        <div><n-logo :width="100" @click="logoClick" /></div>
 
         <h3>Custom styling</h3>
 
@@ -70,5 +70,10 @@
 import Vue from 'vue';
 
 export default Vue.extend({
+    methods: {
+        logoClick() {
+            window.alert('Logo clicked.');
+        },
+    }
 })
 </script>
