@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.4.1
+
+### Changed
+
+- Fixed logo click event.
+- Responsive behaviour in ButtonSelect, Slim and navigation bar.
+
 ## 1.4.0
 
 ### Added
