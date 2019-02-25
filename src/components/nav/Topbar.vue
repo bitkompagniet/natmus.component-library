@@ -4,9 +4,9 @@
         <b-container>
             <b-row>
                 <b-col>
-                    <div class="d-flex" style="height: 130px">
-                        <n-logo @click="$emit('logoClick')" white :width="80" />
-                        <b-nav>
+                    <div class="d-flex">
+                        <n-logo @click="$emit('logoClick')" white :width="80" style="margin-right: 2em;" />
+                        <b-nav class="d-flex flex-column flex-md-row">
                             <slot></slot>
                         </b-nav>
                     </div>
@@ -48,11 +48,11 @@ export default Vue.extend({
 
     ul.nav {
         margin-top: auto;
-        margin-bottom: 11px;
+        // margin-bottom: 20px;
 
         li.nav-item {
 
-            margin-left: 1.5em;
+            // margin-left: 1.5em;
 
             font-weight: 400;
             font-size: 1.4em;
@@ -84,6 +84,18 @@ export default Vue.extend({
                     background-color: $color-lightgrey;
                     color: $color-white;
                 }
+            }
+        }
+    }
+}
+
+@media (min-width: 768px) {
+    .topbar-nav.n-style {
+        ul.nav {
+            margin-bottom: 20px;
+
+            li.nav-item {
+                margin-right: 1em;
             }
         }
     }
