@@ -1,5 +1,5 @@
 <template>
-    <div class="button-select d-flex mb-3">
+    <div class="button-select d-flex flex-column mb-3 flex-md-row">
         <n-button 
             v-for="option in optionsWithSelected" 
             :key="option.key" 
@@ -108,7 +108,13 @@ export default Vue.extend({
 }
 
 .button-select-item + .button-select-item {
-    margin-left: 1em;
+    margin-top: 1em;
+}
+
+@media (min-width: 768px) {
+    .button-select-item + .button-select-item {
+        margin-top: 0;
+    }
 }
 
 </style>

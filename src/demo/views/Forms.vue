@@ -43,7 +43,7 @@
                 { key: '11-15', value: '11-15 år' },
             ]"
             v-model="years"
-            class="justify-content-center"
+            class="justify-content-between"
         />
 
         <p><strong>Value:</strong> {{ years }}</p>
@@ -58,21 +58,23 @@
             ]"
             v-model="colors"
             multi
-            class="justify-content-center"
+            class="justify-content-between"
         />
 
         <p><strong>Value:</strong> {{ colors }}</p>
 
         <h4>Yes or no?</h4>
 
-        <n-form-button-select
-          :options="[
-            { key: true, value: 'Yes' },
-            { key: false, value: 'No' },
-          ]"
-          v-model="yesno"
-          class="justify-content-center"
-        />
+        <div class="mx-auto w-75">
+          <n-form-button-select
+            :options="[
+              { key: true, value: 'Yes' },
+              { key: false, value: 'No' },
+            ]"
+            v-model="yesno"
+            class="justify-content-between"
+          />
+        </div>
       </n-slim>
 
       <h3>Properties</h3>
