@@ -1,6 +1,6 @@
 <template>
     <b-row>
-        <b-col cols="6" offset="3">
+        <b-col cols="12" offset-md="2" md="8" offset-lg="3" lg="6">
             <slot></slot>
         </b-col>
     </b-row>
