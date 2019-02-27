@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.4.2
+
+### Changed
+
+- IE display fixes.
+
 ## 1.4.1
 
 ### Changed
